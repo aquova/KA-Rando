@@ -10,6 +10,7 @@ Written by Austin Bricker (Aquova), 2017
 
 https://twitter.com/Aquova_
 
+
 -- Overview --
 
 A program that will randomize the abilities that Kirby will gain from eating enemies in Kirby's Adventure.
