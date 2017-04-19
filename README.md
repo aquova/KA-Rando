@@ -1,9 +1,10 @@
 # Kirbys_Adventure_Randomizer
 
 Kirby's Adventure Randomizer
+An ability randomizer for Kirby's Adventure for NES.
 https://github.com/Aquova/Kirbys_Adventure_Randomizer
 
-Written by Aquova, 2017
+Written by Austin Bricker (Aquova), 2017
 https://twitter.com/Aquova_
 
 -- Overview --
