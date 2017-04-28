@@ -34,8 +34,14 @@ def getEnemyMap():
     return enemy_rom_locs
 
 if __name__ == "__main__":
-    # rom = open("/Users/austinbricker/Desktop/KA.nes", 'rb')
-    # for i in range(5):
-    #     test = rom.next()
-    #     print test
-    # rom.close()
+    rom_name = "/Users/austinbricker/Desktop/KA.nes"
+    rom = open(rom_name, 'rb').read()
+    for item in getEnemyMap():
+        address = int(item, 16)
+        rand_ind = random.randint(0,len(getEnemyValues()) - 1)
+        new_enemy = getEnemyValues()[rand_ind]
+        new_enemy = chr(int(new_enemy,16))
+        rom = rom[:address] + new_enemy + rom[(address + 1):]
+    new_rom = open(rom_name.split(".")[0] + "_random.nes", 'w')
+    new_rom.write(rom)
+    new_rom.close()
