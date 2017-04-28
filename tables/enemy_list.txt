@@ -1,0 +1,176 @@
+00 Waddle Dee slow
+01 Waddle Dee medium
+02 Waddle Dee fast
+03 Waddle Dee very fast
+04 Waddle Doo slow
+05 Waddle Doo - medium
+06 Waddle Doo - fast
+07 Waddle Doo  very fast
+08 Shotzo (aiming) - slow
+09 Shotzo (aiming) - medium
+0A Shotzo (aiming) - fast
+0B Shotzo (aiming) - very fast
+0C Shotzo (3-shot) - up
+0D Shotzo (3-shot) - right
+0E Shotzo (3-shot) - left
+0F Sparky - slow
+10 Sparky - fast
+11 Poppy Bros. Jr. (normal) - slow
+12 Poppy Bros. Jr. (normal) - medium
+13 Poppy Bros. Jr. (normal) - fast
+14 Poppy Bros. Jr. (apple) - slow
+15 Poppy Bros. Jr. (apple) - medium
+16 Poppy Bros. Jr. (apple) - fast
+17 Poppy Bros. Jr. (tomato) - slow
+18 Poppy Bros. Jr. (tomato) - medium  *unused*
+19 Poppy Bros. Jr. (tomato) - fast  *unused*
+1A Laser Ball - slow
+1B Laser Ball - medium
+1C Laser Ball - fast
+1D Fish (homing) - slow
+1E Fish (homing) - fast
+1F [Fish]  *unused*
+20 Fish (horizontal)
+21 Fish (jumping)
+22 Bounder - ???
+23 Bounder - ???
+24 Hothead - ???
+25 Hothead - ???
+26 Parasol Waddle Doo (held)
+27 Parasol Waddle Dee (held)
+28 Parasol Waddle Doo (flying)
+29 Parasol Waddle Dee (flying)
+2A Parasol Shotzo (flying)
+2B Parasol Waddle Doo (homing)
+2C Parasol Waddle Dee (homing)
+2D Parasol Shotzo (homing)
+2E Blade Knight / Sword Knight
+2F Bubbles - slow
+30 Bubbles - fast
+31 Noddy - slow
+32 Noddy - fast
+33 Coner - slow
+34 Coner - fast
+35 Tomato
+36 1-up
+37 Lollipop
+38 Waddle Dee [walking?] - slow
+39 Waddle Dee [walking?] - medium
+3A Waddle Dee [walking?] - fast
+3B Waddle Dee [walking?] - very fast
+3C Waddle Dee (jumping) - slow
+3D Waddle Dee (jumping) - medium
+3E Waddle Dee (jumping) - fast
+3F Waddle Dee (jumping) - very fast
+40 Bomber
+41 Flamer (peaceful) - slow
+42 Flamer (peaceful) - medium  *unused*
+43 Flamer (peaceful) - fast
+44 Twister - ???
+45 Twister - ???
+46 Twister - ???
+47 Flamer (attacking) - slow
+48 Flamer (attacking) - medium
+49 Metaknight w/Lollipop
+4A Squid (walking) - slow
+4B Squid (walking) - fast
+4C Squid (appearing)
+4D Squid (flying) - slow
+4E Squid (flying) - fast  *unused*
+4F Coconut - fast left
+50 Bronto Burt (up/down straight) - slow
+51 Bronto Burt (up/down straight) - fast
+52 Bronto Burt (up/down homing) - slow
+53 Bronto Burt (up/down homing) - fast  *unused*
+54 Bronto Burt (dropping in) - slow
+55 Bronto Burt (dropping in) - fast
+56 Bronto Burt (up diagonal) - slow
+57 Bronto Burt (up diagonal) - fast
+58 Bronto Burt (homing) - slow
+59 Bronto Burt (homing) - fast
+5A Bronto Burt (waiting) - ???
+5B Bronto Burt (waiting) - ???
+5C Glunk (not shooting)
+5D Glunk (shooting)
+5E Coconut - slow left
+5F Coconut - slow right
+60 Slippy - slow
+61 Slippy - fast
+62 Starman (walking) - slow
+63 Starman (walking) - fast  *unused*
+64 Starman (peaceful)
+65 Starman (flying) - slow
+66 Starman (flying) - fast  *unused*
+67 Sir Kibble (stationary) - ???
+68 Sir Kibble (stationary) - ???
+69 Sir Kibble (walking) - ???
+6A Sir Kibble (walking) - ???
+6B Kabu (jumping) - slow
+6C Kabu (jumping) - fast
+6D Kabu (vanishing) - ???
+6E Kabu (vanishing) - ???
+6F Kabu (sliding)
+70 Gordo (hovering)
+71 Gordo (vertical) - slow
+72 Gordo (vertical) - fast
+73 Gordo (horizontal) - slow
+74 Gordo (horizontal) - fast
+75 Gordo (vertical oscillating)
+76 Scarfy (hovering) - slow
+77 Scarfy (hovering) - fast
+78 Scarfy (dropping in, left) - slow  *unused*
+79 Scarfy (dropping in, left) - fast  *unused*
+7A Scarfy (dropping in, right) - slow
+7B Scarfy (dropping in, right) - fast
+7C Scarfy (rising in, left) - slow  *unused*
+7D Scarfy (rising in, left) - fast  *unused*
+7E Scarfy (rising in, right) - slow
+7F Scarfy (rising in, right) - fast  *unused*
+88 Wheelie - slow
+89 Wheelie - fast
+8A Wheelie - [slow?]
+90 Rocky
+91 Pep Drink
+92 U.F.O.
+93 Cool Spook
+94 Pengy - slow
+95 Pengy - fast
+96 Broom Hatter
+97 Chilly - slow
+98 Chilly - fast
+99 Cappy
+9A Spiny - slow
+9B Spiny - fast
+9C Twizzy (up/down straight) - slow
+9D Twizzy (up/down straight) - fast
+9E Twizzy (up/down homing) - slow
+9F Twizzy (up/down homing) - fast
+A0 Twizzy (dropping in) - slow
+A1 Twizzy (dropping in) - fast  *unused*
+A2 Twizzy (up diagonal) - slow  *unused*
+A3 Twizzy (up diagonal) - fast  *unused*
+A4 Twizzy (homing) - slow
+A5 Twizzy (homing) - fast
+A6 Twizzy (waiting) - ???
+A7 Twizzy (waiting) - ???
+A8 Twizzy (jumping)
+A9 Twizzy (hopping, homing) - slow  *unused*
+AA Twizzy (hopping, homing) - fast  *unused*
+AB Twizzy (hovering)
+AC Coconut - fast right
+B0 Mr. Frosty - slow
+B1 Mr. Frosty - fast
+B2 Bonkers - slow
+B3 Bonkers - fast
+B4 Grand Wheelie - slow
+B5 Grand Wheelie - fast
+B6 Bugzzy - slow
+B7 Bugzzy - fast
+B8 Rolling Turtle - slow
+B9 Rolling Turtle - fast
+BA Mr. Tick Tock - slow
+BB Mr. Tick Tock - fast
+BC Poppy Bros. Sr. - slow
+BD Poppy Bros. Sr. - fast
+BE Fire Lion - slow
+BF Fire Lion - fast

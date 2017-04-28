@@ -1,0 +1,244 @@
+=================================
+== Kirby's Adventure ROM Notes ==
+=================================
+
+Written by Aquova
+
+This document details some of the missing pieces of the ROM. Nearly everything before 0x24A90 is very well documented on Data Crystal, but after that information becomes very hard to piece together. Here I'm going to categorize what I've found, in addition to updating the Data Crystal pages.
+
+Kirby's Adventure Data Crystal page can be found here:
+http://datacrystal.romhacking.net/wiki/Kirby's_Adventure
+
+-------------------------------------------------------------------------------
+RAM
+Actually all 0x0X0X (first row of each page) seem to handle Kirby position
+
+0x0509 - Kirby Y position
+0x05b9 (and 0x05bb?) Kirby X velocity
+
+0x0501 Is Kirby Sucking? (0xFF no, 0x00 yes)
+0x050e-0x050f Is enemy attacking?
+0x0575 Kirby State? (0x1A Mouth Full, 0x1C beam, 0x30 normal)
+0x0510 Enemy X position
+0x0512 Enemy Y position
+
+Waddle Doo - Beam
+0x04 - 0x0F
+
+Sparky - Spark
+0x0F - 0x01
+
+Hothead - Fire
+0x24 - 0x00
+
+
+A lot of the 0x0700 block has something to do with the music it seems
+
+Enemies in first room:
+04 - Waddle Doo slow
+00 - Waddle Dee slow
+50 - Bronto Burt up straight
+50 - Bronto Burt up straight
+04 - Waddle Doo slow
+00 - Waddle Dee slow
+56 - Bronto Burt up diagonal
+0F - Sparky slow
+50 - Bronto Burt up straight
+24 - Hothead
+
+-------------------------------------------------------------------------------
+Gitching Results
+
+0x24ABB Changing Value <0x11 made no enemies spawn in room 1
+        Changing Value >0x11 made glitched enemies spawn in corner
+0x24ABC Same but for room 2
+0x24ABD Same but for room 3
+
+0x24C02 Values less than 0xA6 causes gltiched enemies in room 1
+        Values more than 0xA6 spawn wrong enemies, but not glitched
+        Large values spawn no enemies it seems
+0x24C03 Messes with room 2 apparently
+
+0x24D1E Seems to load in various rooms in level select room
+        0x00 Initiates glitched final boss fight
+        0x0A Loads Egg catch game
+        Various others just load glitched enemies and tomatoes
+
+0x24D4? One of the bytes causes room 1 to have glitched enemies. I was too lazy to figure out with byte.
+
+--- The following pattern seems to continue for various rooms from
+--- 0x24E65 - 0x24F90
+0x24F49 Palette color 1 for non-ability enemies room 1 (change Waddle Dee face)
+0x24F4A Palette color 2 for non-ability enemies room 1 (Waddle Dee body)
+0x24F4B Transparency? for non-ability enemies room 1
+0x24F4C Palette color 1 for ability enemies room 1
+0x24F4D Palette color 2 for ability enemies room 1
+0x24F4E Transparency? for ability enemies room 1
+---
+
+0x24F91 - Unknown = Door pointers. Changing BOTH 0x24F91 and 0x24F92 makes first level select door unopenable.
+Another first door pointer exists in 0x250?? it seems
+And 0x252??
+
+Deleting from about 0x25700-0x25C00 Causes level select tiles to not load, Kirby just falls forever.
+
+Deleting 0x25C00-0x25C90 Causes game to freeze after selecting level.
+
+
+
+-------------------------------------------------------------------------------
+
+ROM
+
+0x26F3B - 0x26FA9 = Text for level names
+0x26F3B - 0x26F4A = "Vegetable Valley"
+0x26F4B - 0x26F5A = "Ice Cream Island"
+0x26F5C - 0x26F6A = "Butter Building"
+0x26F6D - 0x26F78 = "Grape Garden"
+0x26F7D - 0x26F87 = "Yogurt Yard"
+0x26F8D - 0x26F98 = "Orange Ocean"
+0x26F9C - 0x26FA9 = "Rainbow Resort"
+
+These might be part of the Demo Movie, but I haven't confirmed that.
+0x2713C - 0x27140 = "Enemy"
+0x27206 - 0x2720A = "Score"
+0x2773C - 0x2773F = "Fire"
+0x2779D - 0x277A1 = "Spark"
+0x277D2 - 0x277D4 = "Ice"
+0x27806 - 0x2780A = "Sword"
+0x2783D - 0x27843 = "Parasol"
+0x27876 - 0x2787D = "Fireball"
+0x278DD - 0x278E5 = "Back Drop"
+
+Demo Movie Text:
+0x275D0 - 0x27964
+
+End Credits Movie Text:
+0x2796C - 0x27B13
+
+Note: It seems more than one table file to turn text into English
+0x27B48 - 0x27F2E = Credits Block
+0x27B48 - 0x27B57 = "Hiroshi Yamauchi"
+0x27B75 - 0x27B7F = "Satoru Iwata"
+0x27B84 - 0x27B93 = "Shigeru Miyamoto"
+0x27B97 - 0x27BA3 = "Takao Shimizu"
+0x27BDE - 0x27BED = "Masahiro Sakurai"
+0x27C1F - 0x27C2B = "Takashi Saito"
+0x27C2F - 0x27C40 = "Shigeru Hashiguchi"
+0x27C82 - 0x27C8B = "Kazu Ozawa"
+0x27C90 - 0x27C97 = "Ya Miura"
+(Developer's name is Kazuya Miura, I assume the "Kazu" is taken from earlier)
+0x27CBD - 0x27CCE = "Shinichi Shimomura"
+0x27CD2 - 0x27CE2 = "Tsuyoshi Wakayama"
+0x27D0F - 0x27D1A = "Hiroaki Suga"
+0x27D3C - 0x27D45 = "Akio Hanyu"
+0x27D49 - 0x27D57 = "Shigenobu Kasai"
+0x27D79 - 0x27D83 = "Tetsuya Abe"
+0x27D86 - 0x27D93 = "Teruyuki Gunji"
+0x27DB5 - 0x27DC1 = "Senji Otoguro"
+0x27DC5 - 0x27DD5 = "Yoshimi Takahashi"
+0x27DDA - 0x27DE2 = "Ki Suzuka"
+(Developer's name is Yoshiki Suzuki, Possibly took the "Yoshi" from earlier)
+0x27E0C - 0x27E18 = "Hirokazu Ando"
+0x27E1C - 0x27E27 = "Jun Ishikawa"
+0x27E53 - 0x27E63 = "Satoshi Mitsuhara"
+0x27E67 - 0x27E72 = "Hidetoshi Seki"
+0x27E76 - 0x27E7E = "Seika Abe"
+0x27EAC - 0x27EB9 = "Atsushi Kakuta"
+0x27EBC - 0x27EC9 = "Yasuhiro Sakai"
+0x27ECD - 0x27ED7 = "Hideki Fuji"
+0x27F06 - 0x17F15 = "Halken Debuggers"
+0x27F19 - 0x27F20 = "Nintendo"
+(Appears as "Nintendo Debuggers" in credits. I assume "Debuggers" was taken from earlier.)
+0x27F27 - 0x17F2F = "Dan Owsen"
+
+Extra Game Message:
+0x5CF3E - 0x5CFC7
+
+0x6BCCA - 0x6BCCE = "Kirby"
+0x6BD22 - 0x6BD31 = "Play Crane Fever"
+0x6BD42 - 0x6BD4B = "Quick Draw"
+0x6BD54 - 0x6BD5C = "Egg Catch"
+0x6BD62 - 0x6BD6A = "V.S. Boss"
+0x6BD73 - 0x6BD76 = "Quit"
+
+Empty Space:
+0x6BD84 - 0x6C00F
+
+0x69A2F - 0x69A33 = "Level"
+0x69A46 - 0x69A5B = "The Fountain of Dreams"
+
+Empty Space:
+0x69E10 - 0x6A00F
+
+Descriptions of Abilities?:
+0x714B1 - 0x71F1C
+
+It appears these names are part of the pause menu ability descriptions. What's weird is that the table file I was using only revealed the ability names and none of the rest.
+0x714A7 - 0x714AC = "Normal"
+0x71519 - 0x7151C = "Fire"
+0x71572 - 0x71576 = "Spark"
+0x715DA - 0x715DF = "Cutter"
+0x71632 - 0x71636 = "Sword"
+0x7169C - 0x716A3 = "Fireball"
+0x71701 - 0x71705 = "Laser"
+0x7176F - 0x71772 = "Mike"
+0x717D8 - 0x717DC = "Wheel"
+0x7184C - 0x71851 = "Hammer"
+0x718B2 - 0x718B8 = "Parasol"
+0x71921 - 0x71925 = "Sleep"
+0x71965 - 0x7196A = "Needle"
+0x719CF - 0x719D1 = "Ice"
+0x71A36 - 0x71A3B = "Freeze"
+0x71AA2 - 0x71AA8 = "Hi Jump"
+0x71B10 - 0x71B13 = "Beam"
+0x71B79 - 0x71B7D = "Stone"
+0x71BE8 - 0x71BEB = "Ball"
+0x71C4F - 0x71C55 = "Tornado"
+0x71CB8 - 0x71CBC = "Crash"
+0x71D1F - 0x71D23 = "Light"
+0x71D8C - 0x71D94 = "Back Drop"
+0x71DFF - 0x71E03 = "Throw"
+0x71E67 - 0x71E6B = "U F O"
+0x71ED5 - 0x71EDC = "Star Rod"
+
+Egg Catch Instruction Text:
+0x76919 - 0x76988
+
+Crane Fever Instruction Text:
+0x77B1E - 0x77B99
+
+Quick Draw Instruction Text:
+0x7835A - 0x783C8
+
+"How to draw Kirby" text:
+0x7A978 - 0x7A9D5
+
+0x7B794 - 0x7B798 = "Level"
+0x7B79D - 0x7B7A0 = "Easy"
+0x7B7B5 - 0x7B7BA = "Medium"
+0x7B7C4 - 0x7B7CE = "Challenging"
+0x7B7DA - 0x7B7DD = "Quit"
+0x7B7FA - 0x7B7FE = "Music"
+0x7B813 - 0x7B81D = "Sound Efect"
+(Effect appears misspelled in the ROM)
+0x7B82D - 0x7B830 = "Quit"
+0x7B890 - 0x7B893 = "Quit"
+0x7B8BD - 0x7B8C8 = "Are You Sure"
+0x7B8EB - 0x7B8F2 = "Continue"
+0x7B919 - 0x7B928 = "Play Bonus Games"
+0x7B947 - 0x7B955 = "Play Extra Game"
+0x7B975 - 0x7B984 = "Listen to Sounds"
+0x7B996 - 0x7B99A = "Start"
+0x7B9AA - 0x7B9AE = "Start"
+0x7BA15 - 0x7BA19 = "Level"
+0x7BA1F - 0x7BA23 = "Level"
+0x7BA34 - 0x7BA39 = "Finish"
+0x7BA42 - 0x7BA47 = "Finish"
+0x7BA5E - 0x7BA62 = "Extra"
+0x7BA7A - 0x7BA7E = "Extra"
+0x7BA96 - 0x7BA9C = "Perfect"
+0x7BAB2 - 0x7BAB8 = "Perfect"
+
+File Select "Rankings" (Water Drop, Super Star, etc):
+0x7BACA - 0x7BC1D
