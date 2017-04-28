@@ -46,6 +46,14 @@ Enemies in first room:
 50 - Bronto Burt up straight
 24 - Hothead
 
+Enemy 0x0C has no behavior for landing after a fall. So if it is spawned in midair, it falls thru the level.
+Same with 0x0D, 0x0E
+
+0x1F is a glitchy, unused fish, removed from randomization list
+0x26 is a parasol Waddle Dee, but parasol has glitched graphics
+Same with 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C, 0x2D
+0x2E loads wrong sprite, but behavior correct
+Same with 0x2F
 -------------------------------------------------------------------------------
 Gitching Results
 

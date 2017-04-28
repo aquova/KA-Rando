@@ -29,7 +29,6 @@
 1C Laser Ball - fast
 1D Fish (homing) - slow
 1E Fish (homing) - fast
-1F [Fish]  *unused*
 20 Fish (horizontal)
 21 Fish (jumping)
 22 Bounder - ???
