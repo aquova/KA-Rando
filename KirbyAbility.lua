@@ -1,5 +1,5 @@
 -- This is a script to randomize Kirby's ability in Kirby's Adventure
--- Written using the FCEUX emulator and a US ROM of K.A.
+-- To be used with the FCEUX emulator and a US ROM of K.A.
 -- Written by Austin Bricker (Aquova), 2017
 
 -- The power in Kirby's mouth is stored in 0x05E2

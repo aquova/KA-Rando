@@ -54,6 +54,11 @@ Same with 0x0D, 0x0E
 Same with 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C, 0x2D
 0x2E loads wrong sprite, but behavior correct
 Same with 0x2F
+
+1-1 r1 ROM data: 04010005080AE878949437D7376713B7040050500400560F5024060401060709
+
+In first room, 0x34010 is loaded into RAM at 0x8000
+
 -------------------------------------------------------------------------------
 Gitching Results
 
@@ -92,6 +97,7 @@ Deleting from about 0x25700-0x25C00 Causes level select tiles to not load, Kirby
 
 Deleting 0x25C00-0x25C90 Causes game to freeze after selecting level.
 
+Deleting 0x25CA0 - 0x25CFF Causes no level select room to load, Kirby falls forever.
 
 
 -------------------------------------------------------------------------------
