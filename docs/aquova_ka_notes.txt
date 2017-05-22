@@ -55,9 +55,13 @@ Enemies in first room:
 
 
 Waddle Doo (0x04) ability located at 0x72BA7
+
+Definitely between 0x72FA0-0x73000
+
 While changing this value does change the ability gained,
     it also causes enemy collisions whenever their x position is reached,
     regardless of their height.
+    ** Although maybe not.
 
 -------------------------------------------------------------------------------
 Gitching Results

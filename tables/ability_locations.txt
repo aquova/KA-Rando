@@ -1,0 +1,5 @@
+72B8F FF 00 Waddle Dee (slow)
+72BA7 0F 04 Waddle Doo (slow)
+72C1F 01 0F Sparky (slow)
+72FF7 FF 50 Bronto Burt (up-straight)
+72FAF FF 56 Bronto Burt (up-diagonal)
