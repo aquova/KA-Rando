@@ -1,0 +1,27 @@
+00     Fire
+01     Spark
+02     Cutter
+03     Sword
+04     Fireball
+05     Laser
+06     Mike
+07     Wheel
+08     Hammer
+09     Parasol
+0A     Sleep
+0B     Needle
+0C     Ice
+0D     Freeze
+0E     Hi-Jump
+0F     Beam
+10     Stone
+11     Ball
+12     Tornado
+13     Crash
+14     Light
+15     Back Drop
+16     Throw
+17     U.F.O.
+18     Star Rod
+19     Bye Bye
+FF     Normal 

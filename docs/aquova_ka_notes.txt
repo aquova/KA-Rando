@@ -41,27 +41,93 @@ Ability RAM values
 19     Bye Bye
 1A-FF  Normal (game uses FF)
 
-Enemies in first room:
-04 - Waddle Doo slow
-00 - Waddle Dee slow
-50 - Bronto Burt up straight
-50 - Bronto Burt up straight
-04 - Waddle Doo slow
-00 - Waddle Dee slow
-56 - Bronto Burt up diagonal
-0F - Sparky slow
-50 - Bronto Burt up straight
-24 - Hothead
+-------------------------------------------------------------------------------
+ROM
 
+Locations of each enemy's ability in the ROM:
 
-Waddle Doo (0x04) ability located at 0x72BA7
+Byte location | Original Value | Enemy Value | Enemy name
 
-Definitely between 0x72FA0-0x73000
+72B8F FF 00 Waddle Dee (slow)
+72B8F FF 01 Waddle Dee (medium)
+72B8F FF 02 Waddle Dee (fast)
+72B8F FF 03 Waddle Dee (very fast)
+72BA7 0F 04 Waddle Doo (slow)
+72BA7 0F 05 Waddle Doo (medium)
+72BA7 0F 06 Waddle Doo (fast)
+72BA7 0F 07 Waddle Doo (very fast)
+72C1F 01 0F Sparky (slow)
+72C07 01 10 Sparky (fast)
+72C37 FF 11 Poppy Bros. Jr. (normal - slow)
+72C37 FF 12 Poppy Bros. Jr. (normal - medium)
+72C37 FF 13 Poppy Bros. Jr. (normal - fast)
+72C67 FF ?? Apple
+72C4F FF 14 Poppy Bros. Jr. (apple - slow)
+72C4F FF 15 Poppy Bros. Jr. (apple - medium)
+72C4F FF 16 Poppy Bros. Jr. (apple - fast)
+72C4F FF 17 Poppy Bros. Jr. (tomato - slow)
+72C4F FF 18 Poppy Bros. Jr. (tomato - medium)  *unused*
+72C4F FF 19 Poppy Bros. Jr. (tomato - fast)  *unused*
+72C7F 05 1A Laser Ball (slow)
+72C7F 05 1B Laser Ball (medium)
+72C7F 05 1C Laser Ball (fast)
+72CAF FF 1D Fish (homing - slow)
+72CAF FF 1E Fish (homing - fast)
+72CAF FF 20 Fish (horizontal)
+72CAF FF 21 Fish (jumping)
+72CC7 FF 22 Bounder (slow?)
+72CC7 FF 23 Bounder (fast?)
+72CF7 00 24 Hothead (slow?)
+72CF7 00 25 Hothead (fast?)
+72D3F 09 26 Parasol Waddle Doo (held)
+72D3F 09 27 Parasol Waddle Dee (held)
+72D6F 09 28 Parasol Waddle Doo (flying)
+72D6F 09 29 Parasol Waddle Dee (flying)
+72D6F 09 2B Parasol Waddle Doo (homing)
+72D6F 09 2C Parasol Waddle Dee (homing)
+72DB7 03 2E Blade Knight / Sword Knight
+72DFF 11 2F Bubbles (slow)
+72DFF 11 30 Bubbles (fast)
+72E17 0A 31 Noddy (slow)
+72E17 0A 32 Noddy (fast)
+72E5F FF 33 Coner (slow)
+72E5F FF 34 Coner (fast)
+72B8F FF 38 Waddle Dee (walking - slow)
+72B8F FF 39 Waddle Dee (walking - medium)
+72B8F FF 3A Waddle Dee (walking - fast)
+72B8F FF 3B Waddle Dee (walking - very fast)
+72B8F FF 3C Waddle Dee (jumping - slow)
+72B8F FF 3D Waddle Dee (jumping - medium)
+72B8F FF 3E Waddle Dee (jumping - fast)
+72B8F FF 3F Waddle Dee (jumping - very fast)
+73237 13 40 Bomber
+73297 04 41 Flamer (peaceful - slow)
+73297 04 42 Flamer (peaceful - medium)  *unused*
+73297 04 43 Flamer (peaceful - fast)
+73267 12 44 Twister (slow?)
+73267 12 45 Twister (medium?)
+73267 12 46 Twister (fast?)
+73297 04 47 Flamer (attacking - slow)
+73297 04 48 Flamer (attacking - medium)
+72F1F FF 4A Squid (walking - slow)
+72F1F FF 4B Squid (walking - fast)
+72F1F FF 4C Squid (appearing)
+72F1F FF 4D Squid (flying - slow)
+72F1F FF 4E Squid (flying - fast)  *unused*
+72E47 FF 4F Coconut - fast left
+72FF7 FF 50 Bronto Burt (up/down straight - slow)
+72FF7 FF 51 Bronto Burt (up/down straight - fast)
+72FF7 FF 52 Bronto Burt (up/down homing - slow)
+72FF7 FF 53 Bronto Burt (up/down homing - fast)  *unused*
+72FF7 FF 54 Bronto Burt (dropping in - slow)
+72FF7 FF 55 Bronto Burt (dropping in - fast)
+72FF7 FF 56 Bronto Burt (up diagonal - slow)
+72FF7 FF 57 Bronto Burt (up diagonal - fast)
+72FF7 FF 58 Bronto Burt (homing - slow)
+72FF7 FF 59 Bronto Burt (homing - fast)
+72FF7 FF 5A Bronto Burt (waiting - ???)
+72FF7 FF 5B Bronto Burt (waiting - ???)
 
-While changing this value does change the ability gained,
-    it also causes enemy collisions whenever their x position is reached,
-    regardless of their height.
-    ** Although maybe not.
 
 -------------------------------------------------------------------------------
 Gitching Results
@@ -106,7 +172,7 @@ Deleting 0x25CA0 - 0x25CFF Causes no level select room to load, Kirby falls fore
 
 -------------------------------------------------------------------------------
 
-ROM
+Text
 
 0x26F3B - 0x26FA9 = Text for level names
 0x26F3B - 0x26F4A = "Vegetable Valley"

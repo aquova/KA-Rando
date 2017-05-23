@@ -15,33 +15,37 @@ def getAbsPath(realPath):
 
 # Reads and stores the hex values from enemy_list.txt
 # Contains the hex values of valid enemies
-def getEnemyValues():
-    enemies = open(getAbsPath("tables/enemy_list.txt"), 'r')
-    enemy_values = []
-    for line in enemies:
-        enemy_values.append(line.split(" ")[0])
-    enemies.close()
-    return enemy_values
+def getAbilityValues():
+    abilities = open(getAbsPath("tables/ability_list.txt"), 'r')
+    ability_values = []
+    for line in abilities:
+        ability_values.append(line.split(" ")[0])
+    abilities.close()
+    return ability_values
 
 # Reads and stores the hex values from enemy_locations.txt
-# Contains the hex addresses of enemies in the ROM
-def getEnemyMap():
-    locations = open(getAbsPath("tables/enemy_locations.txt"), 'r')
-    enemy_rom_locs = []
+# Contains the hex addresses of abilities in the ROM
+def getAbilityMap():
+    locations = open(getAbsPath("tables/ability_locations.txt"), 'r')
+    ability_rom_locs = []
     for line in locations:
-        enemy_rom_locs.append(line.split(" ")[0])
+        ability_rom_locs.append(line.split(" ")[0])
     locations.close()
-    return enemy_rom_locs
+    return ability_rom_locs
 
 if __name__ == "__main__":
-    rom_name = "/Users/austinbricker/Desktop/KA.nes"
+    print("Thanks for using the Kirby's Adventure Randomizer, version %s" % VERSION)
+    rom_name = raw_input("Give the name of the ROM (must be in same folder as this program): ")
+    rom_name = getAbsPath(rom_name)
+    KA_seed = raw_input("Now give a seed to be used (or leave blank): ")
+    random.seed(KA_seed)
     rom = open(rom_name, 'rb').read()
-    for item in getEnemyMap():
+    for item in getAbilityMap():
         address = int(item, 16)
-        rand_ind = random.randint(0,len(getEnemyValues()) - 1)
-        new_enemy = getEnemyValues()[rand_ind]
+        rand_ind = random.randint(0,len(getAbilityValues()) - 1)
+        new_enemy = getAbilityValues()[rand_ind]
         new_enemy = chr(int(new_enemy,16))
         rom = rom[:address] + new_enemy + rom[(address + 1):]
-    new_rom = open(rom_name.split(".")[0] + "_random.nes", 'w')
+    new_rom = open(rom_name.split(".")[0] + "_" + KA_seed + ".nes", 'w')
     new_rom.write(rom)
     new_rom.close()
