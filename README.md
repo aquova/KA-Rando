@@ -18,6 +18,12 @@ Ex. When eating a fire enemy, instead of gaining the fire ability, Kirby will ga
 
 -- Usage --
 
-Currently the program is simply a lua script to be used with FCEUX (or the lua-compatible emulator of your choice). Designed to be run with a US ROM of Kirby's Adventure for NES.
+There are two programs contained within this repository.
 
-Later updates to include a program to modify a ROM to be used with any emulator.
+First is a .lua script intended to be used with FCEUX or similar lua-compatible emulator and a US ROM of Kirby's Adventure for NES.
+The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed. Completed.
+
+Secondly, there is a python program that edits the ROM, allowing it to be distributed and used with any emulator.
+However, while the abilites are randomized, they are always constant within that ROM.
+Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
+Still a work in progress.
