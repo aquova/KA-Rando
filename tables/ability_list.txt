@@ -22,6 +22,4 @@
 15     Back Drop
 16     Throw
 17     U.F.O.
-18     Star Rod
-19     Bye Bye
-FF     Normal 
+FF     Normal

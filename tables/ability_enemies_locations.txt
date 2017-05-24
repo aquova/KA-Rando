@@ -1,0 +1,30 @@
+72BA7 0F 04-07 Waddle Doo (All)
+72C1F 01 0F Sparky (slow)
+72C07 01 10 Sparky (fast)
+72C7F 05 1A-1C Laser Ball (all)
+72CF7 00 24-25 Hothead (all)
+72D3F 09 26-27 Parasol Waddle Doo/Dee (held)
+72D6F 09 28-2C Parasol Waddle Doo/Dee (flying/homing)
+72DB7 03 2E Blade Knight / Sword Knight
+72DFF 11 2F-30 Bubbles (all)
+72E17 0A 31-32 Noddy (all)
+73237 13 40 Bomber
+73297 04 41-43,47-48 Flamer (all)
+73267 12 44-46 Twister (all)
+72E2F 0E 62-66 Starman (all)
+73117 02 67-6A Sir Kibble (all)
+730FF 07 88-8A Wheelie (all)
+732F0 10 90 Rocky
+7324F 17 92 U.F.O.
+730E7 14 93 Cool Spook
+73027 0C 94-95 Pengy (all)
+73057 0D 97-98 Chilly (all)
+73087 0B 9A-9B Spiny (all)
+72E8F 0D B0-B1 Mr. Frosty (all)
+7318F 08 B2-B3 Bonkers (all)
+7330F 07 B4-B5 Grand Wheelie (all)
+727B7 15 B6-B7 Bugzzy (all)
+72817 16 B8-B9 Rolling Turtle (all)
+7372F 06 BA-BB Mr. Tick Tock (all)
+737D7 13 BC-BD Poppy Bros. Sr. (all)
+731D7 04 BE-BF Fire Lion (all)

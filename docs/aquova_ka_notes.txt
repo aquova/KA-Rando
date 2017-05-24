@@ -161,8 +161,39 @@ Byte location | Original Value | Enemy Value | Enemy name
 72FC7 FF 99 Cappy
 73087 0B 9A Spiny (slow)
 73087 0B 9B Spiny (fast)
-72FF7 FF 9C Twizzy (up/down straight - slow) <- This might be wrong
-
+72FF7 FF 9C Twizzy (up/down straight - slow)
+72FF7 FF 9D Twizzy (up/down straight - fast)
+72FF7 FF 9E Twizzy (up/down homing - slow)
+72FF7 FF 9F Twizzy (up/down homing - fast)
+72FF7 FF A0 Twizzy (dropping in - slow)
+72FF7 FF A1 Twizzy (dropping in - fast)  *unused*
+72FF7 FF A2 Twizzy (up diagonal - slow)  *unused*
+72FF7 FF A3 Twizzy (up diagonal - fast)  *unused*
+72FF7 FF A4 Twizzy (homing - slow)
+72FF7 FF A5 Twizzy (homing - fast)
+72FF7 FF A6 Twizzy (waiting - ???)
+72FF7 FF A7 Twizzy (waiting - ???)
+72F37 FF A8 Twizzy (jumping)
+72F37 FF A9 Twizzy (hopping, homing - slow)  *unused*
+72F37 FF AA Twizzy (hopping, homing - fast)  *unused*
+72F37 FF AB Twizzy (hovering)
+72E47 FF AC Coconut (fast right)
+72E8F 0D B0 Mr. Frosty (slow)
+72E8F 0D B1 Mr. Frosty (fast)
+7318F 08 B2 Bonkers (slow)
+7318F 08 B3 Bonkers (fast)
+7330F 07 B4 Grand Wheelie (slow)
+7330F 07 B5 Grand Wheelie (fast)
+727B7 15 B6 Bugzzy (slow)
+727B7 15 B7 Bugzzy (fast)
+72817 16 B8 Rolling Turtle (slow)
+72817 16 B9 Rolling Turtle (fast)
+7372F 06 BA Mr. Tick Tock (slow)
+7372F 06 BB Mr. Tick Tock (fast)
+737D7 13 BC Poppy Bros. Sr. (slow)
+737D7 13 BD Poppy Bros. Sr. (fast)
+731D7 04 BE Fire Lion (slow)
+731D7 04 BF Fire Lion (fast)
 
 -------------------------------------------------------------------------------
 Gitching Results

@@ -1,0 +1,16 @@
+72B8F FF 00-03,38-3F Waddle Dee (All)
+72C37 FF 11-13 Poppy Bros. Jr. (normal - All)
+72C67 FF ?? Apple
+72C4F FF 14-19 Poppy Bros. Jr. (apple/tomato - all)
+72CAF FF 1D-21 Fish (all)
+72CC7 FF 22-23 Bounder (all)
+72E5F FF 33-34 Coner (all)
+72F1F FF 4A-4E Squid (all)
+72E47 FF 4F,5E-5F,AC Coconut (all)
+72FF7 FF 50-5B,9C-A7 Bronto Burt (all), Twizzy (some)
+72F4F FF 5C-5D Glunk (all)
+72DE7 FF 60-61 Slippy (all)
+72F7F FF 6B-6F Kabu (all)
+72FAF FF 96 Broom Hatter
+72FC7 FF 99 Cappy
+72F37 FF A8-AB Twizzy (some)
