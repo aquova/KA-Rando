@@ -1,6 +1,6 @@
-# Program that randomizes the enemies that spawn in Kirby's Adventure
+# Program that randomizes the abilities of swallowed enemies in Kirby's Adventure
+# Usage: python KA.nes
 # Written by Aquova, 2017
-# Still a work in progress
 
 import os, random
 
@@ -20,26 +20,6 @@ def readHexValues(fileName):
         values.append(line.split(" ")[0])
     file.close()
     return values
-
-# # Reads and stores the hex values from enemy_list.txt
-# # Contains the hex values of valid enemies
-# def getAbilityValues():
-#     abilities = open(getAbsPath("tables/ability_list.txt"), 'r')
-#     ability_values = []
-#     for line in abilities:
-#         ability_values.append(line.split(" ")[0])
-#     abilities.close()
-#     return ability_values
-#
-# # Reads and stores the hex values from enemy_locations.txt
-# # Contains the hex addresses of abilities in the ROM
-# def getAbilityLoc():
-#     locations = open(getAbsPath("tables/ability_locations.txt"), 'r')
-#     ability_rom_locs = []
-#     for line in locations:
-#         ability_rom_locs.append(line.split(" ")[0])
-#     locations.close()
-#     return ability_rom_locs
 
 if __name__ == "__main__":
     try:
