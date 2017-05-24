@@ -26,4 +26,13 @@ The lua script edits the RAM in real time, ensuring a completely random ability 
 Secondly, there is a python program that edits the ROM, allowing it to be distributed and used with any emulator.
 However, while the abilites are randomized, they are always constant within that ROM.
 Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
-Still a work in progress.
+
+-- Version History --
+
+v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomized, supports options for omitting the Star Rod ability or randomizing non-ability enemies.
+
+-- Known Issues/Future Plans --
+
+Museum enemies are not randomized
+
+Add future support for randomizing Kirby color
