@@ -127,6 +127,41 @@ Byte location | Original Value | Enemy Value | Enemy name
 72FF7 FF 59 Bronto Burt (homing - fast)
 72FF7 FF 5A Bronto Burt (waiting - ???)
 72FF7 FF 5B Bronto Burt (waiting - ???)
+72F4F FF 5C Glunk (not shooting)
+72F3F FF 5D Glunk (shooting)
+72E47 FF 5E Coconut (slow left)
+72E47 FF 5F Coconut (slow right)
+72DE7 FF 60 Slippy (slow)
+72DE7 FF 61 Slippy (fast)
+72E2F 0E 62 Starman (walking - slow)
+72E2F 0E 63 Starman (walking - fast)  *unused*
+72E2F 0E 64 Starman (peaceful)
+72E2F 0E 65 Starman (flying - slow)
+72E2F 0E 66 Starman (flying - fast)  *unused*
+73117 02 67 Sir Kibble (stationary - ???)
+73117 02 68 Sir Kibble (stationary - ???)
+73117 02 69 Sir Kibble (walking - ???)
+73117 02 6A Sir Kibble (walking - ???)
+72F7F FF 6B Kabu (jumping - slow)
+72F7F FF 6C Kabu (jumping - fast)
+72F7F FF 6D Kabu (vanishing - ???)
+72F7F FF 6E Kabu (vanishing - ???)
+72F7F FF 6F Kabu (sliding)
+730FF 07 88 Wheelie (slow)
+730FF 07 89 Wheelie (fast)
+730FF 07 8A Wheelie (slow?)
+732F0 10 90 Rocky
+7324F 17 92 U.F.O.
+730E7 14 93 Cool Spook
+73027 0C 94 Pengy (slow)
+73027 0C 95 Pengy (fast)
+72FAF FF 96 Broom Hatter
+73057 0D 97 Chilly (slow)
+73057 0D 98 Chilly (fast)
+72FC7 FF 99 Cappy
+73087 0B 9A Spiny (slow)
+73087 0B 9B Spiny (fast)
+72FF7 FF 9C Twizzy (up/down straight - slow) <- This might be wrong
 
 
 -------------------------------------------------------------------------------
