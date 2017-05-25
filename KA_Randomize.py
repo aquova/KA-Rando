@@ -48,9 +48,8 @@ if __name__ == "__main__":
             new_enemy = ability_values[rand_ind]
             new_enemy = chr(int(new_enemy,16))
             rom_list[address] = new_enemy
-            #rom = rom[:address] + new_enemy + rom[(address + 1):]
         rom = "".join(rom_list)
-        new_rom = open(rom_name.split(".")[0] + "_" + str(KA_seed) + ".nes", 'w')
+        new_rom = open(rom_name.split(".")[0] + "_" + str(KA_seed) + ".nes", 'wb')
         new_rom.write(rom)
         new_rom.close()
     except Exception, e:
