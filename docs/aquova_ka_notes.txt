@@ -196,6 +196,19 @@ Byte location | Original Value | Enemy Value | Enemy name
 731D7 04 BF Fire Lion (fast)
 
 -------------------------------------------------------------------------------
+Door Values
+
+Door Data: 0x25223-0x25C32
+515 sets of 5 bytes
+First byte: Door Type
+Second byte: Door coordinates
+Third byte: Door warp destination
+Fourth byte: Screen in destination room
+Fifth byte: Coordinates in destination screen
+
+
+
+-------------------------------------------------------------------------------
 Gitching Results
 
 0x24ABB Changing Value <0x11 made no enemies spawn in room 1

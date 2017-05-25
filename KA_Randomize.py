@@ -1,20 +1,12 @@
 # Program that randomizes the abilities of swallowed enemies in Kirby's Adventure
-# Usage: python KA.nes
 # Written by Aquova, 2017
 
 import os, random
 
-VERSION = 1.00
-
-# Gets the absolute path of realPath, so the file can be read
-def getAbsPath(realPath):
-    currentPath = os.path.abspath(__file__)
-    currentPath = os.path.split(currentPath)[0]
-    filename = os.path.join(currentPath, realPath)
-    return filename
+VERSION = 1.01
 
 def readHexValues(fileName):
-    file = open(getAbsPath(fileName), 'r')
+    file = open(fileName, 'r')
     values = []
     for line in file:
         values.append(line.split(" ")[0])
@@ -25,7 +17,7 @@ if __name__ == "__main__":
     try:
         print("Thanks for using the Kirby's Adventure Randomizer, version %s" % VERSION)
         rom_name = raw_input("Give the name of the ROM (must be in same folder as this program): ")
-        rom_name = getAbsPath(rom_name)
+        rom_name = os.path.join(os.path.dirname(__file__), rom_name)
 
         # If seed is blank, generate a random seed
         # Python will generate one by default, but you can't access it
@@ -34,8 +26,8 @@ if __name__ == "__main__":
             KA_seed = random.randint(0, 999999999)
         random.seed(KA_seed)
 
-        ability_values = readHexValues("tables/ability_list.txt")
-        ability_locations = readHexValues("tables/ability_enemies_locations.txt")
+        ability_values = readHexValues(os.path.join(os.path.dirname(__file__), 'tables','ability_list.txt'))
+        ability_locations = readHexValues(os.path.join(os.path.dirname(__file__), 'tables','ability_enemies_locations.txt'))
 
         star_rod = raw_input("Should the Star Rod be an available ability? (Y/N): ")
         neutral = raw_input("Should enemies without abilities also be randomized? (Y/N): ")
@@ -45,7 +37,7 @@ if __name__ == "__main__":
 
         if neutral.upper() == 'Y':
             # Add in locations of enemies w/o abilities
-            neutral_locations = readHexValues("tables/neutral_enemies_locations.txt")
+            neutral_locations = readHexValues(os.path.join(os.path.dirname(__file__), 'tables','neutral_enemies_locations.txt'))
             ability_locations.extend(neutral_locations)
 
         rom = open(rom_name, 'rb').read()
@@ -60,3 +52,4 @@ if __name__ == "__main__":
         new_rom.close()
     except Exception, e:
         print("ERROR: %s" % e)
+        raw_input("Press Enter to close.")
