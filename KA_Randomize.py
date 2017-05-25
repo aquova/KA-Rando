@@ -41,12 +41,15 @@ if __name__ == "__main__":
             ability_locations.extend(neutral_locations)
 
         rom = open(rom_name, 'rb').read()
+        rom_list = list(rom)
         for item in ability_locations:
             address = int(item, 16)
             rand_ind = random.randint(0,len(ability_values) - 1)
             new_enemy = ability_values[rand_ind]
             new_enemy = chr(int(new_enemy,16))
-            rom = rom[:address] + new_enemy + rom[(address + 1):]
+            rom_list[address] = new_enemy
+            #rom = rom[:address] + new_enemy + rom[(address + 1):]
+        rom = "".join(rom_list)
         new_rom = open(rom_name.split(".")[0] + "_" + str(KA_seed) + ".nes", 'w')
         new_rom.write(rom)
         new_rom.close()
