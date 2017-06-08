@@ -31,6 +31,8 @@ Windows users should use the exe, while those with Python 2.7 are welcome to run
 
 -- Version History --
 
+v1.02 - 6/8/17 - Added option to randomize Kirby's color palette
+
 v1.01 - 5/25/17 - Fixed issues with OS dependancy. The Python program now works on all OS's, and added an exe program for Windows users.
 
 v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomized, supports options for omitting the Star Rod ability or randomizing non-ability enemies.
@@ -39,4 +41,6 @@ v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomize
 
 Museum enemies are not randomized
 
-Add future support for randomizing Kirby color and room order
+Add future support for room order
+
+Possible support for complete randomization, depending on demand.
