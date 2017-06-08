@@ -58,7 +58,6 @@ if __name__ == "__main__":
             new_palette = readHexValues(os.path.join(os.path.dirname(__file__), 'tables','palette_list.txt'))
             palette_ind = random.randint(0, len(new_palette) - 1)
             row = new_palette[palette_ind]
-            print(new_palette)
             # row = new_palette[8]
             new_color0 = chr(int(row[0:2],16))
             new_color1 = chr(int(row[2:4],16))
