@@ -196,6 +196,15 @@ Byte location | Original Value | Enemy Value | Enemy name
 731D7 04 BF Fire Lion (fast)
 
 -------------------------------------------------------------------------------
+
+Making Kirby Grayscale:
+
+35 25 0F -> 20 10 00
+36 26 0F
+
+0x6021 in RAM is controller input
+
+-------------------------------------------------------------------------------
 Door Values
 
 Door Data: 0x25223-0x25C32
@@ -206,6 +215,30 @@ Third byte: Door warp destination
 Fourth byte: Screen in destination room
 Fifth byte: Coordinates in destination screen
 
+63e0: 01>00
+001e: a9>aa
+6360 00>00
+6038: 5b>ef
+6038: ef>4b
+6039: b4>d1
+6039: d1>de
+0010: 01>29
+0038: 87>86
+0048: 21>1d
+8000: 01>86
+8001: 02>1d
+0782: ??>29
+
+78e7: 00>00
+05f4: 02>02
+05f8: 00>00
+05f3: 00>00
+05fb: 04>04
+0000: 00>00
+0001: 02>00
+0011: 08>fe
+004b: 00>00
+004c: 00>00
 
 
 -------------------------------------------------------------------------------

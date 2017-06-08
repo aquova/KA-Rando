@@ -1,4 +1,4 @@
-Kirby's Adventure Randomizer v1.01
+Kirby's Adventure Randomizer v1.02
 by Austin Bricker (Aquova), 2017
 https://github.com/Aquova
 
@@ -23,9 +23,11 @@ When the python/exe is run, the user will be asked a number of questions.
 
 - Firstly, to specify the name of the ROM to modify. For the program to run, the ROM must be in the same directory as the program.
 - Second, the user will be asked to specify a seed for the random generator. If no seed is given, a random one will be used instead. When the modified ROM is generated, the new file name will be appended with the seed for easy reference.
-- Finally, there are two options about the ROM randomization. First is whether or not to allow the Star Rod ability to be used, which while fully playable, has some small bugs (see below). Lastly, whether or not to allow enemies who don't normally give abilities to be randomized as well.
+- Finally, there are three options about the ROM randomization. First is whether or not to allow the Star Rod ability to be used, which while fully playable, has some small bugs (see below). Secondly, whether or not to allow enemies who don't normally give abilities to be randomized as well. Finally, the option to randomize Kirby's color between a few pre-selected options. Currently these were chosen by me, but allowing full randomization of color is possible given enough demand.
 
 -- Version History --
+
+v1.02 - 6/8/17 - Added option to randomize Kirby's color palette
 
 v1.01 - 5/25/17 - Fixed issues with OS dependancy. The Python program now works on all OS's, and added an exe program for Windows users.
 
@@ -35,7 +37,8 @@ v1.00 - 5/24/17 - Completed the Python program. Enemy abilities are now randomiz
 
 - Museum enemies are not randomized
 - If you die with the Star Rod ability, you will be unable to give up an ability until the level ends
-- Add future support for randomizing Kirby color and room order
+- Add future support for room order
+- Possibly add future support for full Kirby color randomization or enemy color randomization if enough demand.
 
 -- Contact Me --
 
@@ -47,4 +50,4 @@ Aquova#1296 : Discord
 Romhacking.net and the Data Crystal wiki for their reference materials
 Randomizer Central discord for their assistance
 Nintendo and HAL Laboratories for originally creating the game
-You! For using my software. Thank you!
+And you, for using my software. Thank you!

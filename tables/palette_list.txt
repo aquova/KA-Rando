@@ -1,0 +1,9 @@
+201000 Grayscale
+31210F Light Blue
+21110F Blue
+24140F Purple
+25150F Redish
+26160F Orange
+38280F Yellow
+39290F Light Green
+29190F Green
