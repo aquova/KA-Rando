@@ -43,4 +43,4 @@ Museum enemies are not randomized
 
 Add future support for room order
 
-Possible support for complete randomization, depending on demand.
+Possible support for complete color randomization, depending on demand.
