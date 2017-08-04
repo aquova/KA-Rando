@@ -1,4 +1,4 @@
-# Kirbys_Adventure_Randomizer
+# KA-Rando
 
 Kirby's Adventure Randomizer
 
