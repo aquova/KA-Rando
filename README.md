@@ -26,22 +26,26 @@ Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will alway
 
 A copy of the US Kirby's Adventure ROM (which is left to the user to obtain) should be placed into the 'KA-Rando' folder. The programs require the ROM to be located in their same directory.
 
-### --- Windows ---
+#### --- Windows ---
 
 Run the .exe program, and follow the on screen instructions
 
-### --- Mac/Linux/Python ---
+#### --- Mac/Linux/Python ---
 
 Users with Python 2.7+ installed should run the following commands in Terminal:
+
 `cd /PATH/TO/FILE/KA-Rando`
+
 `python KA_Randomize.py`
 
-### --- .Lua Compatible Emulator ---
+#### --- .Lua Compatible Emulator ---
 
 If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcome to instead use the 'KirbyAbility.lua' script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. However, this script does not change Kirby's color.
 
 
 ## -- Version History --
+
+v1.03 - 9/2/17 - Removed need to import data from txt files. Entire program now contained in .py
 
 v1.02 - 6/8/17 - Added option to randomize Kirby's color palette
 
@@ -50,6 +54,8 @@ v1.01 - 5/25/17 - Fixed issues with OS dependancy. The Python program now works 
 v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomized, supports options for omitting the Star Rod ability or randomizing non-ability enemies.
 
 ## -- Known Issues/Future Plans --
+
+Dying with Star Rod disables select button until level completion
 
 Museum enemies are not randomized
 
