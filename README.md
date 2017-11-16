@@ -52,7 +52,7 @@ Make sure that your .nes file is located in the same folder as the program, then
 
 #### --- .Lua Compatible Emulator ---
 
-If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcome to instead use the 'KirbyAbility.lua' script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. However, this script does not change Kirby's color.
+If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcome to instead use the `Randomize-Script.lua` script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. However, this script does not change Kirby's color.
 
 
 ## -- Version History --

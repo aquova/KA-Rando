@@ -1,0 +1,6 @@
+These are simply the commands to build the .py files into an executable, because I can never remember them, and there's no good single source online that has the right ones.
+
+OS X:
+'pyinstaller --onefile --windowed --icon=icon.ico app.py'
+
+Windows:
