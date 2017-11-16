@@ -1,10 +1,11 @@
 # Program that randomizes the abilities of swallowed enemies in Kirby's Adventure
 # Written by Aquova, 2017
+# Usage: python KA_Randomize.py
 # http://github.com/Aquova/KA-Rando
 
 import os, random
 
-VERSION = 1.03
+VERSION = 2.00
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -23,7 +24,7 @@ neutral_locations = ["72B8F","72C37","72C67","72C4F","72CAF","72CC7","72E5F","72
 # Several new palettes for Kirby, chosen by me
 new_palette = ["201000","31210F","21110F","24140F","25150F","26160F","38280F","39290F","29190F"]
 
-# Places to replace Kirby's palette 
+# Places to replace Kirby's palette
 # TODO: This can probably be greatly shortened down
 color_locations = ["32FEC","43AC9","43AF7","43CE1","47E4A","6D5EB","6D5EF","711E4","711EB","76759",
                     "76783","7679B","767B3","767CB","767E3","767FB","76813","7682B","7684F","7687B",
@@ -34,20 +35,20 @@ color_locations = ["32FEC","43AC9","43AF7","43CE1","47E4A","6D5EB","6D5EF","711E
 
 if __name__ == "__main__":
     try:
-        print("Thanks for using the Kirby's Adventure Randomizer, version %s" % VERSION)
-        rom_name = raw_input("Give the name of the ROM (must be in same folder as this program): ")
+        print("Thanks for using the Kirby's Adventure Randomizer, version " + VERSION)
+        rom_name = input("Give the name of the ROM (must be in same folder as this program): ")
         rom_name = os.path.join(os.path.dirname(__file__), rom_name)
 
         # If seed is blank, generate a random seed
         # Python will generate one by default, but you can't access it
-        KA_seed = raw_input("Now give a seed to be used (or leave blank): ")
+        KA_seed = input("Now give a seed to be used (or leave blank): ")
         if KA_seed == "":
             KA_seed = random.randint(0, 999999999)
         random.seed(KA_seed)
 
-        star_rod = raw_input("Should the Star Rod be an available ability? (Y/N): ")
-        neutral = raw_input("Should enemies without abilities also be randomized? (Y/N): ")
-        color = raw_input("Should Kirby's color be randomized? (Y/N): ")
+        star_rod = input("Should the Star Rod be an available ability? (Y/N): ")
+        neutral = input("Should enemies without abilities also be randomized? (Y/N): ")
+        color = input("Should Kirby's color be randomized? (Y/N): ")
         if star_rod.upper() == 'Y':
             # Add 0x18, the value of Star Rod
             ability_values.append("18")
@@ -64,7 +65,7 @@ if __name__ == "__main__":
             address = int(item, 16)
             rand_ind = random.randint(0,len(ability_values) - 1)
             new_enemy = ability_values[rand_ind]
-            new_enemy = chr(int(new_enemy,16))
+            new_enemy = int(new_enemy,16)
             rom_list[address] = new_enemy
 
         if color.upper() == 'Y':
@@ -79,17 +80,16 @@ if __name__ == "__main__":
 
             # Replaces old color palettes with the new
             for item in color_locations:
-                if item[0] != '#':
-                    color_address = int(item, 16)
-                    rom_list[color_address] = new_color0
-                    rom_list[color_address + 1] = new_color1
-                    rom_list[color_address + 2] = new_color2
+                color_address = int(item, 16)
+                rom_list[color_address] = new_color0
+                rom_list[color_address + 1] = new_color1
+                rom_list[color_address + 2] = new_color2
 
-        rom = "".join(rom_list)
-        new_rom = open(rom_name.split(".")[0] + "_" + str(KA_seed) + ".nes", 'wb')
+        rom = bytes(rom_list)
+        new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KA_seed) + ".nes", 'wb')
         new_rom.write(rom)
         new_rom.close()
 
-    except Exception, e:
-        print("ERROR: %s" % e)
-        raw_input("Press Enter to close.")
+    except Exception as e:
+        print("ERROR: " + e)
+        input("Press Enter to close.")

@@ -8,35 +8,47 @@ https://github.com/Aquova/KA-Rando
 
 Written by Austin Bricker (Aquova), 2017
 
-https://twitter.com/Aquova_
+https://twitter.com/Aquova__
 
 
 ## -- Overview --
 
-Programs to randomize the abilities that Kirby will gain from eating enemies in Kirby's Adventure. There are two programs contained within this repository.
+Programs to randomize the abilities that Kirby will gain from eating enemies in Kirby's Adventure. There are three programs contained within this repository.
 
 First is a .lua script intended to be used with FCEUX or similar lua-compatible emulator and a US ROM of Kirby's Adventure for NES.
-The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed. Completed.
+The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed.
 
-Secondly, there is a program that edits the ROM, allowing it to be distributed and used with any emulator.
+Secondly, there are two programs that edit the ROM, allowing it to be distributed and used with any emulator.
 However, while the abilites are randomized, they are always constant within that ROM.
 Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
 
 ## -- Usage --
 
-A copy of the US Kirby's Adventure ROM (which is left to the user to obtain) should be placed into the 'KA-Rando' folder. The programs require the ROM to be located in their same directory.
+In addition to the files included in the repository, you will also need a US copy of the Kirby's Adventure ROM (which is left to the user to obtain). Follow the instructions in the subcategories below for your operating system/preference.
 
 #### --- Windows ---
 
-Run the .exe program, and follow the on screen instructions
+Run `KA-Randomize.exe`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
-#### --- Mac/Linux/Python ---
+#### --- macOS ---
 
-Users with Python 2.7+ installed should run the following commands in Terminal:
+Run `KA-Randomize.app`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
-`cd /PATH/TO/FILE/KA-Rando`
+#### --- Linux/Python ---
 
-`python KA_Randomize.py`
+Linux users, or users who want to simply run the Python program itself, have two options.
+
+1. If you have Python3, Qt5, and PyQt installed, you can run the following command in Terminal:
+
+`python3 KA-Randomize.py`
+
+This will open the same application as the PC and Mac binaries.
+
+2. If you just have Python 3, there is a Command Line version of the program, which can be run via:
+
+`python3 KA-Rando-Simple.py`
+
+Make sure that your .nes file is located in the same folder as the program, then simply follow the instructions.
 
 #### --- .Lua Compatible Emulator ---
 
@@ -44,6 +56,8 @@ If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcom
 
 
 ## -- Version History --
+
+v2.00 - 11/16/17 - Added GUI interface. Can now select specific Kirby color in addition to randomizing the color. Switched from Python 2 to Python 3
 
 v1.03 - 9/2/17 - Removed need to import data from txt files. Entire program now contained in .py
 
