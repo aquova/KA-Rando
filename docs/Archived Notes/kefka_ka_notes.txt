@@ -1,0 +1,796 @@
+=========================
+
+-------------------------
+Kirby's Adventure Bytes 
+-------------------------
+
+Compiled by Kefka
+
+=========================
+  
+ Data found by Kefka and Bbitmaster
+ Compression notes by Parasyte
+ Maybe a couple of bytes were found by others, so sorry if you found something but your name isn't on here
+
+
+ ----------------------------------------------------------------------------------------------------------------------
+ Huge thanks to Bbitmaster for teaching me a lot, particularly regarding how to use FCEUXD to find craploads of data!
+ Also, props to Parasyte for working so hard on the decompression of this game. His notes on the compressions are
+ included at the end of this little doc.
+
+ Please feel free to use any of this data as you see fit. I don't have a lot of time these days (though there will be
+ a couple of weeks where I will have a bit more time to work on this stuff coming up), so my oppurtunities to expand
+ upon this document that has remained unchanged for some time are limited. All of this data was found with either
+ corruption or FCEUXD, and it really isn't that difficult. I included info on finding headers for objects and levels
+ so that people could find the rest on their own instead of waiting around for me to have enough free time to finish
+ doing it myself. Thanks for your understanding. Hopefully this helps the "Kirby hacking scene" a little.
+ 
+ ~Kefka
+ ----------------------------------------------------------------------------------------------------------------------
+
+ Kirby/Kirby movement Data 
+ ========================== 
+  
+ 42B00-42B20 / Pretty safe to assume that these bytes contain the abilities for Kirby to move properly. 
+  
+ 42B06 / Seems to deal with Kirby's transition from almost full to full floating. 
+  
+ Notes: Default value is F0, FF allows full floating, 00 makes Kirby spit before reaching that point. 
+  
+ 42B07 / Deals with Kirby's full floating state. 
+  
+ Notes: [Push up to float] 
+ value (effect): values with common effect {on 42B07} 
+ ________________________________________ 
+  
+ 00 (does not allow Kirby to use maximum float): 04, 06, 08, 0A, etc. 
+ 01 (allows Kirby to float until he hits ceiling): 03, 0B, 0D, 15, 17, etc. 
+ 02 (default for game, normal floating): FF 
+ 05 (crashes game): 07, 09, 0F, 11, 13, 19, 1B, etc. 
+  
+ 42B08 / Deals with Kirby spitting after full floating. 
+  
+ Notes: default value is 38, 39 causes Kirby to not be able to spit until he hits ceiling, 
+        FF= default effects, 00 causes bottom status screen to flash over when attempting to spit. 
+        Spitting is not allowed with 05.  
+  
+ 42B1B / Deals with Kirby's ability to float or climb ladders (i.e. the actions of pushing up on D-pad) 
+  
+ Notes: [Push up on D-pad] Changing the default value (02) to anything but FF does not allow Kirby to go up at all.
+
+==============
+Level Data 
+============== 
+ 
+ Level Headers
+ -------------
+ Level headers are apparently 8 bytes and are right before their room's data.
+
+ Format:
+ 
+ 1st byte= Level pointer/ID?
+ 2nd byte= Room length
+ 3rd byte= Room depth/height
+ 4th byte= Level tileset
+ 5th byte= Level palette
+ 6th byte= Enemy tileset
+ 7th byte= Enemy palette
+ 8th byte= Background music
+
+ Example:
+ ________
+
+ 1289D / Level 1-1:1 pointer/ID? (value: 07)
+ 1289E / Length of level 1-1:1 (04)
+ 1289F / Depth/height of 1-1:1? (01)
+ 128A0 / Tileset for 1-1:1? (07)
+ 128A1 / 1-1:1 Palette (07)
+ 128A2 / 1-1:1 Enemy tileset (9A)
+ 128A3 / 1-1:1 Enemy palette (26)
+ 128A4 / Music byte for 1-1:1 (00)
+
+ Music/Sound Test values
+ ------------------------
+ These are the music byte values; they can be applied to all level headers in the game.
+
+ 00: Vegetable Valley theme (level 1-1)
+ 01: VV theme abridged
+ 02: Invincibility music
+ 03: Green Greens theme/Credits theme
+ 04: GG theme abridged
+ 05: Post-boss star chime
+ 06: World 7 Overworld theme
+ 07: Victory theme
+ 08: Victory theme abridged
+ 09: Crane mini-game theme
+ 0A: Crane moving
+ 0B: Mini-game victory????
+ 0C: Boss theme
+ 0D: Last boss intro
+ 0E: Last boss theme
+ 0F: Mining theme (level 1-2)
+ 10: Kirby's Dream Land theme(unused?)
+ 11: Mysterious woods/Mysterious castle theme (darkened castle levels)
+ 12: Mysterious theme abridged
+ 13: Egg catching mini-game theme
+ 14: Arena theme (abridged from egg catching)
+ 15: World 6 overworld theme
+ 16: sound effect
+ 17: no sound?
+ 18: bomb sound effect?
+ 19: chime sound effect?
+ 1A: Quick Draw mini-game intro
+ 1B: Rainbow Resort theme (level 7-1)
+ 1C: RR theme abridged
+ 1D: Quick Draw lost
+ 1E: Yogurt Yard theme (level 5-1)
+ 1F: YY-theme abridged
+ 20: Grape Gardens theme (level 4-1)
+ 21: GG theme abridged
+ 22: World 1 overworld theme
+ 23: World 4 overworld theme
+ 24: World 5 overworld theme
+ 25: chirp sound effect?
+ 26: no sound
+ 27: lost life
+ 28: Ice Cream Island theme (level 2-1)
+ 29: ICI theme abridged
+ 2A: Orange Ocean theme (level 6-1)
+ 2B: OO theme abridged
+ 2C: World 2 overworld theme
+ 2D: World 3 overworld theme
+ 2E: Egg mini-game loss
+ 2F: mini-game victory
+ 30: mini-game victory abridged
+ 31: Opening intro theme
+ 32: Butter Building theme (level 3-1)
+ 33: BB theme abridged
+ 34: ??? either Flying Nightmare SFX or unused
+ 35: Title Screen theme
+ 36: Warp Zone theme
+ 37: Epilogue theme (cinema after beating last boss)
+ 38: Fountain of Dreams theme (after beating King Dedede)
+ 39: Flying Nightmare battle theme
+
+
+Level Header Locations:
+________________________
+
+Note: Written in Offset / World-Level:Room format. In order of level, not rom location.
+
+Mini-games not in level data.
+
+--------
+World 1
+--------
+
+0F6B0-0F6B7 / Level 1 Overworld header
+1E89A-1E8A1 / Level 1 Museum header
+16388-1638F / Level 1 Warp Zone header
+
+1289D-128A4 / Level 1-1:1 header
+13A5E-13A65 / Level 1-1:2 header
+2192D-21934 / Level 1-1:3 header (Hidden Waterfall/UFO room)
+18904-1890B / Level 1-1:4 header
+10BB6-10BBD / Level 1-2:1 header
+1D36E-1D375 / Level 1-2:2 header (cinematic transition room)
+17911-17918 / Level 1-2:3 header
+0FDE2-0FDE9 / Level 1-2:4 header
+196BA-196C1 / Level 1-2:5 header
+12467-1246E / Level 1-3:1 header
+140A5-140AC / Level 1-3:2 header
+1A150-1A157 / Level 1-3:3 header
+13693-1369A / Level 1-3:4 header
+1A3CE-1A3D5 / Level 1-4:1 header
+1349D-134A4 / Level 1-4:2 header
+18010-18017 / Level 1-4:3 header
+0B728-0B72F / Level 1-4:4 header
+
+11A290-11A297 / Wispy Woods header (World 1 boss level)
+
+-------
+World 2
+-------
+
+06F92-06F99 / Level 2 Overworld header
+1216EB-1216F2 / Level 2 Arena header
+1E4B0-1E4B7 / Level 2 Museum header
+15B11-15B18 / Level 2 Warp Zone header
+
+0C5D4-0C5DB / Level 2-1:1 header
+1AB30-1Ab37 / Level 2-1:2 header (optional cave w/ pep drink)
+0EA51-0EA58 / Level 2-1:3 header
+1128E-11295 / Level 2-1:4 header
+1E2B7-1E2BE / Level 2-2:1 header
+1C11E-1C125 / Level 2-2:2 header
+1DDDE-1DDE5 / Level 2-2:3 header
+0A6DE-0A6E5 / Level 2-2:4 header
+1C010-1C017 / Level 2-2:5 header
+1AC64-1AC6B / Level 2-3:1 header
+05C8B-05C92 / Level 2-3:2 header (go through twice, before and after 2-3:4)
+21B8F-21B96 / Level 2-3:3 header (UFO room in cave)
+1C532-1C539 / Level 2-3:4 header (swimming room outside)
+11F588-11F58F / Level 2-3:5 header (Meta Knight minion battle)
+1B911-1B918 / Level 2-3:6 header
+0D655-0D65C / Level 2-4:1 header
+18BE9-18BF0 / Level 2-4:2 header (optional 1-up room)
+1A8C1-1A8C8 / Level 2-4:3 header (mini-boss room)
+19414-1941B / Level 2-4:4 header
+21B3C-21B43 / Level 2-4:5 header
+0BA22-0BA29 / Level 2-4:6 header
+1FE02-1FE09 / Level 2-4:7 header (optional pep drink room)
+09CE9-09CF0 / Level 2-5:1 header
+0D911-0D918 / Level 2-5:2 header
+1FD77-1FD7E / Level 2-5:3 header (optional pep drink room)
+0DBB3-0DBBA / Level 2-5:4 header
+20D3D-20D44 / Level 2-5:5 header (hidden window room w/ fireballs)
+1E74D-1E754 / Level 2-5:6 header
+1A9FA-1AA01 / Level 2-5:7 header
+
+11E0BB-11E0C2 / Paint Roller header (World 2 boss level)
+
+--------
+World 3
+--------
+
+0E010-0E017 / Level 3 Overworld header
+12168A-121691 / Level 3 Arena header
+1F6B3-1F6BA / Level 3 Museum header
+16010-16017 / Level 3 Warp Zone header
+
+18315-1831C / Level 3-1:1 header
+1FAB0-1FAB7 / Level 3-1:2 header
+20344-2034B / Level 3-1:3 header
+1D18D-1D194 / Level 3-1:4 header (go through twice)
+17F44-17F4B / Level 3-1:5 header (contains switch)
+21566-2156D / Level 3-1:6 header (path to Switch Room)
+1AD98-1AD9F / Level 3-2:1 header
+175E1-175E8 / Level 3-2:2 header (spinning tower room)
+1B123-1B12A / Level 3-2:3 header
+14B1A-14B21 / Level 3-2:4 header
+12186F-121876 / Level 3-2:5 header (optional Wheelie mini-boss room)
+210E1-210E8 / Level 3-2:6 header
+1204D3-1204DA / Level 3-2:7 header (Bugsy mini-boss room)
+12010-12017 / Level 3-3:1 header
+18492-18499 / Level 3-3:2 header (spinning tower room)
+1B5BC-1B5C3 / Level 3-3:3 header (blue room)
+1BD6A-1BD71 / Level 3-3:4 header (pink room)
+20010-20017 / Level 3-3:5 header (optional 1-up room)
+1E5FF-1E606 / Level 3-4:1 header
+0C010-0C017 / Level 3-4:2 header (cinematic transition room)
+1F15A-1F161 / Level 3-4:3 header
+120CC4-120CCB / Level 3-4:4 header (Meta Knight minion battle)
+2198A-21991 / Level 3-4:5 header
+14CED-14CF4 / Level 3-4:6 header
+2044F-20456 / Level 3-5:1 header
+19568-1956F / Level 3-5:2 header (spinning tower room)
+1DE94-1DE9B / Level 3-5:3 header
+1EE4B-1EE52 / Level 3-5:4 header (Hammer mini-boss)
+209E1-209E8 / Level 3-5:5 header
+21503-2150A / Level 3-6:1 header
+1D45B-1D462 / Level 3-6:2 header
+1BA2A-1BA31 / Level 3-6:3 header
+18A78-18A7F / Level 3-6:4 header (spinning tower room)
+13E1B-13E22 / Level 3-6:5 header
+1ED0D-1ED14 / Level 3-6:6 header (optional pep drink room)
+21BDF-21BE6 / Level 3-6:7 header (hidden switch room)
+19007-1900E / Level 3-6:8 header (dark tower room)
+1BB40-1BB47 / Level 3-6:9 header
+
+
+121150-121157 / Mr. Shine [moon] and Mr. Bright [sun] header (World 3 boss level)
+
+--------
+World 4
+--------
+
+07361-07368 / Level 4 Overworld header
+
+
+------
+Extra
+------
+0A379-0A380/ Level Finish header (for all levels)
+
+
+
+
+Finding Level Headers
+----------------------
+
+Yes, I will finish these at some point; however, it would probably be faster if someone else did. I seriously
+have little to no time to work on this.
+
+Therefore, I shall share exactly how you can find level headers using FCEUXD's debugger:
+
+
+
+When you are looking for the header of a room, go to another room that is connected to it via door, warp star, etc.
+Now, open up the debugger and write an Execute breakpoint at E650. Enter the room you are looking for. Now, you will
+be dealing with E650, E654, and E657. There is a formula you can use that will help you find the ROM file offset very
+quickly:
+
+ROM file offset = (RAM Offset - $A000) + (Bank * $2000) +$10
+
+
+You will find the RAM offset that the header is written from with E654 and E650. Place the value of E654 before the value
+of E650. For example, if E654 is B9, and E650 is 18, then you should have B918. The "Bank" value is going to be E657.
+In this example, I will say that E657 is 09. So, with the RAM and Bank values figured out, we are all set.
+
+The example values should be plugged into the formula like this:
+
+ROM file offset = ($B918 - $A000) + ($09 * $2000) + $10
+
+For any formula like this, you can always pull out your good ol' Windows Scientific Calculator and put it in Hex.
+
+The result is ($1918) + ($12000) + $10, which comes out to $13928. That will be the FIRST BYTE of the example level
+header you were looking for. So, to reiterate, the formula finds you the first byte. The 2nd-8th bytes immediately
+follow this. Viola, now you should be able to find any level header in the game! If you don't think you fully understand
+this yet, then try out this formula on some values that have already been found until you match the results.
+
+Oh, and just for the record, I'm not sure where the example offset is an actual level header or not. I doubt it, because
+I made the values up as I went along.
+
+
+
+-------------------------------------------------
+ 
+15B12 / Scroll Value? 
+ 15000-20000 / All the warp stations' data [possibly] 
+ 15B07-15B2E / warp Station 2 data 
+ 163A0-163BF / Warp Station 1 data 
+ Note: Give or take a couple bytes on all station data. Will check later. 
+  
+ Level Effects 
+ ============== 
+  
+ 2637D / Level 2-4 spinning tower effect added? 
+ 2637E / ''? 
+ 2637F / ''?
+
+Door Data 
+========= 
+  
+ 2524B / Level 1-1 door [default value: 12] 
+ 2524C / Pointer? Looks like it has something to do with being able to enter the level. Default value 66 seems to be the only one that can enter. 
+ 2525A / Level 1-2 door [default value: 22] 
+ 252C3 / Level 3-3 door [default value: 32] 
+ 252D7 / Level 3-4 door [default value: 42] 
+ 253C7 / Level 7-1 door [default value: 12] 
+ 253CC / Level 7-2 door [default value: 22] 
+  
+ Notes: most values have no lvl number above door and you cannot enter, but there are a few values to take note of:
+
+ 02: nothing above door, but enter normally. 
+ 12: level 1 above door, enter normally 
+ 22: level 2 above door, enter normally 
+ 32: level 3 above door, enter normally 
+ 42: level 4 above door, enter normally 
+ 52: level 5 above door (door flashing as well), enter normally 
+ 62: level 6 above door (also flashing), enter normally 
+ 72: level 7 above door (also flashing), enter normally 
+ 82: has the museum symbol above the door, and if it's the first time during gameplay that you enter, Museum entry text appears. Same effects as entering any museum level. (found by Dan) 
+ 92: has the arena symbol above door, the arena text if you enter it, and then it takes you to the level... however, there seems to be an "audience" effect on the level during the 1st room. 
+ A2: Not only has the Quick Draw symbol above the door, but takes you to a normal quick draw mini-game (including the text)... the computer takes a LONG time to shoot, though. After the mini-game, it takes you to the level. If you complete the level, whether you have already beat it or not, you stick a flag down, and the door is shut off (as a quick draw one would be). 
+ B2: Egg Catch symbol above door, enter into the egg catch game, then the level. If level completed, door is shut off. (and flag marked) 
+ C2: Crane game symbol above door, enter into crane game. After crane game, if you win lives, they are not added (yet). Go to level. If level, completed, THEN the lives are added as you come out, and the door shuts off. 
+ D2: Warp star symbol above door, and if first time entering (any station), then it gives Warp station text. Enter normally. 
+ E2: Has "Back" Symbol over the door, enter normally. 
+ F2: If level unbeaten, it has the Dedede symbol over the door. After level is beaten, it turns into "Go". Enter level normally. 
+  
+ As a side note, I believe the flashing is because there is no level 5 or above in world 1, so that is why they flash, being marked as unbeaten.
+
+Enemy/Object Data 
+====================
+  
+ Enemy/Object Data Headers
+ -------------------
+ So far there have been 3 bytes found for "enemy/object headers" in levels
+
+ Format:
+ 
+ 1st byte: Screen order data
+ 
+ 2nd byte: x and y positions (x is the first value, y is the second value);
+           not pixel perfect: shifts left 4 bits and tags 8 to the end (example of "tags 8 to the end": $3 becomes $38)
+
+ 3rd byte: Enemy/object types
+
+ These headers write from RAM ED-F2; reverse the bytes to get the address, then add to 18010 to get the ROM address
+ (e.g. if the hex editor has ED as 41 and EE as A6, it is address A641, and this added to 18010 becomes $22651)
+ 
+ 
+
+ Screen order bytes
+ -------------------
+ 
+ 22F9F / Screen order byte for Level 3-6 secret switch 
+
+
+ X/Y bytes
+ --------------
+ 
+ 22FA0 / 3-6 secret switch, xy location
+ 
+
+
+ Enemy/object type bytes
+ -----------------
+ 
+ 1D0BF / Type of object for 3-6 secret switch
+ 22663 / Type of enemy for 1st Waddler in level 1-1 (default value: 04)
+
+
+
+ Enemy/Object type values
+ =========================
+
+ Note: some of the enemies may appear glitchy in some levels but perfectly fine in others; the glitchiness is caused by
+       the wrong CHR bank being swapped, but this can be fixed in the level header.
+
+Yea, I haven't gotten around to doing the other values. Gimme a break, here! I'll get everything when I HAVE TIME.
+
+....or someone else could get them. That would be nice too.
+
+00: Waddle-Dee, Type A
+01: Waddle-Dee, Type B
+02: Waddle-Dee, Type C
+03: Waddle-Dee, Type D
+04: Waddle-Doo, Type A
+05: Waddle-Doo, Type B
+06: Waddle-Doo, Type C
+07: Waddle-Doo, Type D
+08: Cannon, type A (all around movement, slow fire)
+0A: Cannon, type B (all around movement, faster fire)
+0C: Cannon, type C (rapid fire up)
+0E: Cannon, Type D (rapid fire upper left)
+26: Parasol Waddle-Doo, type A
+28: Parasol Waddle-Doo, type B
+2A: Parasol Cannon, type A
+2C: Parasol Waddle-Dee, type A
+2E: Swordsman
+36: 1-Up
+38: Waddle-Dee, type C
+39: Waddle-Dee, Type D
+3A: Waddle-Dee, Type E
+3B: Waddle-Dee, Type F
+3C: Waddle-Dee, Type G
+3D: Waddle-Dee, Type H
+3E: Waddle-Dee, Type I
+3F: Waddle-Dee, Type J
+40: Crash Enemy
+50: Bronto Brunt, type A
+52: Bronto Brunt, type B
+54: Bronto Brunt, type C
+56: Bronto Brunt, type D
+58: Bronto Brunt, type E
+5A: Bronto Brunt, type F
+62: Hi-Jumper, type A
+64: Hi-Jumper, type B
+66: Hi-Jumper, type C (flying)
+68: Cutter Knight, type A (standing)
+6A: Cutter Knight, type B (walking)
+6C: Kabu, type A
+6E: Kabu, type B (disappear/reappear)
+70: Spikeball/Gordo, type A (sitting)
+72: Spikeball/Gordo, type B (goes up until it hits something)
+74: Spikeball/Gordo, type C (moving left)
+80: Meta Knight mini-boss battle, type A (must be by itself)
+82: Meta Knight mini-boss battle, type B (must be by itself)
+84: Meta Knight mini-boss battle, type C (must be by itself)
+86: Meta Knight mini-boss battle, type D (must be by itself)
+8C: MK battle?
+8E: MK battle?
+96: Broom enemy
+99: Mushroom enemy
+BC: Poppy Bros. Sr. (glitches other objects graphically besides cannons)
+BE: Fire Lion (glitches other objects graphically)
+D2: Painter boss (attached with Star rod... need to edit events and such if used other than in a main boss stage)
+D3: Sun and Moon boss (attached with Star rod, etc.)
+D4: Tunnel machine boss (attached with Star rod, etc.)
+D5: Kracko (NEEDS TO BE IN Kracko's room!)
+D7: Meta Knight; THE SHOWDOWN! (star rod, etc)
+D8: possibly Wispy?
+D9: death... possibly something else (flying Nightmare)?
+DA: Final Boss (Nightmare); if you beat him (and yes, without the Star rod), you get the normal credit sequence.
+E4: Museum Swordsman
+E7: Museum Hi-Jumper
+E8: Museum Cutter Knight
+F1: World 2 Warp Star
+F2: World 3 Warp Star
+F3: World 4 Warp Star
+F4: World 5 Warp Star
+F5: World 6 Warp Star
+F6: World 7 Warp Star
+F7: Special Warp Star (type in level 1-2); goes through next screen, and then proceeds to shoot onto the screen after
+F8: Special Warp Star 2
+F9: Bonus Cannon (Kirby can jump into this)
+FA: Another bonus cannon
+FB: Start of a fuse
+FE: Big Switch (has to be combined with an effect on the world map)
+FF: Upside down Big Switch
+
+
+
+ 60133 / Spark guy front, facing left, landing [palette] 
+ 60126 / Spark guy back, facing left, landing [palette] 
+ 60118 / Spark guy front, facing left, normal pose [palette] 
+ 60114 / Spark guy back, facing left, normal pose [palette] 
+ 60106 / Spark guy front, facing left, jumping [palette] 
+ 60102 / Spark guy back, facing left, jumping [palette] 
+ 60021      
+           (moving left) 
+           <info> 
+           <Right side> SprRam, 4 bytes (x,y,p,t) 
+           <Left  side>   ' ' 
+  
+           (moving right) 
+           <info> 
+           <left  side> 
+           <right side> 
+            
+           Repeat Above for Animation 2 
+           Repeat Above for Damage? 
+  
+ 60016 / Waddle Doo Scary
+ 60025 / Waddle Doo walking left
+ 61C48 / Bronto Brunt Right wing flying left.
+ 61C49 / Palette? low 2 bits only?
+
+
+Sprite Placement Data
+======================
+
+2271E / Sprite Placement, level 1-2:1, warp star
+
+
+
+Enemy AI 
+=========== 
+  
+ 4F808 / Poppy Bros Sr. prg? 
+ 4F84C / Initial jumping distance of Poppy Bros. Sr. (mini-boss) [default value: 00] 
+ 4F92A / Poppy Bros. Sr. dying. [prg?] 
+ 5A505 / Distance that cutter knight throws [default value: 02] 
+ 5A77F / Jumping distance of mushroom enemy [default value: 00] 
+ 5A794 / Kirby sucking in mushroom enemy's hat [default value: 02] 
+  
+ Notes: 
+  
+ Value of 5A794: effect 
+ _______________________ 
+ 00,01,04,08: makes mushroom enemy jump toward you when you suck his hat up 
+ 02(default),03: enemy jumps away when you suck his hat. 
+ 05-07,09-0A: makes the game crash when you swallow the hat 
+ other values for this byte to be explored later. 
+  
+ 5A7DC / Effects of sucking/swallowing mushroom enemy [default value: 21] 
+  
+ Notes: Most values for 5A7DC are graphical glitches or swallow the whole enemy, but with no ability. So, only the values that do not have a glitchy effect are listed below.
+
+Value of 5A7DC: effect (NOTE: this is for the mushroom enemy) 
+ _______________________ 
+ 00: suck in whole enemy, and then instruction text (This is Kirby of Dream Land, etc.) appears on bottom. Some enemies disappear. 
+ 03: a star shoots at you when you suck the enemy, but with not effect. 
+ 05: sucks in whole enemy, and you get a 1Up 
+ 07: sucks in hat, and rest of enemy becomes a pink ice cube 
+ 09: same effect as pushing pause in middle of sucking enemy? Again, sucks enemy whole 
+ 0A: sucks enemy whole, and if swallowed, you get the Laser ability 
+ 11: sucks whole enemy, and if swallowed, you get the Spark ability. 
+ 14: sucks hat, and Kirby "craps out" a Max Tomato. 
+ 15: sucks hat, and now the enemy turns into a Max Tomato that jumps away from Kirby once. 
+ 16: sucks whole enemy, and if swallowed, gives the Laser ability. 
+ 17: sucks whole enemy, and if swallowed, gives the Fireball ability. 
+ 21: default; swallows hat, and normal mushroom enemy is there. 
+ 23: sucks whole enemy, and if swallowed, gives Stone ability. 
+ 24: sucks whole enemy, and if swallowed, gives Tornado ability. 
+ 25: sucks whole enemy, and if swallowed, gives Crash ability (x1). 
+ 26: sucks whole enemy, and triggers event for Metaknight to throw Hyper Candy. Sucking also causes some graphics to glitch and for some enemy AI to not work properly. As a side note, if you get the candy and jump on a star in the same room while still hyper (most likely candidate would be level 1-2), you get the same star in the left corner that you would with the Mike or Crash ability, but with x00.
+ 27: sucks whole enemy, and a flashing crash enemy sprite with same effect as Hyper Candy flies in the air. No graphics glitch. Jumping on a star while hyper has same effect. 
+ 28: sucks whole enemy, and if swallowed, gives UFO ability. 
+ 29: sucks whole enemy, and if swallowed, gives Fire ability. 
+ 2A: sucks whole enemy, and if swallowed, gives Parasol ability. 
+ 2B: sucks whole enemy, and if swallowed, gives Sword ability. 
+ 2D: sucks whole enemy, and if swallowed, gives Ball ability. 
+ 2F: sucks whole enemy, and if swallowed, gives Hi-Jump ability. 
+ 36: sucks whole enemy, and if swallowed, gives Wheel ability. 
+ 37: sucks whole enemy, and if swallowed, gives Light ability. 
+ 3C: sucks whole enemy, and if swallowed, gives Needle ability. 
+ 41: sucks whole enemy, and if swallowed, gives Cutter ability. 
+ 5D: sucks whole enemy, and if swallowed, gives Hammer ability.
+ All values were toyed with on this byte. Surprisingly, the Freeze and Ice abilities were not found without a big glitch
+ involved.  
+  
+ TSA 
+ ====== 
+  
+ 03370 / floor tile 
+ 033AE / Start of new tsa batch. Green Block 
+ Notes: Top left to bottom right, doesn't refresh on pause of out of view 
+  
+ Text 
+ ====== 
+  
+ 275D0 / Some Info 
+ 714B0 / Start of Kirby baddies Info ? 
+ 71514 / Start of Fire guys info 
+  
+      Format: 
+           byte 1 Ident amount ? 
+           byte 2 Fill Text 
+           byte 3 Text amount +1 
+           <Text> 
+  
+      Pointer: 
+           In nes  B45C,  B477 (low, high, indirect Y) 
+           in rom 7146C, 71467 
+           27 ($1B) bytes long. To Enemy info
+
+ Misc. 
+ ===== 
+ 
+ RAM:
+ -----
+ 
+ ED-F2 / Enemy/object on screen
+ 05E3  / Affects Kirby's abilities when swallowing any enemy
+
+ Freeze values/effects for 50E3:
+ ________________________________
+
+ 06: Every enemy swallowed = Mike ability
+ 17: Every enemy swallowed = UFO ability
+
+
+
+ 2BC5F / Flag for UFO use after level completion (default value: C9); change to A5 for all-time use
+ 2D253 / Energy recovered by a pep drink (default value: 08)
+ 307FD / Number of lives you start with (default value: 04)
+ 30802 / Initial starting health of Kirby in regular game; default is 6 (default value: 2F or 4F)
+ 43E15 / Ability to be hurt? (Default value: 8D); change to AD for infinite health
+ 
+ Easter Eggs
+ ============
+ 
+30852 / KIRBY [use unknown]; it reads as KIRBY in the hex editor when in ASCII
+
+
+==============================
+==============================
+
+Parasyte's Compression Notes
+
+==============================
+==============================
+
+Kirby's Adventure and Kirby Super Star compression format.
+by Parasyte, 2004
+
+
+    I Have attempted to explain the compression format to the best of my
+ability. This document may be confusing, even to an experienced hacker. The
+compression format used is one of the most expansive I've seen. It uses seven
+different kinds of compression techniques, which includes the common LZ-Copy,
+RLE, and uncompressed data methods. The remaining types are simply variations
+of LZ-Copy and RLE.
+
+    The decompressor begins by reading a control byte from the source.
+(Source = compressed data) The upper three bits of the control byte are checked
+to determine the compression type. Compression types are in the range 0 - 6.
+The "8th compression type" is an expansion of the previous 7 types. It provides
+the compression type with a greater length attribute than normally available.
+
+
+The control byte format is as follows:
+
+(binary) tttxxxxx
+t: Compression type.
+x: See below.
+
+
+Lower 5 bits of control byte:
+    For compression types 0-6 are as follows:
+
+    (binary) lllll
+    l: Length attribute.
+
+
+    For "compression type 7" (expansion) are as follows:
+
+    (binary) tttll
+    t: Expanded compression type. (Actual compression type to use)
+    l: Upper two bits of length attribute.
+
+
+
+    For compression types 0-6, the byte(s) following the control byte is the
+data used for output. Maximum length: 32.
+For compression type 7 (expansion), the byte following the control byte is the
+lower 8 bits of the length attribute. The byte(s) following the length is the
+data used for output. Maximum length: 1024.
+In both cases, (length) is incremented; making a length of zero output 1 byte.
+
+
+Compression types:
+
+0: Uncompressed copy
+   Copies (length) number of (data) bytes to output.
+1: Run-Length Encoding (RLE)
+   Copies 1 byte of (data) to output (length) times.
+2: 2-Byte RLE
+   Copies 2 bytes of (data) in sequence to output (length) times.
+3: RLE++
+   Copies 1 byte of (data) to output (length) times, incrementing (data) after
+   each byte output.
+4: LZ-Copy
+   Uses (data) as an offset into the output. Copies from offset (length) times.
+5: Bit-reversing LZ-Copy
+   Uses (data) as an offset into the output. Copies from offset (length) times,
+   reversing the bits of every byte copied.
+6: LZ-Reverse-Copy
+   Uses (data) as an offset into the output. Copies from offset (length) times,
+   moving backward from offset.
+7: Invalid compression type
+   This compression type can only appear if it has been extended first. In this
+   case, it assumes the compression type of 4; LZ-Copy.
+
+
+Examples:
+$03,$94,$24,$51,$73
+   Control Byte:     $03 (000,00011)
+   Compression Type: 0
+   Length Attribute: 4
+   Data:             $94,$24,$51,$73
+   Action:           $94,$24,$51,$73 written to output.
+
+$24,$65
+   Control Byte:     $24 (001,00100)
+   Compression Type: 1
+   Length Attribute: 5
+   Data:             $65
+   Action:           $65,$65,$65,$65,$65 written to output.
+
+$42,$81,$91
+   Control Byte:     $42 (010,00010)
+   Compression Type: 2
+   Length Attribute: 3
+   Data:             $81,$91
+   Action:           $81,$91,$81,$91,$81,$91 written to output.
+
+$65,$50
+   Control Byte:     $65 (011,00101)
+   Compression Type: 3
+   Length Attribute: 6
+   Data:             $50
+   Action:           $50,$51,$52,$53,$54,$55 written to output.
+
+$83,$00,$05
+   Control Byte:     $83 (100,00011)
+   Compression Type: 4
+   Length Attribute: 4
+   Data:             $00,$05
+   Action:           Four bytes from (beginning of output)+$0005 copied to
+                     output.
+
+$B0,$01,$43
+   Control Byte:     $A7 (101,10000)
+   Compression Type: 5
+   Length Attribute: 17
+   Data:             $01,$43
+   Action:           Seventeen bytes from (beginning of output)+$0143
+                     copied to output and bit-reversed.
+
+$C4,$00,$10
+   Control Byte:     $C4 (110,00100)
+   Compression Type: 6
+   Length Attribute: 5
+   Data:             $00,$10
+   Action:           Five bytes from (beginning of output)+$0010 copied to
+                     output, bytes read backward.
+
+$E8,$3F,$00
+   Control Byte:     $E8 (111,010,00)
+   Compression Type: 2 (Expanded)
+   Length Attribute: 64
+   Data:             $00
+   Action:           Sixty-four bytes of '$00' written to output.
