@@ -57,6 +57,8 @@ If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcom
 
 ## -- Version History --
 
+v2.01 - 11/20/17 - Added option to only change Kirby's color, but don't randomize anything
+
 v2.00 - 11/16/17 - Added GUI interface. Can now select specific Kirby color in addition to randomizing the color. Switched from Python 2 to Python 3
 
 v1.03 - 9/2/17 - Removed need to import data from txt files. Entire program now contained in .py
