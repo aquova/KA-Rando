@@ -73,6 +73,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QCheckBox" name="noRandoCheck">
+      <property name="text">
+       <string>Don't Randomize, only change Kirby's color</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <spacer name="verticalSpacer_5">
       <property name="orientation">
        <enum>Qt::Vertical</enum>

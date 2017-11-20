@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 import os, random, sys
 from gui_design import Ui_MainWindow
 
-VERSION = '2.00'
+VERSION = '2.01'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -72,27 +72,28 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def runRandomizer(self):
         try:
+            rom = open(self.rom_file, 'rb').read()
+            rom_list = list(rom)
+
             KA_seed = self.seedValue.text()
             if KA_seed == "":
                 KA_seed = random.randint(0, 999999999)
             random.seed(KA_seed)
 
-            if self.starRodCheck.isChecked():
-                ability_values.append("18")
+            if self.noRandoCheck.isChecked() == False:
+                if self.starRodCheck.isChecked():
+                    ability_values.append("18")
 
-            if self.noAbilityCheck.isChecked():
-                ability_locations.extend(neutral_locations)
+                if self.noAbilityCheck.isChecked():
+                    ability_locations.extend(neutral_locations)
 
-            rom = open(self.rom_file, 'rb').read()
-            rom_list = list(rom)
-
-            # Gives enemies new abilities based on random selection from file
-            for item in ability_locations:
-                address = int(item, 16)
-                rand_ind = random.randint(0,len(ability_values) - 1)
-                new_enemy = ability_values[rand_ind]
-                new_enemy = int(new_enemy,16)
-                rom_list[address] = new_enemy
+                # Gives enemies new abilities based on random selection from file
+                for item in ability_locations:
+                    address = int(item, 16)
+                    rand_ind = random.randint(0,len(ability_values) - 1)
+                    new_enemy = ability_values[rand_ind]
+                    new_enemy = int(new_enemy,16)
+                    rom_list[address] = new_enemy
 
             if self.defaultColor.isChecked() == False:
                 new_color = self.selectedColor()
