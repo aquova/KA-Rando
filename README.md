@@ -8,7 +8,7 @@ https://github.com/Aquova/KA-Rando
 
 Written by Austin Bricker (Aquova), 2017
 
-https://twitter.com/Aquova__
+https://twitter.com/Aquova_
 
 
 ## -- Overview --
