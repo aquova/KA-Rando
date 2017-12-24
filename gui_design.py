@@ -129,7 +129,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Kirby\'s Adventure Randomizer"))
         self.title.setText(_translate("MainWindow", "Kirby\'s Adventure Randomizer - Version: "))
         self.seedLabel.setText(_translate("MainWindow", "Seed:"))
         self.starRodCheck.setText(_translate("MainWindow", "Use Star Rod"))

@@ -4,8 +4,8 @@
 
 Written by Aquova
 
-This document details some of the missing pieces of the ROM. 
-Nearly everything before 0x24A90 is very well documented on Data Crystal, but after that information becomes very hard to piece together. 
+This document details some of the missing pieces of the ROM.
+Nearly everything before 0x24A90 is very well documented on Data Crystal, but after that information becomes very hard to piece together.
 Here I'm going to categorize what I've found, in addition to updating the Data Crystal pages.
 
 Kirby's Adventure Data Crystal page can be found here:
@@ -440,3 +440,4 @@ Quick Draw Instruction Text:
 
 File Select "Rankings" (Water Drop, Super Star, etc):
 0x7BACA - 0x7BC1D
+

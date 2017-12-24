@@ -28,11 +28,11 @@ In addition to the files included in the repository, you will also need a US cop
 
 #### --- Windows ---
 
-Run `KA-Randomize.exe`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
+Run `KA-Randomize-PC.exe`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
 #### --- macOS ---
 
-Run `KA-Randomize.app`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
+Run `KA-Randomize-Mac.app`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
 #### --- Linux/Python ---
 
