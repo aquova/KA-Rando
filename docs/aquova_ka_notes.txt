@@ -217,31 +217,128 @@ Third byte: Door warp destination
 Fourth byte: Screen in destination room
 Fifth byte: Coordinates in destination screen
 
-63e0: 01>00
-001e: a9>aa
-6360 00>00
-6038: 5b>ef
-6038: ef>4b
-6039: b4>d1
-6039: d1>de
-0010: 01>29
-0038: 87>86
-0048: 21>1d
-8000: 01>86
-8001: 02>1d
-0782: ??>29
+---
 
-78e7: 00>00
-05f4: 02>02
-05f8: 00>00
-05f3: 00>00
-05fb: 04>04
-0000: 00>00
-0001: 02>00
-0011: 08>fe
-004b: 00>00
-004c: 00>00
+First byte values:
+0x12 - Stage entrance
+0x00 - Mid-level door?
 
+---
+
+Third byte values:
+
+00 - World 1 map
+01 - World 2 map
+02 - World 3 map
+03 - World 4 map
+04 - World 5 map
+05 - World 6 map
+06 - World 7 map
+07 - Hub room to all worlds (I honestly don't remember where it is in the game)
+08 - World 1 boss
+09 - World 2 boss
+0A - World 3 boss
+0B - World 4 boss *Note: Boss didn't load*
+0C - World 5 boss
+0D - World 5 boss Victory screen
+0E - King DeDeDe (World 7 boss)
+0F - Final boss phase 1
+10 - Final boss phase 2 *Boss didn't load*
+11 - Glitched final boss-ish area
+12 - Fountain of Dreams Ending area
+13 - Same as 12
+***
+NOTE: These Museums have the wrong enemy and no 'picture frame' sprite
+14 - World 6 Museum glitched
+15 - World 2 Museum glitched
+16 - World 4 Museum glitched
+17 - World 5 Museum glitched
+***
+18 - World 1 Museum
+19 - World 2 Museum
+1A - World 3 Museum
+1B - World 4 Museum
+1C - World 5 Museum
+1D - World 6 Museum
+1E - World 1 Warp Star Area
+1F - World 2 Warp Star Area
+20 - World 3 Warp Star Area
+21 - World 4 Warp Star Area
+22 - World 5 Warp Star Area
+23 - World 6 Warp Star Area
+24 - World 7 Warp Star Area
+25 - Arena Minigame - Mr. Frosty
+26 - Arena Minigame - Grand Wheelie
+27 - Arena Minigame - Bugzzy
+28 - Arena Minigame - Bonkers
+29 - Arena Minigame - Fire Lion
+2A - 'Push A' bonus screen
+2B - Stage 1-1 Room 1
+2C - Stage 1-1 Room 2
+2D - Stage 1-1 Room 3
+2E - Stage 1-1 Hidden UFO room
+2F - Stage 1-2 Room 1
+30 - Stage 1-2 Warp Star Transit Room
+31 - Stage 1-2 Room 2
+32 - Stage 1-2 Room 3
+33 - Stage 1-2 Room 4
+34 - Stage 1-2 Hidden 1-up room
+35 - Stage 1-3 Room 1
+36 - Stage 1-3 Room 2
+37 - Stage 1-3 Room 3
+38 - Stage 1-3 Room 4
+39 - Stage 1-4 Room 1
+3A - Stage 1-4 Room 2
+3B - Stage 1-4 Room 3
+3C - Stage 1-4 Room 4
+3D - Stage 6-1 Room 1
+3E - Stage 6-1 Room 2
+3F - Stage 6-1 Room 3
+40 - Stage 6-1 Room 4
+41 - Stage 6-1 Room 5
+42 - Stage 6-1 Hidden Switch Room
+43 - Stage 6-2 Room 1
+44 - Stage 6-2 Hidden 1-up Room
+45 - Stage 6-2 Room 2
+46 - Stage 6-2 Room 3
+47 - Stage 6-2 Room 4
+48 - Stage 6-2 Room 5
+49 - Stage 6-2 Hidden Switch Room
+4A - Stage 6-3 Room 1
+4B - Stage 6-3 Room 2
+4C - Stage 6-3 Room 3
+4D - Stage 6-3 Hidden 1-up Room 1
+4E - Stage 6-3 Hidden 1-up Room 2
+4F - Stage 6-3 Hidden 1-up Room 3
+
+To randomize: Gather relevant 3rd, 4th, and 5th bytes in the group, and randomize them
+Probably only do for stage entrance
+
+25223
+25228
+2522D
+25232
+25237
+2523C
+25241
+25246
+2524B - Stage 1-1 entrance
+25250
+25255
+2525A
+2525F
+25264
+25269
+2526E
+25273
+25278
+2527D
+25282
+25287
+2528C
+25291
+25296
+2529B
 
 -------------------------------------------------------------------------------
 Gitching Results
