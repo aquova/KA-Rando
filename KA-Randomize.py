@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 import os, random, sys
 from gui_design import Ui_MainWindow
 
-VERSION = '2.01'
+VERSION = '3.00'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -33,6 +33,22 @@ color_locations = ["32FEC","43AC9","43AF7","43CE1","47E4A","6D5EB","6D5EF","711E
                     "2CED0","2D2F6","43B79","43CE9","5C980","5C98C","69D29","69D49","69D69","69D71",
                     "69D89","69DA9","69DC9","69DE9","69E09","6D5F7","6DBAF","6DF56","711F3","79542",
                     "7954A","7855A","7ADCA","43ACD"]
+
+
+# Locations of the entrance and exit of the same levels
+# MUST have the same number of elements as door_values
+door_locations = [["2524B", "254B7"],
+                  ["2525A", "254DF"],
+                  ["2525F", "25502"],
+                  ["25264", "25516"]]
+
+# First array is the entrance of the level door, the second is the end of level door
+# The three bytes are the 3rd, 4th, and 5th bytes of the 5-byte door data
+door_values = [[["2B", "00", "24"], ["00", "12", "66"]],
+               [["2F", "00", "24"], ["00", "12", "F8"]],
+               [["35", "00", "34"], ["00", "13", "42"]],
+               [["39", "01", "21"], ["00", "13", "85"]]]
+
 
 class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -95,6 +111,24 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
 
+                if self.doorCheck.isChecked():
+                    num_doors = len(door_locations)
+                    num_array = list(range(0, num_doors))
+                    shuffled_nums = num_array
+                    random.shuffle(shuffled_nums)
+                    for i in num_array:
+                        entry_address = int(door_locations[i][0], 16)
+                        exit_address = int(door_locations[i][1], 16)
+                        j = shuffled_nums[i]
+
+                        rom_list[entry_address + 2] = int(door_values[j][0][0], 16)
+                        rom_list[entry_address + 3] = int(door_values[j][0][1], 16)
+                        rom_list[entry_address + 4] = int(door_values[j][0][2], 16)
+
+                        rom_list[exit_address + 2] = int(door_values[j][1][0], 16)
+                        rom_list[exit_address + 3] = int(door_values[j][1][1], 16)
+                        rom_list[exit_address + 4] = int(door_values[j][1][2], 16)
+
             if self.defaultColor.isChecked() == False:
                 new_color = self.selectedColor()
                 row = new_palette[new_color]
@@ -110,6 +144,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     rom_list[color_address + 1] = new_color1
                     rom_list[color_address + 2] = new_color2
 
+
             rom = bytes(rom_list)
             new_rom = open('.'.join(self.rom_file.split(".")[:-1]) + "_" + str(KA_seed) + ".nes", 'wb')
             new_rom.write(rom)
@@ -120,6 +155,9 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             QtWidgets.QMessageBox.about(self, "Error", "Error: Specify a ROM location")
         except FileNotFoundError:
             QtWidgets.QMessageBox.about(self, "Error", "Error: File not found")
+        except Exception as e:
+            # QtWidgets.QMessageBox.about(self, "Error", "Some mysterious error has occurred. Please contact the developers with information about what happened.")
+            QtWidgets.QMessageBox.about(self, "Error", "{}".format(e))
 
 def main():
     app = QtWidgets.QApplication(sys.argv)

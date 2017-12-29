@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(523, 410)
+        MainWindow.resize(525, 480)
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralWidget)
@@ -37,6 +37,9 @@ class Ui_MainWindow(object):
         self.starRodCheck = QtWidgets.QCheckBox(self.centralWidget)
         self.starRodCheck.setObjectName("starRodCheck")
         self.verticalLayout.addWidget(self.starRodCheck)
+        self.doorCheck = QtWidgets.QCheckBox(self.centralWidget)
+        self.doorCheck.setObjectName("doorCheck")
+        self.verticalLayout.addWidget(self.doorCheck)
         self.noAbilityCheck = QtWidgets.QCheckBox(self.centralWidget)
         self.noAbilityCheck.setToolTip("")
         self.noAbilityCheck.setStatusTip("")
@@ -133,6 +136,7 @@ class Ui_MainWindow(object):
         self.title.setText(_translate("MainWindow", "Kirby\'s Adventure Randomizer - Version: "))
         self.seedLabel.setText(_translate("MainWindow", "Seed:"))
         self.starRodCheck.setText(_translate("MainWindow", "Use Star Rod"))
+        self.doorCheck.setText(_translate("MainWindow", "Randomize Doors"))
         self.noAbilityCheck.setText(_translate("MainWindow", "Randomize enemies without abilities"))
         self.noRandoCheck.setText(_translate("MainWindow", "Don\'t Randomize, only change Kirby\'s color"))
         self.grayColor.setText(_translate("MainWindow", "Grayscale"))

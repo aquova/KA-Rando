@@ -490,8 +490,7 @@ FE - Stage 4-3 Hidden Switch Room
 FF - Stage 4-4 Room 1
 There are about 17 more rooms remaining in World 4, but I have no idea what values they are...
 
-To randomize: Gather relevant 3rd, 4th, and 5th bytes in the group, and randomize them
-Probably only do for stage entrance
+---
 
 25223
 25228
@@ -502,22 +501,190 @@ Probably only do for stage entrance
 25241
 25246
 2524B - Stage 1-1 entrance
-25250
-25255
-2525A
-2525F
-25264
-25269
-2526E
-25273
-25278
-2527D
-25282
-25287
-2528C
-25291
-25296
-2529B
+25250 - Door from museum to world 1 map
+25255 - World 1 Museum
+2525A - Stage 1-2 entrance
+2525F - Stage 1-3 Entrance
+25264 - Stage 1-4 entrance
+25269 - World 1 -> World 2 door
+2526E - Entrance to world 1 warp star
+25273 - Some door to world 1 map
+25278 - Some door to world 2 map
+2527D - Stage 2-1 entrance
+25282 - Stage 2-2 entrance
+25287 - Stage 2-4 entrance
+2528C - Stage 2-3 entrance
+25291 - Door from museum to world 2 map
+25296 - World 2 museum
+2529B - Door to World 2 Arena
+252A0 - Stage 2-5 entrance
+252A5 - Entrance to World 2 warp star
+252AA - World 2 -> world 3 door
+252AF - World 3 Museum
+252B4 - Some door to world 2 map
+252B9 - Some door to world 3 map
+252BE - Some door to world 4
+252C3 - Stage 3-3 entrance
+252C8 - Stage 3-1 entrance
+252CD - Stage 3-6 entrance
+252D2 - Stage 3-5 entrance
+252D7 - Stage 3-4 entrance
+252DC - Stage 3-2 entrance
+252E1 - Entrance to World 3 warp star
+252E6 - Door to World 3 Arena
+252EB - Some door to world 3 map
+252F0 - Some door to world 3 map
+252F5 - World 3 -> World 4 door
+252FA - Stage 4-1 entrance
+252FF - Stage 4-2 entrance
+25304 - Door from museum to world 4 map
+25309 - World 4 museum
+2530E - Stage 4-3 entrance
+25313 - Stage 4-4 entrance
+25318 - World 4 Arena
+2531D - Some door to world 5 map
+25322 - World 4 boss? (Might be 4-5 entrance)
+25327 - Some door to world 5 map
+2532C - Entrance to world 4 warp star
+25331 - Some door to world 4 map
+25336 - Some door to world 5 map
+2533B - 0x11, I don't know what this is
+25340 - 0x16, I don't know what this is
+25345 - Door to world 6 museum?
+2534A - Some door to world 5 map
+2534F - World 6 warp star area
+25354 - World 5 museum
+25359 - Door to Arena
+2535E - Final door of unknown level
+25363 - Some door to world 5 map
+25368 - Stage 1-2 Room 2
+2536D - Some door to world 6 map
+25372 - World 5 warp star area
+25377 - Some door to world 5 map
+2537C - World 6 museum
+25381 - Stage 6-1 entrance
+25386 - Stage 6-2 entrance
+2538B - Door to Arena
+25390 - Stage 6-3 entrance
+25395 - Some door to world 6
+2539A - Some door to world 6
+2539F - Stage 6-4 entrance
+253A4 - Stage 6-5 entrance
+253A9 - World 6 warp star area
+253AE - Door from warp star area to world 6 map (probably)
+253B3 - Stage 6-6 entrance
+253B8 - Some door to world 7 map
+253BD - Some door to world 6 map
+253C2 - Some door to world 7 map
+253C7 - Stage 7-1 entrance
+253CC - Stage 7-2 entrance
+253D1 - Door to Final Boss
+253D6 - Stage 7-3 entrance
+253DB - Stage 7-4 entrance
+253E0 - Stage 7-5 entrance
+253E5 - World 7 Warp star area
+253EA - Stage 7-6 entrance
+
+***
+NOTE: I assume these are the Warp Stars in the hubs for each world
+253EF - Some door to world 1 map
+253F4 - Some door to world 5 map
+253F9 - Some door to world 2 map
+253FE - Some door to world 6 map
+25403 - Some door to world 3 map
+25408 - Some door to world 7 map
+2540D - Some door to world 4 map
+25412 - Some door to world 6 map
+25417 - Some door to world 2 map
+2541C - Some door to world 4 map
+25421 - Some door to world 5 map
+25426 - Some door to world 1 map
+2542B - Some door to world 2 map
+25430 - Some door to world 3 map
+25435 - Some door to world 4 map
+2543A - Some door to world 5 map
+2543F - Some door to world 6 map
+25444 - Some door to world 1 map
+25449 - Some door to world 1 map
+2544E - Some door to world 2 map
+25453 - Some door to world 2 map
+25458 - Some door to world 3 map
+2545D - Some door to world 3 map
+25462 - Some door to world 4 map
+25467 - Some door to world 4 map
+2546C - Some door to world 5 map
+25471 - Some door to world 5 map
+25476 - Some door to world 6 map
+2547B - Some door to world 6 map
+27480 - Some door to world 7 map
+25485 - Some door to world 7 map
+2548A - Some door to world 2 map
+2548F - Some door to world 3 map
+25494 - Some door to world 4 map
+25499 - Some door to world 5 map
+2549E - Some door to world 6 map
+***
+
+254A3 - Stage 1-1 room 1 -> room 2
+254A8 - Stage 1-1 to UFO room
+254AD - Stage 1-1 room 2 -> room 3
+254B2 - Stage 1-1 UFO room -> room 2 (Probably)
+254B7 - Stage 1-1 End of level
+254BC - Some door to Stage 1-1 room 2
+254C1 - Stage 1-2 Room 1 -> Warp Star transit room
+254C6 - Stage 1-2 Warp Star room -> Room 2
+254CB - Stage 1-2 Room 2 -> Stage 1-2 Room 3
+254D0 - Stage 1-2 Room 3 -> Stage 1-2 Room 4
+254D5 - Door to Stage 1-2 1-up room
+254DA - Door from 1-Up room to Stage 1-2 Room 3 (probably)
+254DF - Stage 1-2 End of level
+254E4 - Some door to Stage 1-2 Room 4
+254E9 - Stage 1-3 Room 1 -> Room 2
+254EE - Stage 1-3 Room 2 -> Room 3
+254F3 - Stage 1-3 Room 3 -> Room 2
+254F8 - Stage 1-3 Room 3 -> Room 4
+254FD - Stage 1-3 Room 4 -> Room 3
+25502 - Stage 1-3 End of level
+25507 - Stage 1-4 Room 1 -> Room 2
+2550C - Stage 1-4 Room 2 -> Room 3
+25511 - Stage 1-4 Room 3 -> Room 4
+25516 - Stage 1-4 End of Level
+2551B - Stage 6-1 Room 1 -> Room 2
+25520 -
+25525
+2552A
+2552F
+25534
+25539
+2553E
+25543
+25548
+2554D
+25552
+25557
+2555C
+25561
+25566
+2556B
+25570
+25575
+2557A
+2557F
+
+-------------------------------------------------------------------------------
+Test: Swapping Stage 1-1 and 1-2:
+Stage 1-1 Entrance:
+2524B - 12 66 2B 00 24
+
+Stage 1-1 Exit:
+254B7 - 03 C4 00 12 66
+
+Stage 1-2 Entrance:
+2525A - 22 F8 2F 00 24
+
+Stage 1-2 Exit:
+254DF - 00 C7 00 12 F8
+
 
 -------------------------------------------------------------------------------
 Gitching Results
