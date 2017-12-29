@@ -310,6 +310,185 @@ NOTE: These Museums have the wrong enemy and no 'picture frame' sprite
 4D - Stage 6-3 Hidden 1-up Room 1
 4E - Stage 6-3 Hidden 1-up Room 2
 4F - Stage 6-3 Hidden 1-up Room 3
+50 - Stage 6-3 Warp Star Transit Room
+51 - Stage 6-3 Room 4
+52 - Stage 6-3 Room 5
+53 - Stage 6-3 Room 6
+54 - Stage 6-3 Room 7
+55 - Stage 6-3 Hidden Switch Room
+56 - Stage 6-4 Room 1
+57 - Stage 6-4 Room 2
+58 - Stage 6-4 Room 3
+59 - Stage 6-4 Hidden Switch Room
+5A - Stage 6-4 Room 4
+5B - Stage 6-4 Room 5
+5C - Stage 6-5 Room 1
+5D - Stage 6-5 Room 2
+5E - Stage 6-5 Room 3
+5F - Stage 6-5 Room 4
+60 - Stage 6-5 Hidden Switch Room
+61 - Stage 6-6 Room 1
+62 - Stage 6-6 Room 2
+63 - Stage 6-6 Room 3
+64 - Stage 6-6 Room 4
+65 - Stage 6-6 Room 5
+66 - Stage 6-6 Room 6
+67 - Stage 6-6 Room 7
+68 - Stage 6-6 Room 8
+69 - Stage 6-6 Room 9
+6A - Stage 6-6 Miniboss Room
+6B - Stage 6-6 Hidden Switch Room
+6C - World 6 Boss
+6D - Stage 7-1 Room 1
+6E - Stage 7-1 Room 2
+6F - Stage 7-1 Room 3
+70 - Stage 7-1 Hidden Switch Room
+NOTE: Every other room in 7-2 is part of a tower, so it's actually the same room, but it's treated as different rooms in the ROM
+Also, I think every room in this level is in twice, may need to double check
+71 - Stage 7-2 Room 1
+72 - Stage 7-2 Room 2
+73 - Stage 7-2 Room 3
+74 - Stage 7-2 Room 4
+75 - Stage 7-2 Room 5
+76 - Stage 7-2 Room 6
+77 - Stage 7-2 Room 7
+78 - Stage 7-2 Room 8
+79 - Stage 7-2 Room 9
+7A - Stage 7-2 Room 10
+7B - Stage 7-2 Room 11
+7C - Stage 7-2 Room 12
+7D - Stage 7-2 Room 13
+7E - Stage 7-2 Room 14
+7F - Stage 7-2 Room 15
+80 - Stage 7-2 Room 16
+81 - Stage 7-2 Room 17
+82 - Stage 7-2 Room 18
+83 - Stage 7-2 Room 19
+84 - Stage 7-2 Room 20
+85 - Stage 7-2 Room 21
+86 - Stage 7-2 Room 22
+87 - Stage 7-2 Room 23
+88 - Stage 7-2 Room 24
+89 - Stage 7-2 Room 25
+8A - Stage 7-2 Room 26
+8B - Stage 7-2 Room 27
+8C - Stage 7-2 Secret 5 1-up room
+8D - Stage 7-2 Room 28 - Top of tower
+8E - Stage 7-2 Warp Star Transit Room
+8F - Stage 7-2 Room 28
+90 - Stage 7-3 Room 1
+91 - Stage 7-3 Room 2
+92 - Stage 7-3 Room 3
+93 - Stage 7-3 Room 4
+94 - Stage 7-4 Room 1
+95 - Stage 7-4 Room 2
+96 - Stage 7-4 Room 3
+97 - Stage 7-4 Room 4
+98 - Stage 7-4 Room 5
+99 - Stage 7-4 Room 6
+9A - Stage 7-6 Room 1
+9B - Stage 7-6 Room 2
+9C - Stage 7-6 Room 3
+9D - Stage 7-6 Room 4
+9E - Stage 7-6 Room 5
+9F - Stage 7-6 Room 6
+A0 - Stage 7-6 Room 7
+A1 - Stage 7-6 Room 8
+A2 - Stage 7-6 Hidden Switch Room
+A3 - Stage 7-5 Room 1
+A4 - Stage 7-5 Room 2
+A5 - Stage 7-5 Room 3
+A6 - Stage 7-5 Room 4
+A7 - Stage 7-5 Hidden Switch Room
+A8 - ??? Possibly glitched out?
+A9 - Stage 2-1 Room 1
+AA - Stage 2-1 Room 2
+AB - Stage 2-1 Room 3
+AC - Stage 2-1 Room 4
+AD - Stage 2-2 Room 1
+AE - Stage 2-2 Room 2
+AF - Stage 2-2 Room 3
+B0 - Stage 2-2 Room 4
+B1 - Stage 2-2 Room 5
+B2 - Stage 2-3 Room 1
+B3 - Stage 2-3 Room 2
+B4 - Stage 2-3 Miniboss
+B5 - Stage 2-3 Room 3
+B6 - Stage 2-3 Room 4
+B7 - Stage 2-3 Secret Room
+B8 - Stage 2-4 Room 1
+B9 - Stage 2-4 Room 2
+BA - Stage 2-4 Room 3
+BB - Stage 2-4 Room 4
+BC - Stage 2-4 Hidden 1-up room
+BD - Stage 2-4 Room 5
+BE - Stage 2-4 Room 6
+BF - Stage 2-5 Room 1
+C0 - Stage 2-5 Room 2
+C1 - Stage 2-5 Secret Room
+C2 - Stage 2-5 Room 3
+C3 - Stage 2-5 Room 4
+C4 - Stage 2-5 Room 5
+C5 - Stage 2-5 Room 6
+C6 - Stage 3-1 Room 1
+C7 - Stage 3-1 Room 2
+C8 - Stage 3-1 Room 3
+C9 - Stage 3-1 Room 4
+CA - Stage 3-1 Hidden Switch Room
+CB - Stage 3-1 Room 5
+CC - Stage 3-2 Room 1
+CD - Stage 3-2 Room 2
+CE - Stage 3-2 Room 3
+CF - Stage 3-2 Room 4
+D0 - Stage 3-2 Room 5
+D1 - Stage 3-2 Room 6
+D2 - Stage 3-2 Room 7
+D3 - Stage 3-3 Room 1
+D4 - Stage 3-3 Room 2
+D5 - Stage 3-3 Room 3
+D6 - Stage 3-3 Room 4
+D7 - Stage 3-3 Room 5
+D8 - Stage 3-4 Room 1
+D9 - Stage 3-4 Warp Star Transit Room
+DA - Stage 3-4 Room 2
+DB - Stage 3-4 Miniboss
+DC - Stage 3-4 Room 3
+DD - Stage 3-4 Room 4
+DE - Stage 3-5 Room 1
+DF - Stage 3-5 Room 2
+E0 - Stage 3-5 Room 3
+E1 - Stage 3-5 Room 4
+E2 - Stage 3-5 Room 5
+E3 - Stage 3-6 Room 1
+E4 - Stage 3-6 Room 2
+E5 - Stage 3-6 Room 3
+E6 - Stage 3-6 Room 4
+E7 - Stage 3-6 Room 5
+E8 - Stage 3-6 Room 6
+E9 - Stage 3-6 Hidden Switch Room
+EA - Stage 3-6 Room 7
+EB - Stage 3-6 Room 8
+EC - Stage 4-1 Room 1
+ED - Stage 4-1 Room 2
+EE - Stage 4-1 Room 3
+EF - Stage 4-1 Room 4
+F0 - Stage 4-1 Room 5
+F1 - Stage 4-1 Hidden Switch Room
+F2 - Stage 4-2 Room 1
+F3 - Stage 4-2 Room 2
+F4 - Stage 4-2 Room 3
+F5 - Stage 4-2 Room 4
+F6 - Stage 4-2 Room 5
+F7 - Stage 4-2 Room 6
+F8 - Stage 4-3 Room 1
+F9 - Stage 4-3 Room 2
+FA - Stage 4-3 Room 3
+FB - Stage 4-3 Room 4
+FC - Stage 4-3 Room 5
+FD - Stage 4-3 Room 6
+FE - Stage 4-3 Hidden Switch Room
+FF - Stage 4-4 Room 1
+There are about 17 more rooms remaining in World 4, but I have no idea what values they are...
 
 To randomize: Gather relevant 3rd, 4th, and 5th bytes in the group, and randomize them
 Probably only do for stage entrance

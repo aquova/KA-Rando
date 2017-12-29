@@ -30,14 +30,14 @@ In addition to the files included in the repository, you will also need a US cop
 
 Run `KA-Randomize-PC.exe`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
-If you have Qt5 and PyQt installed, you can also build the binary by running `pyinstaller.exe --onefile --windowed --icon=icon.ico KA-Randomize.py`
+If you have Qt5, PyQt, and PyInstaller installed, you can also build the binary by running `pyinstaller.exe --onefile --windowed --icon=icon.ico KA-Randomize.py`
 
 
 #### --- macOS ---
 
 Run `KA-Randomize-Mac.app`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
-If you have Qt5 and PyQt installed, you can also build the binary by running `pyinstaller --onefile --windowed --icon=icon.icns KA-Randomize.py`
+If you have Qt5, PyQt, and PyInstaller installed, you can also build the binary by running `pyinstaller --onefile --windowed --icon=icon.icns KA-Randomize.py`
 
 #### --- Linux/Python ---
 
