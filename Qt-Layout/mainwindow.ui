@@ -53,16 +53,29 @@
      </layout>
     </item>
     <item>
-     <widget class="QCheckBox" name="starRodCheck">
-      <property name="text">
-       <string>Use Star Rod</string>
+     <spacer name="verticalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
-     </widget>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
     <item>
      <widget class="QCheckBox" name="doorCheck">
       <property name="text">
        <string>Randomize Doors</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="enemyCheck">
+      <property name="text">
+       <string>Randomize Enemies</string>
       </property>
      </widget>
     </item>
@@ -75,14 +88,14 @@
        <string/>
       </property>
       <property name="text">
-       <string>Randomize enemies without abilities</string>
+       <string>Randomize Enemies without Abilities</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QCheckBox" name="noRandoCheck">
+     <widget class="QCheckBox" name="starRodCheck">
       <property name="text">
-       <string>Don't Randomize, only change Kirby's color</string>
+       <string>Use Star Rod</string>
       </property>
      </widget>
     </item>

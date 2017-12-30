@@ -650,26 +650,102 @@ NOTE: I assume these are the Warp Stars in the hubs for each world
 25511 - Stage 1-4 Room 3 -> Room 4
 25516 - Stage 1-4 End of Level
 2551B - Stage 6-1 Room 1 -> Room 2
-25520 -
-25525
-2552A
-2552F
-25534
-25539
-2553E
-25543
-25548
-2554D
-25552
-25557
-2555C
-25561
-25566
-2556B
-25570
-25575
-2557A
-2557F
+25520 - Stage 6-1 Room 2 -> Room 3
+25525 - Some door to Stage 6-1 room 1
+2552A - Door to Stage 6-1 Room 5
+2552F - Door to Stage 6-1 Room 5
+25534 - Stage 6-1 End of Level
+25539 - Door to Stage 6-1 Room 3
+2553E - Door to Stage 6-1 Hidden Switch Room
+25543 - Door to Stage 6-1 Room 3
+25548 - Door to Stage 6-2 Hidden 1-Up room
+2554D - Stage 6-2 Room 1 -> Room 2
+25552 - Stage 6-2 Room 2 -> Room 1
+25557 - Stage 6-2 Room 2 -> Room 5?
+2555C - Stage 6-2 Room 5 -> Room 3?
+25561 - Door to Stage 6-2 Room 2
+25566 - Door to Stage 6-2 Room 4
+2556B - Stage 6-2 End of level
+25570 - Door to Stage 6-2 Room 2
+25575 - Door to 6-2 Hidden Switch room
+2557A - Door to 6-2 Room 5
+2557F - Door to 6-2 Room 5
+25584 - Stage 6-3 Room 1 -> Room 2
+25589 - Door to Stage 6-3 Hidden Room 1
+2558E - Stage 6-3 Room 2 -> Room 3
+25593 - Stage 6-3 Room 3? -> Room 1
+25598 - Door to Stage 6-3 Room 2
+2559D - Door to 6-3 Hidden Room 2
+255A2 - Door to 6-3 Hidden Room 3
+255A7 - Door to 6-3 Hidden Room 2
+255AC - Door to 6-3 Hidden Room 3
+255B1 - Door to Stage 6-3 Room 5
+255B6 - Stage 6-3 Room 5 -> Room 6
+255BB - Door to Stage 6-3 Room 6
+255C0 - Door to Stage 6-3 Room 2
+255C5 - Door to Stage 6-3 Room 7
+255CA - Door to Stage 6-3 Room 3
+255CF - Door to Stage 6-3 Room 3
+255D4 - Door to Stage 6-3 Room 3
+255D9 - Door to Stage 6-3 Room 3
+255DE - Door to Stage 6-3 Room 4
+255E3 - Stage 6-3 End of level
+255E8 - Stage 6-3 Warp Star room
+255ED - Stage 6-3 Hidden Switch Room
+255F2 - Stage 6-3 Hidden Switch room -> Room 3
+255F7 - Door to Stage 6-3 hidden room 1
+255FC - Door to Stage 6-3 hidden room 1
+25601 - Door to Stage 6-3 Room 3
+25606 - Stage 6-4 Room 1 -> Room 2
+2560B - Stage 6-4 Room 2 -> Room 1
+25610 - Stage 6-4 Room 2 -> Hidden switch room
+25615 - Stage 6-4 Room 2 -> Room 3
+2561A - Stage 6-4 Room 3 -> Room 4
+2561F - Door to Stage 6-4 Room 2
+25624 - Door to Stage 6-4 Room 3
+25629 - Door to Stage 6-4 Room 5
+2562E - Stage 6-4 End of level
+25633 - Stage 6-5 Room 1 -> Room 2
+25638 - Stage 6-5 Room 2 -> Room 3
+2563D - Stage 6-5 Room 3 -> Room 2
+25642 - Stage 6-5 Room 3 -> Room 4
+25647 - Door to Stage 6-5 Hidden Switch room
+2564C - Door to Stage 6-5 Room 3
+25651 - Stage 6-5 End of level
+25656 - Door to Stage 6-5 Room 4
+2565B - Door to Stage 6-6 Hidden Switch room
+25660 - Stage 6-6 Room 1 -> Room 2
+25665 - Stage 6-6 Room 2 -> Room 1
+2566A - Stage 6-6 Room 2 -> Room 3
+2566F - Stage 6-6 Room 3 -> Room 4
+25674 - Stage 6-6 Room 4 -> Room 7
+25679 - Stage 6-6 Room 7 -> Room 5
+2567E - Stage 6-6 Room 5 -> Room 6
+25683 - Stage 6-6 Room 6 -> Room 9
+25688 - Stage 6-6 Room 9 -> Room 8
+2568D - Stage 6-6 Room 8 -> Room 9
+25692 - Stage 6-6 Room 8? -> Miniboss room
+25697 - Stage 6-6 End of level
+2569C - Door to Stage 6-6 Room 1
+256A1 - Unknown Door to World 6 Map (Possibly the World 6 boss?)
+256A6 - Stage 7-1 Room 1 -> Room 2
+256AB - Door to Stage 7-1 Hidden Switch Room
+256B0 - Stage 7-1 Room 2 -> Room 3
+256B5 - Stage 7-1 End of level
+256BA
+256BF
+256C4
+256C9
+256CE
+256D3
+256D8
+256DD
+256E2
+256E7
+256EC
+256F1
+256F6
+256FB
 
 -------------------------------------------------------------------------------
 Test: Swapping Stage 1-1 and 1-2:
@@ -684,6 +760,17 @@ Stage 1-2 Entrance:
 
 Stage 1-2 Exit:
 254DF - 00 C7 00 12 F8
+
+
+---
+
+What I need:
+Entry 1-1 -> Room 1 6-1
+Exit 6-1 -> Bonus 1-1
+
+What I'm doing:
+Entry 1-1 -> Room 1 6-1
+Exit 1-1 -> Bonus 6-1
 
 
 -------------------------------------------------------------------------------

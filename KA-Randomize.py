@@ -37,17 +37,31 @@ color_locations = ["32FEC","43AC9","43AF7","43CE1","47E4A","6D5EB","6D5EF","711E
 
 # Locations of the entrance and exit of the same levels
 # MUST have the same number of elements as door_values
-door_locations = [["2524B", "254B7"],
-                  ["2525A", "254DF"],
-                  ["2525F", "25502"],
-                  ["25264", "25516"]]
+door_locations = [["2524B", "254B7"], # Stage 1-1
+                  ["2525A", "254DF"], # Stage 1-2
+                  ["2525F", "25502"], # Stage 1-3
+                  ["25264", "25516"], # Stage 1-4
+                  ["25381", "25534"], # Stage 6-1
+                  ["25386", "2556B"], # Stage 6-2
+                  ["25390", "255E3"], # Stage 6-3
+                  ["2539F", "2562E"], # Stage 6-4
+                  ["253A4", "25651"], # Stage 6-5
+                  ["253B3", "25697"], # Stage 6-6
+                  ["253C7", "256B5"]] # Stage 7-1
 
 # First array is the entrance of the level door, the second is the end of level door
 # The three bytes are the 3rd, 4th, and 5th bytes of the 5-byte door data
 door_values = [[["2B", "00", "24"], ["00", "12", "66"]],
                [["2F", "00", "24"], ["00", "12", "F8"]],
                [["35", "00", "34"], ["00", "13", "42"]],
-               [["39", "01", "21"], ["00", "13", "85"]]]
+               [["39", "01", "21"], ["00", "13", "85"]],
+               [["3D", "03", "56"], ["05", "13", "88"]],
+               [["43", "00", "23"], ["05", "13", "C2"]],
+               [["4A", "00", "23"], ["05", "14", "35"]],
+               [["56", "00", "2A"], ["05", "14", "A3"]],
+               [["5C", "00", "23"], ["05", "15", "41"]],
+               [["61", "00", "39"], ["05", "12", "AB"]],
+               [["6D", "00", "36"], ["06", "12", "52"]]]
 
 
 class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -57,6 +71,18 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.findROMButton.clicked.connect(self.open_file)
         self.randomizeButton.clicked.connect(self.runRandomizer)
         self.title.setText(self.title.text() + VERSION)
+
+        # Fades out noAbilityCheck if enemyCheck is not clicked
+        self.noAbilityCheck.setEnabled(False)
+        self.enemyCheck.toggled.connect(self.noAbilityCheck.setEnabled)
+        self.enemyCheck.toggled.connect(
+            lambda checked: not checked and self.noAbilityCheck.setChecked(False))
+
+        # Same for starRodCheck
+        self.starRodCheck.setEnabled(False)
+        self.enemyCheck.toggled.connect(self.starRodCheck.setEnabled)
+        self.enemyCheck.toggled.connect(
+            lambda checked: not checked and self.starRodCheck.setChecked(False))
 
     def open_file(self):
         self.romDisplay.clear()
@@ -96,7 +122,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 KA_seed = random.randint(0, 999999999)
             random.seed(KA_seed)
 
-            if self.noRandoCheck.isChecked() == False:
+            if self.enemyCheck.isChecked() == False:
                 if self.starRodCheck.isChecked():
                     ability_values.append("18")
 
@@ -111,23 +137,23 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
 
-                if self.doorCheck.isChecked():
-                    num_doors = len(door_locations)
-                    num_array = list(range(0, num_doors))
-                    shuffled_nums = num_array
-                    random.shuffle(shuffled_nums)
-                    for i in num_array:
-                        entry_address = int(door_locations[i][0], 16)
-                        exit_address = int(door_locations[i][1], 16)
-                        j = shuffled_nums[i]
+            if self.doorCheck.isChecked():
+                num_doors = len(door_locations)
+                num_array = list(range(0, num_doors))
+                shuffled_nums = num_array
+                random.shuffle(shuffled_nums)
+                for i in num_array:
+                    j = shuffled_nums[i]
+                    entry_address = int(door_locations[i][0], 16)
+                    exit_address = int(door_locations[j][1], 16)
 
-                        rom_list[entry_address + 2] = int(door_values[j][0][0], 16)
-                        rom_list[entry_address + 3] = int(door_values[j][0][1], 16)
-                        rom_list[entry_address + 4] = int(door_values[j][0][2], 16)
+                    rom_list[entry_address + 2] = int(door_values[j][0][0], 16)
+                    rom_list[entry_address + 3] = int(door_values[j][0][1], 16)
+                    rom_list[entry_address + 4] = int(door_values[j][0][2], 16)
 
-                        rom_list[exit_address + 2] = int(door_values[j][1][0], 16)
-                        rom_list[exit_address + 3] = int(door_values[j][1][1], 16)
-                        rom_list[exit_address + 4] = int(door_values[j][1][2], 16)
+                    rom_list[exit_address + 2] = int(door_values[i][1][0], 16)
+                    rom_list[exit_address + 3] = int(door_values[i][1][1], 16)
+                    rom_list[exit_address + 4] = int(door_values[i][1][2], 16)
 
             if self.defaultColor.isChecked() == False:
                 new_color = self.selectedColor()
@@ -156,8 +182,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         except FileNotFoundError:
             QtWidgets.QMessageBox.about(self, "Error", "Error: File not found")
         except Exception as e:
-            # QtWidgets.QMessageBox.about(self, "Error", "Some mysterious error has occurred. Please contact the developers with information about what happened.")
-            QtWidgets.QMessageBox.about(self, "Error", "{}".format(e))
+            QtWidgets.QMessageBox.about(self, "Error", "Some mysterious error has occurred. Please contact the developers with information about what happened. {}".format(e))
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
