@@ -228,12 +228,6 @@ Fifth byte: Coordinates in destination screen
 
 ---
 
-First byte values:
-0x12 - Stage entrance
-0x00 - Mid-level door?
-
----
-
 Third byte values:
 
 00 - World 1 map
@@ -497,7 +491,66 @@ FC - Stage 4-3 Room 5
 FD - Stage 4-3 Room 6
 FE - Stage 4-3 Hidden Switch Room
 FF - Stage 4-4 Room 1
-There are about 17 more rooms remaining in World 4, but I have no idea what values they are...
+NOTE: Here the numbering starts over at 00, but the first 'digit' (nibble) of the 4th byte is an 8.
+For example, for the next entry (Stage 4-4 Room 2) the 3rd byte is 00 and the 4th byte is 80, separating it from the World 1 Map entry, which is 00 00
+00 - Stage 4-4 Room 2
+01 - Stage 4-4 Room 3
+02 - Stage 4-4 Room 4
+03 - Stage 4-4 Room 5
+04 - Stage 4-5 Room 1
+05 - Stage 4-5 Room 2
+06 - Stage 4-5 1-Up Room
+07 - Stage 4-5 Room 3
+08 - Stage 4-5 Miniboss
+09 - Stage 4-5 Room 4
+0A - Stage 4-5 Room 5
+0B - Stage 4-6 Room 1
+0C - Stage 4-6 Room 2
+0D - Stage 4-6 Room 3
+0E - Stage 4-6 Switch Room
+0F - Stage 4-6 Room 4
+10 - Stage 4-6 Room 5
+11 - Stage 5-1 Room 1
+12 - Stage 5-1 1-Up Room
+13 - Stage 5-1 Room 2
+14 - Stage 5-1 Switch Room
+15 - Stage 5-1 Room 3
+16 - Stage 5-2 Room 1
+17 - Stage 5-2 Room 2
+18 - Stage 5-2 Room 3
+19 - Stage 5-2 Room 4
+1A - Stage 5-2 Room 5
+1B - Stage 5-2 Room 6
+1C - Stage 5-2 Room 7
+1D - Stage 5-3 Room 1
+1E - Stage 5-3 Room 2
+1F - Stage 5-3 Room 3
+20 - Stage 5-3 Room 4
+21 - Stage 5-3 Room 5
+22 - Stage 5-3 Room 6
+23 - Stage 5-4 Room 1
+24 - Stage 5-4 Miniboss
+25 - Stage 5-4 Room 2
+26 - Stage 5-4 Room 3
+27 - Stage 5-4 Room 4
+28 - Stage 5-4 Switch Room
+29 - Stage 5-4 Room 5
+2A - Stage 5-5 Room 1
+2B - Stage 5-5 Room 2
+2C - Stage 5-5 Switch Room
+2D - Stage 5-5 Room 3
+2E - Stage 5-5 Room 4
+2F - Stage 5-5 Room 5
+30 - Stage 5-5 Room 6
+31 - Stage 5-6 Room 1
+32 - Stage 5-6 Room 2
+33 - Stage 5-6 Room 3
+34 - Stage 5-6 Room 4
+35 - Stage 5-6 Switch Room
+36 - Glitched out Museum, leaving crashes the game
+37 - Arena
+38 - The Demo Area
+This seems to be the end of the valid values
 
 ---
 
@@ -551,22 +604,22 @@ There are about 17 more rooms remaining in World 4, but I have no idea what valu
 2530E - Stage 4-3 entrance
 25313 - Stage 4-4 entrance
 25318 - World 4 Arena
-2531D - Some door to world 5 map
-25322 - World 4 boss? (Might be 4-5 entrance)
+2531D - Stage 4-5 Entrance
+25322 - Stage 4-6 Entrance
 25327 - Some door to world 5 map
 2532C - Entrance to world 4 warp star
 25331 - Some door to world 4 map
 25336 - Some door to world 5 map
-2533B - 0x11, I don't know what this is
-25340 - 0x16, I don't know what this is
-25345 - Door to world 6 museum?
+2533B - Stage 5-1 Entrance
+25340 - Stage 5-2 Entrance
+25345 - Stage 5-3 Entrance
 2534A - Some door to world 5 map
-2534F - World 6 warp star area
+2534F - Stage 5-4 Entrance
 25354 - World 5 museum
 25359 - Door to Arena
-2535E - Final door of unknown level
+2535E - Stage 5-5 Entrance
 25363 - Some door to world 5 map
-25368 - Stage 1-2 Room 2
+25368 - Stage 5-6 Entrance
 2536D - Some door to world 6 map
 25372 - World 5 warp star area
 25377 - Some door to world 5 map
@@ -896,37 +949,118 @@ NOTE: I have no idea what this stuff is
 259F8 - Door to Stage 4-1 Switch Room
 259FD - Stage 4-1 Room 4 -> Room 5
 25A02 - Stage 4-1 End of level
-25A07
-25A0C
-25A11
-25A16
-25A1B
-
--------------------------------------------------------------------------------
-Test: Swapping Stage 1-1 and 1-2:
-Stage 1-1 Entrance:
-2524B - 12 66 2B 00 24
-
-Stage 1-1 Exit:
-254B7 - 03 C4 00 12 66
-
-Stage 1-2 Entrance:
-2525A - 22 F8 2F 00 24
-
-Stage 1-2 Exit:
-254DF - 00 C7 00 12 F8
-
-
----
-
-What I need:
-Entry 1-1 -> Room 1 6-1
-Exit 6-1 -> Bonus 1-1
-
-What I'm doing:
-Entry 1-1 -> Room 1 6-1
-Exit 1-1 -> Bonus 6-1
-
+25A07 - Door to Stage 4-1 Room 4
+25A0C - Stage 4-2 Room 1 -> Room 2
+25A11 - Stage 4-2 Room 2 -> Room 3
+25A16 - Stage 4-2 Room 3 -> Room 5
+25A1B - Stage 4-2 Room 5 -> Room 4
+25A20 - Door to Stage 4-2 Room 3
+25A25 - Door to Stage 4-2 Room 6
+25A2A - Stage 4-2 End of level
+25A2F - Stage 4-3 Room 1 -> Room 2
+25A34 - Stage 4-3 Room 2 -> Room 3
+25A39 - Door to Stage 4-3 Room 1
+25A3E - Stage 4-3 Room 3 -> Room 4
+25A43 - Stage 4-3 Room 4 -> Room 5
+25A48 - Door to Stage 4-3 Hidden Switch Room
+25A4D - Door to Stage 4-3 Room 3
+25A52 - Door to Stage 4-3 Room 6
+25A57 - Stage 4-3 End of level
+25A5C - Door to Stage 4-3 Room 3
+25A61 - Stage 4-4 Room 1 -> Room 2
+25A66 - Stage 4-4 Room 2 -> Room 3
+25A6B - Stage 4-4 Room 3 -> Room 4
+25A70 - Door to Stage 4-4 Room 4
+25A75 - Stage 4-4 Room 4 -> Room 5
+25A7A - Stage 4-4 End of level
+25A7F - Stage 4-5 Room 1 -> Room 2
+25A84 - Stage 4-5 Room 2 -> Room 3
+25A89 - Door to Stage 4-5 Room 1
+25A8E - Door to Stage 4-5 1-Up Room
+25A93 - Door to Stage 4-5 Room 2
+25A98 - Door to Stage 4-5 Miniboss
+25A9D - Door to Stage 4-5 Miniboss
+25AA2 - Stage 4-5 Miniboss -> Room 4
+25AA7 - Stage 4-5 Room 4 -> Room 5
+25AAC - Stage 4-5 End of level
+25AB1 - Door to Stage 4-6 Room 4
+25AB6 - Door to Stage 4-6 Room 2
+25ABB - Stage 4-6 Room 2 -> Room 3
+25AC0 - Door to Stage 4-6 Switch Room
+25AC5 - Door to Stage 4-6 Room 1
+25ACA - Door to Stage 4-6 Room 3
+25ACF - Door to Stage 4-6 Room 5
+25AD4 - Stage 4-6 End of level
+25AD9 - Door to Stage 5-1 1-Up room
+25ADE - Stage 5-1 Room 1 -> Room 2
+25AE3 - Door to Stage 5-1 Room 2
+25AE8 - Stage 5-1 Room 2 -> Room 3
+25AED - Door to Stage 5-1 Switch Room
+25AF2 - Door to Stage 5-1 Room 3
+25AF7 - Stage 5-1 End of level
+25AFC - Stage 5-2 Room 1 -> Room 2
+25B01 - Door to Stage 5-2 Room 5
+25B06 - Stage 5-2 Room 5 -> Room 4
+25B0B - Stage 5-2 Room 4 -> Room 3
+25B10 - Stage 5-2 Room 3 -> Room 7
+25B15 - Stage 5-2 Room 7 -> Room 2
+25B1A - Stage 5-2 Room 2 -> Room 4
+25B1F - Door to Stage 5-2 Room 5
+25B24 - Door to Stage 5-2 Room 2
+25B29 - Stage 5-2 Room 2 -> Room 3
+25B2E - Stage 5-2 End of level
+25B33 - Door to Stage 5-2 Room 6
+25B38 - Door to Stage 5-2 Room 2
+25B3D - Door to Stage 5-2 Room 7
+25B42 - Door to Stage 5-2 Room 3
+25B47 - Door to Stage 5-2 Room 5
+25B4C - Door to Stage 5-2 Room 2
+25B51 - Stage 5-3 Room 1 -> Room 2
+25B56 - Stage 5-3 Room 2 -> Room 3
+25B5B - Stage 5-3 Room 3 -> Room 4
+25B60 - Stage 5-3 Room 4 -> Room 3
+25B65 - Stage 5-3 Room 4 -> Room 5
+25B6A - Stage 5-3 Room 5 -> Room 6
+25B6F - Door to Stage 5-3 Room 4
+25B74 - Stage 5-3 End of level
+25B79 - Door to Stage 5-4 Miniboss
+25B7E - Stage 5-4 Room 1 -> Room 2
+25B83 - Door to Stage 5-4 Room 4
+25B88 - Stage 5-4 Room 4 -> Room 3
+25B8D - Stage 5-4 Room 4 -> Room 5
+25B92 - Door to Stage 5-4 Room 5
+25B97 - Door to Stage 5-4 Switch room
+25B9C - Door to Stage 5-4 Room 4
+25BA1 - Stage 5-4 End of level
+25BA6 - Stage 5-5 Room 1 -> Room 2
+25BAB - Stage 5-5 Room 1 -> Room 6
+25BB0 - Door to Stage 5-5 Switch room
+25BB5 - Door to Stage 5-5 Room 1
+25BBA - Door to Stage 5-5 Room 1
+25BBF - Door to Stage 5-5 Room 5
+25BC4 - Stage 5-5 End of level
+25BC9 - Door to Stage 5-5 Room 3
+25BCE - Door to Stage 5-5 Room 3
+25BD3 - Stage 5-5 Room 3 -> Room 4
+25BD8 - Stage 5-5 Room 4 -> Room 5
+25BDD - Stage 5-6 Room 1 -> Room 2
+25BE2 - Stage 5-6 Room 2 -> Room 3
+25BE7 - Stage 5-6 Room 3 -> Room 2
+25BEC - Stage 5-6 Room 3 -> Room 4
+25BF1 - Stage 5-6 End of level
+25BF6 - Door to Stage 5-6 Room 3
+25BFB - Door to Stage 5-6 Switch Room
+25C00 - Door to Stage 5-6 Switch Room
+25C05 - Stage 5-6 Room 3 -> Room 4
+25C0A
+25C0F
+25C14
+25C19
+25C1E
+25C23
+25C28
+25C2D
+25C32
 
 -------------------------------------------------------------------------------
 Gitching Results
