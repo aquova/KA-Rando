@@ -6,9 +6,9 @@ An ability randomizer for Kirby's Adventure for NES.
 
 https://github.com/Aquova/KA-Rando
 
-Written by Austin Bricker (Aquova), 2017
+Written by Austin Bricker, 2017
 
-https://twitter.com/Aquova_
+https://twitter.com/Aquova__
 
 
 ## -- Overview --
@@ -30,14 +30,9 @@ In addition to the files included in the repository, you will also need a US cop
 
 Run `KA-Randomize-PC.exe`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
 
-If you have Qt5, PyQt, and PyInstaller installed, you can also build the binary by running `pyinstaller.exe --onefile --windowed --icon=icon.ico KA-Randomize.py`
-
-
 #### --- macOS ---
 
 Run `KA-Randomize-Mac.app`. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
-
-If you have Qt5, PyQt, and PyInstaller installed, you can also build the binary by running `pyinstaller --onefile --windowed --icon=icon.icns KA-Randomize.py`
 
 #### --- Linux/Python ---
 
@@ -79,7 +74,5 @@ v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomize
 Dying with Star Rod disables select button until level completion
 
 Museum enemies are not randomized
-
-Add future support for room order
 
 Possible support for complete color randomization, depending on demand.

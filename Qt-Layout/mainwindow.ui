@@ -68,7 +68,7 @@
     <item>
      <widget class="QCheckBox" name="doorCheck">
       <property name="text">
-       <string>Randomize Doors</string>
+       <string>Randomize Levels</string>
       </property>
      </widget>
     </item>

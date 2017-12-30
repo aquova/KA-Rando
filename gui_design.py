@@ -137,7 +137,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Kirby\'s Adventure Randomizer"))
         self.title.setText(_translate("MainWindow", "Kirby\'s Adventure Randomizer - Version: "))
         self.seedLabel.setText(_translate("MainWindow", "Seed:"))
-        self.doorCheck.setText(_translate("MainWindow", "Randomize Doors"))
+        self.doorCheck.setText(_translate("MainWindow", "Randomize Levels"))
         self.enemyCheck.setText(_translate("MainWindow", "Randomize Enemies"))
         self.noAbilityCheck.setText(_translate("MainWindow", "Randomize Enemies without Abilities"))
         self.starRodCheck.setText(_translate("MainWindow", "Use Star Rod"))
