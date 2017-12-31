@@ -3,7 +3,7 @@
 # http://github.com/Aquova/KA-Rando
 
 from PyQt5 import QtWidgets
-import os, random, sys
+import os, random, sys, hashlib
 from gui_design import Ui_MainWindow
 
 VERSION = '3.00'
@@ -54,7 +54,7 @@ door_locations = [["2524B", "254B7"], # 1-1
                   ["253E0", "257E6"], # 7-5
                   ["253EA", "257C3"], # 7-6
                   ["2527D", "25827"], # 2-1
-                  ["25282", "25840"], # 2-2
+                  # ["25282", "25840"], # 2-2 - Contains Warp Star
                   ["2528C", "25863"], # 2-3
                   ["25287", "25890"], # 2-4
                   ["252A0", "258C2"], # 2-5
@@ -96,7 +96,7 @@ door_values = [[["2B", "00", "24"], ["00", "12", "66"]], # 1-1
                [["A3", "00", "55"], ["06", "13", "A1"]], # 7-5
                [["9A", "00", "24"], ["06", "11", "DA"]], # 7-6
                [["A9", "00", "34"], ["01", "13", "74"]], # 2-1
-               [["AD", "00", "37"], ["01", "11", "0B"]], # 2-2
+               # [["AD", "00", "37"], ["01", "11", "0B"]], # 2-2
                [["B2", "00", "22"], ["01", "14", "17"]], # 2-3
                [["B8", "00", "26"], ["01", "11", "16"]], # 2-4
                [["BF", "00", "25"], ["01", "14", "F3"]], # 2-5
@@ -118,6 +118,10 @@ door_values = [[["2B", "00", "24"], ["00", "12", "66"]], # 1-1
                [["23", "80", "57"], ["04", "14", "30"]], # 5-4
                [["2A", "85", "13"], ["04", "15", "14"]], # 5-5
                [["31", "80", "49"], ["04", "15", "85"]]] # 5-6
+
+# Creating a custom exception, how fancy
+class HashError(Exception):
+    pass
 
 class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -172,6 +176,9 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def runRandomizer(self):
         try:
             rom = open(self.rom_file, 'rb').read()
+            test_hash = hashlib.md5(rom).hexdigest()
+            if (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7" and test_hash != "69018a5181f255bc3a66badfb19fdb76"):
+                raise HashError("Invalid checksum")
             rom_list = list(rom)
 
             KA_seed = self.seedValue.text()
@@ -189,7 +196,7 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
                 # Gives enemies new abilities based on random selection from file
                 for item in ability_locations:
                     address = int(item, 16)
-                    rand_ind = random.randint(0,len(ability_values) - 1)
+                    rand_ind = random.randint(0, len(ability_values) - 1)
                     new_enemy = ability_values[rand_ind]
                     new_enemy = int(new_enemy,16)
                     rom_list[address] = new_enemy
@@ -245,6 +252,8 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             QtWidgets.QMessageBox.about(self, "Error", "Error: Specify a ROM location")
         except FileNotFoundError:
             QtWidgets.QMessageBox.about(self, "Error", "Error: File not found")
+        except HashError:
+            QtWidgets.QMessageBox.about(self, "Error", "The given file is invalid. Please use a US NES Kirby's Adventure ROM.")
         except Exception as e:
             QtWidgets.QMessageBox.about(self, "Error", "Some mysterious error has occurred. Please contact the developers with information about what happened. {}".format(e))
 
