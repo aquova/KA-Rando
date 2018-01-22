@@ -1,12 +1,12 @@
 # Program that randomizes the abilities of swallowed enemies in Kirby's Adventure
-# Written by Aquova, 2017
+# Written by Aquova, 2017-2018
 # http://github.com/Aquova/KA-Rando
 
 from PyQt5 import QtWidgets
 import os, random, sys, hashlib
 from gui_design import Ui_MainWindow
 
-VERSION = '3.00'
+VERSION = '3.0.1'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -143,12 +143,15 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.enemyCheck.toggled.connect(
             lambda checked: not checked and self.starRodCheck.setChecked(False))
 
+    # Opens ROM selector window, clears the previous path text
     def open_file(self):
         self.romDisplay.clear()
         self.rom_file = QtWidgets.QFileDialog.getOpenFileName(self, "Open file", os.path.dirname(__file__), "NES ROMs (*.nes)")[0]
         if self.rom_file:
             self.romDisplay.setText(self.rom_file)
 
+    # Returns the index of the selected color in the color array
+    # I put the colors in the array randomly, which is why the colors are all over here
     def selectedColor(self):
         if self.grayColor.isChecked():
             return 0
@@ -177,10 +180,13 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             rom = open(self.rom_file, 'rb').read()
             test_hash = hashlib.md5(rom).hexdigest()
+            # Checks for the Rev0 or Rev1 KA hashes
             if (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7" and test_hash != "69018a5181f255bc3a66badfb19fdb76"):
                 raise HashError("Invalid checksum")
             rom_list = list(rom)
 
+            # Uses given input as seed, else randomly picks a new seed to use
+            # AFAIK you can't get what the default seed is, so it needs to be changed to one we know
             KA_seed = self.seedValue.text()
             if KA_seed == "":
                 KA_seed = random.randint(0, 999999999)

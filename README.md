@@ -52,15 +52,14 @@ If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcom
 
 ## -- Known Issues --
 
-Dying with Star Rod disables select button until level completion
-
-Three levels with in-level Warp Stars are not randomized, due to game-breaking bugs occurring.
-
-Changing Kirby's color causes palette issues with the revised version of the ROM (PRG1)
-
-Museum enemies are not randomized
+- Dying with Star Rod disables select button until level completion
+- Four levels with in-level Warp Stars are not randomized, due to game-breaking bugs occurring.
+- Changing Kirby's color causes palette issues with the revised version of the ROM (PRG1)
+- Museum enemies are not randomized
 
 ## -- Version History --
+
+v3.0.1 - 1/22/18 - Removed stage 7-2 from randomization list due to Warp Star bugs
 
 v3.00 - 12/31/17 - Added support for randomizing the level order, full randomization of Kirby's color, and checksum verification
 

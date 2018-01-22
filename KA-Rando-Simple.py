@@ -1,11 +1,11 @@
 # Program that randomizes the abilities of swallowed enemies in Kirby's Adventure
-# Written by Aquova, 2017
+# Written by Aquova, 2017-2018
 # Usage: python3 KA_Randomize.py
 # http://github.com/Aquova/KA-Rando
 
 import os, random, hashlib
 
-VERSION = "3.00 CLI"
+VERSION = "3.0.1 CLI"
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -46,7 +46,7 @@ door_locations = [["2524B", "254B7"], # 1-1
                   ["253A4", "25651"], # 6-5
                   ["253B3", "25697"], # 6-6
                   ["253C7", "256B5"], # 7-1
-                  ["253CC", "2575F"], # 7-2 - Contains Warp Star, seems fine.
+                  # ["253CC", "2575F"], # 7-2
                   ["253D6", "25773"], # 7-3
                   ["253DB", "25791"], # 7-4
                   ["253E0", "257E6"], # 7-5
@@ -88,7 +88,7 @@ door_values = [[["2B", "00", "24"], ["00", "12", "66"]], # 1-1
                [["5C", "00", "23"], ["05", "15", "41"]], # 6-5
                [["61", "00", "39"], ["05", "12", "AB"]], # 6-6
                [["6D", "00", "36"], ["06", "12", "52"]], # 7-1
-               [["71", "00", "29"], ["06", "12", "A4"]], # 7-2
+               # [["71", "00", "29"], ["06", "12", "A4"]], # 7-2
                [["90", "00", "34"], ["06", "13", "06"]], # 7-3
                [["94", "00", "34"], ["06", "13", "53"]], # 7-4
                [["A3", "00", "55"], ["06", "13", "A1"]], # 7-5
