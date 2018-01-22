@@ -8,9 +8,6 @@ https://github.com/Aquova/KA-Rando
 
 Written by Austin Bricker, 2017-2018
 
-https://twitter.com/Aquova__
-
-
 ## -- Overview --
 
 Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. For best results, the first released version of the ROM is recommended (PRG0).
@@ -49,7 +46,7 @@ This will open the same application as the PC and Mac binaries.
 
 Make sure that your .nes file is located in the same folder as the program, then simply follow the instructions. Note that the command line version is missing some of the features of the GUI version, such as the ability to choose a specific color for Kirby.
 
-#### --- .Lua Compatible Emulator ---
+#### --- .lua Compatible Emulator ---
 
 If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcome to instead use the `Randomize-Script.lua` script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. However, this script does not change Kirby's color or the level order, but it can be used with a ROM that has been randomized.
 
