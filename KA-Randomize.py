@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 import os, random, sys, hashlib
 from gui_design import Ui_MainWindow
 
-VERSION = '3.0.1'
+VERSION = '3.0.2'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",

@@ -5,7 +5,7 @@
 
 import os, random, hashlib
 
-VERSION = "3.0.1 CLI"
+VERSION = "3.0.2 CLI"
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
