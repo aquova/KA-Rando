@@ -1,5 +1,12 @@
 # Release Notes
 
+## 3.0.3
+
+Two small changes to this release
+
+- With the release of my Kirby: Nightmare in Dream Land randomizer, I've decided to use the old icon for that, and a new one from Kirby's Adventure for this one.
+- I've decided to limit the randomizer to work only with the original release (PRG0) ROM, and not the first revision (PRG1). This second ROM always had issues with the color palettes, and it's not worth the effort to try and debug two different versions of the game. If you still wish to use this ROM, the older releases still support it, but with their existing bugs.
+
 ## 3.0.2
 
 Due to further issues with levels containing Warp Stars, I've removed the final two levels from the randomized list until I can figure out a way to stop the problem
