@@ -4,7 +4,7 @@
 
 from PyQt5 import QtWidgets
 import os, random, sys, hashlib
-from gui_design import Ui_MainWindow
+from mainwindow import Ui_MainWindow
 
 VERSION = '3.0.3'
 

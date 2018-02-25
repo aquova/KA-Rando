@@ -10,7 +10,7 @@ Written by Austin Bricker, 2017-2018
 
 ## -- Overview --
 
-Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. For best results, the first released version of the ROM is recommended (PRG0).
+Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. As of Version 3.0.3, only the original release of the game (PRG0) is supported.
 
 First is a .lua script intended to be used with FCEUX or similar lua-compatible emulator. The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed.
 
@@ -54,25 +54,26 @@ If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcom
 
 - Dying with Star Rod disables select button until level completion
 - All six levels with in-level Warp Stars are not randomized, due to game-breaking bugs occurring.
-- Changing Kirby's color causes palette issues with the revised version of the ROM (PRG1)
 - Museum enemies are not randomized
 
 ## -- Version History --
+
+v3.0.3 - 2/25/18 - Changed icon to not match KNDL-Randomizer, removed support for PRG1
 
 v3.0.2 - 1/23/18 - Removed the last two stages with Warp Stars from randomization to avoid potential bugs
 
 v3.0.1 - 1/22/18 - Removed stage 7-2 from randomization list due to Warp Star bugs
 
-v3.00 - 12/31/17 - Added support for randomizing the level order, full randomization of Kirby's color, and checksum verification
+v3.0.0 - 12/31/17 - Added support for randomizing the level order, full randomization of Kirby's color, and checksum verification
 
-v2.01 - 11/20/17 - Added option to only change Kirby's color, but don't randomize anything
+v2.0.1 - 11/20/17 - Added option to only change Kirby's color, but don't randomize anything
 
-v2.00 - 11/16/17 - Added GUI interface. Can now select specific Kirby color in addition to randomizing the color. Switched from Python 2 to Python 3
+v2.0.0 - 11/16/17 - Added GUI interface. Can now select specific Kirby color in addition to randomizing the color. Switched from Python 2 to Python 3
 
-v1.03 - 9/2/17 - Removed need to import data from txt files. Entire program now contained in .py
+v1.0.3 - 9/2/17 - Removed need to import data from txt files. Entire program now contained in .py
 
-v1.02 - 6/8/17 - Added option to randomize Kirby's color palette
+v1.0.2 - 6/8/17 - Added option to randomize Kirby's color palette
 
-v1.01 - 5/25/17 - Fixed issues with OS dependancy. The Python program now works on all OS's, and added an exe program for Windows users.
+v1.0.1 - 5/25/17 - Fixed issues with OS dependancy. The Python program now works on all OS's, and added an exe program for Windows users.
 
-v1.00 - 5/24/17 - Completed the Python program. Enemy abilites are now randomized, supports options for omitting the Star Rod ability or randomizing non-ability enemies.
+v1.0.0 - 5/24/17 - Completed the Python program. Enemy abilites are now randomized, supports options for omitting the Star Rod ability or randomizing non-ability enemies.
