@@ -5,7 +5,7 @@
 
 import os, random, hashlib
 
-VERSION = "3.0.2 CLI"
+VERSION = "3.0.3 CLI"
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -121,6 +121,9 @@ door_values = [[["2B", "00", "24"], ["00", "12", "66"]], # 1-1
 class HashError(Exception):
     pass
 
+class WrongVersionError(Exception):
+    pass
+
 if __name__ == "__main__":
     try:
         print("Thanks for using the Kirby's Adventure Randomizer, version " + VERSION)
@@ -136,7 +139,9 @@ if __name__ == "__main__":
 
         rom = open(rom_name, 'rb').read()
         test_hash = hashlib.md5(rom).hexdigest()
-        if (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7" and test_hash != "69018a5181f255bc3a66badfb19fdb76"):
+        if test_hash == "69018a5181f255bc3a66badfb19fdb76":
+            raise WrongVersionError("Wrong version")
+        elif (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7"):
             raise HashError("Invalid checksum")
         rom_list = list(rom)
 
@@ -210,6 +215,8 @@ if __name__ == "__main__":
         input("No file of that name was found. Make sure your .nes ROM is in the same folder as this program. Press Enter to close.")
     except HashError:
         input("The file given is invalid. Please use a US NES Kirby's Adventure ROM. Press Enter to close.")
+    except WrongVersionError:
+        QtWidgets.QMessageBox.about(self, "Error", "Error: As of version 3.0.3 the randomizer no longer supports the first revision (PRG1) ROM. Please use the original release ROM instead. Sorry!")
     except Exception as e:
         print("ERROR: {}".format(e))
         input("Press Enter to close.")

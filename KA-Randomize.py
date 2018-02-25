@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 import os, random, sys, hashlib
 from gui_design import Ui_MainWindow
 
-VERSION = '3.0.2'
+VERSION = '3.0.3'
 
 # Valid byte values for Kirby's ability
 ability_values = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C",
@@ -123,6 +123,9 @@ door_values = [[["2B", "00", "24"], ["00", "12", "66"]], # 1-1
 class HashError(Exception):
     pass
 
+class WrongVersionError(Exception):
+    pass
+
 class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(KirbyApp, self).__init__(parent)
@@ -181,7 +184,9 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             rom = open(self.rom_file, 'rb').read()
             test_hash = hashlib.md5(rom).hexdigest()
             # Checks for the Rev0 or Rev1 KA hashes
-            if (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7" and test_hash != "69018a5181f255bc3a66badfb19fdb76"):
+            if test_hash == "69018a5181f255bc3a66badfb19fdb76":
+                raise WrongVersionError("Wrong version")
+            elif (test_hash != "a415cb0e40f8bcdce71e28283a7e6cd7"):
                 raise HashError("Invalid checksum")
             rom_list = list(rom)
 
@@ -261,6 +266,8 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             QtWidgets.QMessageBox.about(self, "Error", "Error: File not found")
         except HashError:
             QtWidgets.QMessageBox.about(self, "Error", "The given file is invalid. Please use a US NES Kirby's Adventure ROM.")
+        except WrongVersionError:
+            QtWidgets.QMessageBox.about(self, "Error", "Error: As of version 3.0.3 the randomizer no longer supports the first revision (PRG1) ROM. Please use the original release ROM instead. Sorry!")
         except Exception as e:
             QtWidgets.QMessageBox.about(self, "Error", "Some mysterious error has occurred. Please contact the developers with information about what happened. {}".format(e))
 
