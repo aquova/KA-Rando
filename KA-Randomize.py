@@ -234,8 +234,8 @@ class KirbyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             if self.defaultColor.isChecked() == False:
                 new_color = self.selectedColor()
                 # All the 'useful' colors in the NES palette. The exceptions are all just black
-                all_colors = [x for x in range(62) if (x != 15 or x != 30 or x != 31 or x!= 44 or x != 46)]
                 if new_color == 9:
+                    all_colors = [x for x in range(62) if (x != 15 or x != 30 or x != 31 or x!= 44 or x != 46)]
                     new_color0 = random.choice(all_colors)
                     new_color1 = random.choice(all_colors)
                     new_color2 = random.choice(all_colors)

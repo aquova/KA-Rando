@@ -12,11 +12,11 @@ Written by Austin Bricker, 2017-2018
 
 Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. As of Version 3.0.3, only the original release of the game (PRG0) is supported.
 
-First is a .lua script intended to be used with FCEUX or similar lua-compatible emulator. The lua script edits the RAM in real time, ensuring a completely random ability each time an enemy is swallowed.
-
-Secondly, there are two programs that edit the ROM, allowing it to be distributed and used with any emulator.
-However, while the abilites are randomized, they are always constant within that ROM.
-Ex. If a fire enemy now gives you the spark ability, ALL fire enemies will always give you the spark ability.
+## -- Features --
+- Randomize the levels! You can now randomize the level order, so each level door you go through will take you to an unexpected level!
+    - Note, boss doors and a handful of the regular levels (the ones with warp stars) are not randomized as of yet.
+- Randomize enemy abilities! Enemies will give you different abilities than the vanilla game when eaten.
+- Randomize your color! Kirby's color can now be randomized or chosen between a handful of color palettes I've selected. If you're feeling really crazy, you can also *completely* randomize Kirby's color, which often ends up looking rather hideous.
 
 ## -- Usage --
 
