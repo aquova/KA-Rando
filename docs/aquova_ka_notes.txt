@@ -81,131 +81,132 @@ Locations of each enemy's ability in the ROM:
 | 72C4F         |       FF       |      18     | Poppy Bros. Jr. (tomato - medium)| unused |
 | 72C4F         |       FF       |      19     | Poppy Bros. Jr. (tomato - fast)  | unused |
 | 72C7F         |       05       |      1A     | Laser Ball (slow)                |        |
-72C7F 05 1B Laser Ball (medium)
-72C7F 05 1C Laser Ball (fast)
-72CAF FF 1D Fish (homing - slow)
-72CAF FF 1E Fish (homing - fast)
-72CAF FF 20 Fish (horizontal)
-72CAF FF 21 Fish (jumping)
-72CC7 FF 22 Bounder (slow?)
-72CC7 FF 23 Bounder (fast?)
-72CF7 00 24 Hothead (slow?)
-72CF7 00 25 Hothead (fast?)
-72D3F 09 26 Parasol Waddle Doo (held)
-72D3F 09 27 Parasol Waddle Dee (held)
-72D6F 09 28 Parasol Waddle Doo (flying)
-72D6F 09 29 Parasol Waddle Dee (flying)
-72D6F 09 2B Parasol Waddle Doo (homing)
-72D6F 09 2C Parasol Waddle Dee (homing)
-72DB7 03 2E Blade Knight / Sword Knight
-72DFF 11 2F Bubbles (slow)
-72DFF 11 30 Bubbles (fast)
-72E17 0A 31 Noddy (slow)
-72E17 0A 32 Noddy (fast)
-72E5F FF 33 Coner (slow)
-72E5F FF 34 Coner (fast)
-72B8F FF 38 Waddle Dee (walking - slow)
-72B8F FF 39 Waddle Dee (walking - medium)
-72B8F FF 3A Waddle Dee (walking - fast)
-72B8F FF 3B Waddle Dee (walking - very fast)
-72B8F FF 3C Waddle Dee (jumping - slow)
-72B8F FF 3D Waddle Dee (jumping - medium)
-72B8F FF 3E Waddle Dee (jumping - fast)
-72B8F FF 3F Waddle Dee (jumping - very fast)
-73237 13 40 Bomber
-73297 04 41 Flamer (peaceful - slow)
-73297 04 42 Flamer (peaceful - medium)  *unused*
-73297 04 43 Flamer (peaceful - fast)
-73267 12 44 Twister (slow?)
-73267 12 45 Twister (medium?)
-73267 12 46 Twister (fast?)
-73297 04 47 Flamer (attacking - slow)
-73297 04 48 Flamer (attacking - medium)
-72F1F FF 4A Squid (walking - slow)
-72F1F FF 4B Squid (walking - fast)
-72F1F FF 4C Squid (appearing)
-72F1F FF 4D Squid (flying - slow)
-72F1F FF 4E Squid (flying - fast)  *unused*
-72E47 FF 4F Coconut - fast left
-72FF7 FF 50 Bronto Burt (up/down straight - slow)
-72FF7 FF 51 Bronto Burt (up/down straight - fast)
-72FF7 FF 52 Bronto Burt (up/down homing - slow)
-72FF7 FF 53 Bronto Burt (up/down homing - fast)  *unused*
-72FF7 FF 54 Bronto Burt (dropping in - slow)
-72FF7 FF 55 Bronto Burt (dropping in - fast)
-72FF7 FF 56 Bronto Burt (up diagonal - slow)
-72FF7 FF 57 Bronto Burt (up diagonal - fast)
-72FF7 FF 58 Bronto Burt (homing - slow)
-72FF7 FF 59 Bronto Burt (homing - fast)
-72FF7 FF 5A Bronto Burt (waiting - ???)
-72FF7 FF 5B Bronto Burt (waiting - ???)
-72F4F FF 5C Glunk (not shooting)
-72F3F FF 5D Glunk (shooting)
-72E47 FF 5E Coconut (slow left)
-72E47 FF 5F Coconut (slow right)
-72DE7 FF 60 Slippy (slow)
-72DE7 FF 61 Slippy (fast)
-72E2F 0E 62 Starman (walking - slow)
-72E2F 0E 63 Starman (walking - fast)  *unused*
-72E2F 0E 64 Starman (peaceful)
-72E2F 0E 65 Starman (flying - slow)
-72E2F 0E 66 Starman (flying - fast)  *unused*
-73117 02 67 Sir Kibble (stationary - ???)
-73117 02 68 Sir Kibble (stationary - ???)
-73117 02 69 Sir Kibble (walking - ???)
-73117 02 6A Sir Kibble (walking - ???)
-72F7F FF 6B Kabu (jumping - slow)
-72F7F FF 6C Kabu (jumping - fast)
-72F7F FF 6D Kabu (vanishing - ???)
-72F7F FF 6E Kabu (vanishing - ???)
-72F7F FF 6F Kabu (sliding)
-730FF 07 88 Wheelie (slow)
-730FF 07 89 Wheelie (fast)
-730FF 07 8A Wheelie (slow?)
-732F0 10 90 Rocky
-7324F 17 92 U.F.O.
-730E7 14 93 Cool Spook
-73027 0C 94 Pengy (slow)
-73027 0C 95 Pengy (fast)
-72FAF FF 96 Broom Hatter
-73057 0D 97 Chilly (slow)
-73057 0D 98 Chilly (fast)
-72FC7 FF 99 Cappy
-73087 0B 9A Spiny (slow)
-73087 0B 9B Spiny (fast)
-72FF7 FF 9C Twizzy (up/down straight - slow)
-72FF7 FF 9D Twizzy (up/down straight - fast)
-72FF7 FF 9E Twizzy (up/down homing - slow)
-72FF7 FF 9F Twizzy (up/down homing - fast)
-72FF7 FF A0 Twizzy (dropping in - slow)
-72FF7 FF A1 Twizzy (dropping in - fast)  *unused*
-72FF7 FF A2 Twizzy (up diagonal - slow)  *unused*
-72FF7 FF A3 Twizzy (up diagonal - fast)  *unused*
-72FF7 FF A4 Twizzy (homing - slow)
-72FF7 FF A5 Twizzy (homing - fast)
-72FF7 FF A6 Twizzy (waiting - ???)
-72FF7 FF A7 Twizzy (waiting - ???)
-72F37 FF A8 Twizzy (jumping)
-72F37 FF A9 Twizzy (hopping, homing - slow)  *unused*
-72F37 FF AA Twizzy (hopping, homing - fast)  *unused*
-72F37 FF AB Twizzy (hovering)
-72E47 FF AC Coconut (fast right)
-72E8F 0D B0 Mr. Frosty (slow)
-72E8F 0D B1 Mr. Frosty (fast)
-7318F 08 B2 Bonkers (slow)
-7318F 08 B3 Bonkers (fast)
-7330F 07 B4 Grand Wheelie (slow)
-7330F 07 B5 Grand Wheelie (fast)
-727B7 15 B6 Bugzzy (slow)
-727B7 15 B7 Bugzzy (fast)
-72817 16 B8 Rolling Turtle (slow)
-72817 16 B9 Rolling Turtle (fast)
-7372F 06 BA Mr. Tick Tock (slow)
-7372F 06 BB Mr. Tick Tock (fast)
-737D7 13 BC Poppy Bros. Sr. (slow)
-737D7 13 BD Poppy Bros. Sr. (fast)
-731D7 04 BE Fire Lion (slow)
-731D7 04 BF Fire Lion (fast)
+| 72C7F         |       05       |      1B     | Laser Ball (medium)              |        |
+| 72C7F         |       05       |      1C     | Laser Ball (fast)                |        |
+| 72CAF         |       FF       |      1D     | Fish (homing - slow)             |        |
+| 72CAF         |       FF       |      1E     | Fish (homing - fast)             |        |
+| 72CAF         |       FF       |      20     | Fish (horizontal)                |        |
+| 72CAF         |       FF       |      21     | Fish (jumping)                   |        |
+| 72CC7         |       FF       |      22     | Bounder (slow?)                  |        |
+| 72CC7         |       FF       |      23     | Bounder (fast?)                  |        |
+| 72CF7         |       00       |      24     | Hothead (slow?)                  |        |
+| 72CF7         |       00       |      25     | Hothead (fast?)                  |        |
+| 72D3F         |       09       |      26     | Parasol Waddle Doo (held)        |        |
+| 72D3F         |       09       |      27     | Parasol Waddle Dee (held)        |        |
+| 72D6F         |       09       |      28     | Parasol Waddle Doo (flying)      |        |
+| 72D6F         |       09       |      29     | Parasol Waddle Dee (flying)      |        |
+| 72D6F         |       09       |      2B     | Parasol Waddle Doo (homing)      |        |
+| 72D6F         |       09       |      2C     | Parasol Waddle Dee (homing)      |        |
+| 72DB7         |       03       |      2E     | Blade Knight / Sword Knight      |        |
+| 72DFF         |       11       |      2F     | Bubbles (slow)                   |        |
+| 72DFF         |       11       |      30     | Bubbles (fast)                   |        |
+| 72E17         |       0A       |      31     | Noddy (slow)                     |        |
+| 72E17         |       0A       |      32     | Noddy (fast)                     |        |
+| 72E5F         |       FF       |      33     | Coner (slow)                     |        |
+| 72E5F         |       FF       |      34     | Coner (fast)                     |        |
+| 72B8F         |       FF       |      38     | Waddle Dee (walking - slow)      |        |
+| 72B8F         |       FF       |      39     | Waddle Dee (walking - medium)    |        |
+| 72B8F         |       FF       |      3A     | Waddle Dee (walking - fast)      |        |
+| 72B8F         |       FF       |      3B     | Waddle Dee (walking - very fast) |        |
+| 72B8F         |       FF       |      3C     | Waddle Dee (jumping - slow)      |        |
+| 72B8F         |       FF       |      3D     | Waddle Dee (jumping - medium)    |        |
+| 72B8F         |       FF       |      3E     | Waddle Dee (jumping - fast)      |        |
+| 72B8F         |       FF       |      3F     | Waddle Dee (jumping - very fast) |        |
+| 73237         |       13       |      40     | Bomber                           |        |
+| 73297         |       04       |      41     | Flamer (peaceful - slow)         |        |
+| 73297         |       04       |      42     | Flamer (peaceful - medium)       | unused |
+| 73297         |       04       |      43     | Flamer (peaceful - fast)         |        |
+| 73267         |       12       |      44     | Twister (slow?)                  |        |
+| 73267         |       12       |      45     | Twister (medium?)                |        |
+| 73267         |       12       |      46     | Twister (fast?)                  |        |
+| 73297         |       04       |      47     | Flamer (attacking - slow)        |        |
+| 73297         |       04       |      48     | Flamer (attacking - medium)      |        |
+| 72F1F         |       FF       |      4A     | Squid (walking - slow)           |        |
+| 72F1F         |       FF       |      4B     | Squid (walking - fast)           |        |
+| 72F1F         |       FF       |      4C     | Squid (appearing)                |        |
+| 72F1F         |       FF       |      4D     | Squid (flying - slow)            |        |
+| 72F1F         |       FF       |      4E     | Squid (flying - fast)            | unused |
+| 72E47         |       FF       |      4F     | Coconut - fast left              |        |
+| 72FF7         |       FF       |      50     | Bronto Burt (vert. linear - slow)|        |
+| 72FF7         |       FF       |      51     | Bronto Burt (vert. linear - fast)|        |
+| 72FF7         |       FF       |      52     | Bronto Burt (vert. homing - slow)|        |
+| 72FF7         |       FF       |      53     | Bronto Burt (vert. homing - fast)| unused |
+| 72FF7         |       FF       |      54     | Bronto Burt (dropping in - slow) |        |
+| 72FF7         |       FF       |      55     | Bronto Burt (dropping in - fast) |        |
+| 72FF7         |       FF       |      56     | Bronto Burt (up diagonal - slow) |        |
+| 72FF7         |       FF       |      57     | Bronto Burt (up diagonal - fast) |        |
+| 72FF7         |       FF       |      58     | Bronto Burt (homing - slow)      |        |
+| 72FF7         |       FF       |      59     | Bronto Burt (homing - fast)      |        |
+| 72FF7         |       FF       |      5A     | Bronto Burt (waiting - ???)      |        |
+| 72FF7         |       FF       |      5B     | Bronto Burt (waiting - ???)      |        |
+| 72F4F         |       FF       |      5C     | Glunk (not shooting)             |        |
+| 72F3F         |       FF       |      5D     | Glunk (shooting)                 |        |
+| 72E47         |       FF       |      5E     | Coconut (slow left)              |        |
+| 72E47         |       FF       |      5F     | Coconut (slow right)             |        |
+| 72DE7         |       FF       |      60     | Slippy (slow)                    |        |
+| 72DE7         |       FF       |      61     | Slippy (fast)                    |        |
+| 72E2F         |       0E       |      62     | Starman (walking - slow)         |        |
+| 72E2F         |       0E       |      63     | Starman (walking - fast)         | unused |
+| 72E2F         |       0E       |      64     | Starman (peaceful)               |        |
+| 72E2F         |       0E       |      65     | Starman (flying - slow)          |        |
+| 72E2F         |       0E       |      66     | Starman (flying - fast)          | unused |
+| 73117         |       02       |      67     | Sir Kibble (stationary - ???)    | unused |
+| 73117         |       02       |      68     | Sir Kibble (stationary - ???)    | unused |
+| 73117         |       02       |      69     | Sir Kibble (walking - ???)       |        |
+| 73117         |       02       |      6A     | Sir Kibble (walking - ???)       |        |
+| 72F7F         |       FF       |      6B     | Kabu (jumping - slow)            |        |
+| 72F7F         |       FF       |      6C     | Kabu (jumping - fast)            |        |
+| 72F7F         |       FF       |      6D     | Kabu (vanishing - ???)           |        |
+| 72F7F         |       FF       |      6E     | Kabu (vanishing - ???)           |        |
+| 72F7F         |       FF       |      6F     | Kabu (sliding)                   |        |
+| 730FF         |       07       |      88     | Wheelie (slow)                   |        |
+| 730FF         |       07       |      89     | Wheelie (fast)                   |        |
+| 730FF         |       07       |      8A     | Wheelie (slow?)                  |        |
+| 732F0         |       10       |      90     | Rocky                            |        |
+| 7324F         |       17       |      92     | U.F.O.                           |        |
+| 730E7         |       14       |      93     | Cool Spook                       |        |
+| 73027         |       0C       |      94     | Pengy (slow)                     |        |
+| 73027         |       0C       |      95     | Pengy (fast)                     |        |
+| 72FAF         |       FF       |      96     | Broom Hatter                     |        |
+| 73057         |       0D       |      97     | Chilly (slow)                    |        |
+| 73057         |       0D       |      98     | Chilly (fast)                    |        |
+| 72FC7         |       FF       |      99     | Cappy                            |        |
+| 73087         |       0B       |      9A     | Spiny (slow)                     |        |
+| 73087         |       0B       |      9B     | Spiny (fast)                     |        |
+| 72FF7         |       FF       |      9C     | Twizzy (up/down straight - slow) |        |
+| 72FF7         |       FF       |      9D     | Twizzy (up/down straight - fast) |        |
+| 72FF7         |       FF       |      9E     | Twizzy (up/down homing - slow)   |        |
+| 72FF7         |       FF       |      9F     | Twizzy (up/down homing - fast)   |        |
+| 72FF7         |       FF       |      A0     | Twizzy (dropping in - slow)      |        |
+| 72FF7         |       FF       |      A1     | Twizzy (dropping in - fast)      | unused |
+| 72FF7         |       FF       |      A2     | Twizzy (up diagonal - slow)      | unused |
+| 72FF7         |       FF       |      A3     | Twizzy (up diagonal - fast)      | unused |
+| 72FF7         |       FF       |      A4     | Twizzy (homing - slow)           |        |
+| 72FF7         |       FF       |      A5     | Twizzy (homing - fast)           |        |
+| 72FF7         |       FF       |      A6     | Twizzy (waiting - ???)           |        |
+| 72FF7         |       FF       |      A7     | Twizzy (waiting - ???)           |        |
+| 72F37         |       FF       |      A8     | Twizzy (jumping) 72F37           |        |
+| 72F37         |       FF       |      A9     | Twizzy (hopping, homing - slow)  | unused |
+| 72F37         |       FF       |      AA     | Twizzy (hopping, homing - fast)  | unused |
+| 72F37         |       FF       |      AB     | Twizzy (hovering)                |        |
+| 72E47         |       FF       |      AC     | Coconut (fast right)             |        |
+| 72E8F         |       0D       |      B0     | Mr. Frosty (slow)                |        |
+| 72E8F         |       0D       |      B1     | Mr. Frosty (fast)                |        |
+| 7318F         |       08       |      B2     | Bonkers (slow)                   |        |
+| 7318F         |       08       |      B3     | Bonkers (fast)                   |        |
+| 7330F         |       07       |      B4     | Grand Wheelie (slow)             |        |
+| 7330F         |       07       |      B5     | Grand Wheelie (fast)             |        |
+| 727B7         |       15       |      B6     | Bugzzy (slow)                    |        |
+| 727B7         |       15       |      B7     | Bugzzy (fast)                    |        |
+| 72817         |       16       |      B8     | Rolling Turtle (slow)            |        |
+| 72817         |       16       |      B9     | Rolling Turtle (fast)            |        |
+| 7372F         |       06       |      BA     | Mr. Tick Tock (slow)             |        |
+| 7372F         |       06       |      BB     | Mr. Tick Tock (fast)             |        |
+| 737D7         |       13       |      BC     | Poppy Bros. Sr. (slow)           |        |
+| 737D7         |       13       |      BD     | Poppy Bros. Sr. (fast)           |        |
+| 731D7         |       04       |      BE     | Fire Lion (slow)                 |        |
+| 731D7         |       04       |      BF     | Fire Lion (fast)                 |        |
+*==========================================================================================*
 
 -------------------------------------------------------------------------------
 

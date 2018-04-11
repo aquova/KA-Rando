@@ -1,0 +1,17 @@
+h1 {
+    text-align:center;
+}
+
+p {
+    padding-left:15px;
+}
+
+.bg-1 {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.bg-2 {
+	background-color: #e5e5e5; /* Gray */
+	color: #000000;
+}
