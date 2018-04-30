@@ -4,7 +4,7 @@ Kirby's Adventure Randomizer
 
 An ability randomizer for Kirby's Adventure for NES.
 
-https://github.com/Aquova/KA-Rando
+https://github.com/aquova/KA-Rando
 
 Written by Austin Bricker, 2017-2018
 
