@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KA Randomizer</title>
+        <meta charset="utf-8">
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="main">
+            <h1>Kirby's Adventure Randomizer</h1>
+            <form>
+                <label for="seed">Seed: </label>
+                <input type="text" id="seed" class="center">
+            </form>
+
+            <form>
+                <input type="checkbox">Randomize Levels<br/>
+                <input type="checkbox">Randomize Enemies<br/>
+                <input type="checkbox">Randomize Enemies with Abilities<br/>
+                <input type="checkbox">Use Star Rod<br/>
+            </form>
+            <span class="center">
+                <input type="tfile" id="filename"/>
+                <output id="name"></output>
+            </span>
+            <hr/>
+            <input type="button" id="rando-button" disabled="true" value="Randomize!"/>
+            <hr/>
+            <div id="footer" class="center">
+                <p>&copy; 2017-2018 Austin Bricker</p>
+                <p><a href="https://github.com/aquova/KA-Rando">Source Code</a></p>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
