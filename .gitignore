@@ -1,5 +1,9 @@
+# Python auto-generated files
 *__pycache__
-*.swp
 *build
 *dist
 *.spec
+
+# Editor files
+*.code-workspace
+*.swp

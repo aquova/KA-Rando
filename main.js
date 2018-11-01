@@ -14,6 +14,7 @@ function readFile(evt) {
             rom = new Uint8Array(arrayBuffer)
         }
         fr.readAsArrayBuffer(f)
+        randoButton.disabled = false
     }
 }
 
@@ -28,3 +29,46 @@ function writeFile(evt) {
     a.click()
     document.body.removeChild(a)
 }
+
+// Apparently JS doesn't support seeds, so need to make my own random function
+// From here: https://stackoverflow.com/questions/521295/seeding-the-random-number-generator-in-javascript
+function random(seed) {
+    var x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+}
+
+function randomChoice(array) {
+    return array[Math.floor(Math.random() * array.length)]
+}
+
+function randomize(evt) {
+    var seed = document.getElementById("seed").innerHTML
+    if (seed == "") {
+        seed = Math.random()
+    }
+
+    if (document.getElementById("enemyCheck").checked) {
+        if (document.getElementById("starRodCheck").checked) {
+            abilityValues.push(0x18)
+        }
+
+        if (document.getElementById("noAbilityCheck").checked) {
+            abilityLocations.concat(neutralLocations)
+        }
+    }
+
+    replaceEnemies()
+
+    if (document.getElementById("doorCheck").checked) {
+        shuffleDoors()
+    }
+
+    writeFile(evt)
+}
+
+var rom;
+var randoButton = document.getElementById("rando-button")
+randoButton.addEventListener("click", randomize)
+randoButton.disabled = true
+
+document.getElementById("fileinput").addEventListener('change', readFile, false)

@@ -14,23 +14,26 @@
             </form>
 
             <form>
-                <input type="checkbox">Randomize Levels<br/>
-                <input type="checkbox">Randomize Enemies<br/>
-                <input type="checkbox">Randomize Enemies with Abilities<br/>
-                <input type="checkbox">Use Star Rod<br/>
+                <input type="checkbox" id="doorCheck">Randomize Levels<br/>
+                <input type="checkbox" id="enemyCheck">Randomize Enemies<br/>
+                <input type="checkbox" id="noAbilityCheck" disabled="true">Randomize Enemies with Abilities<br/>
+                <input type="checkbox" id="starRodCheck" disabled="true">Use Star Rod<br/>
             </form>
+            <hr/>
             <span class="center">
-                <input type="tfile" id="filename"/>
                 <output id="name"></output>
+                <input type="file" id="fileinput" autocomplete="off"/>
             </span>
             <hr/>
-            <input type="button" id="rando-button" disabled="true" value="Randomize!"/>
-            <hr/>
+            <input type="button" id="rando-button" class="center" value="Randomize!"/>
             <div id="footer" class="center">
                 <p>&copy; 2017-2018 Austin Bricker</p>
-                <p><a href="https://github.com/aquova/KA-Rando">Source Code</a></p>
+                <p>Want to run this locally? View the <a href="https://github.com/aquova/KA-Rando">source code</a> and follow the instructions.</p>
             </div>
         </div>
+        <script src="colors.js"></script>
+        <script src="enemies.js"></script>
+        <script src="doors.js"></script>
         <script src="main.js"></script>
     </body>
 </html>

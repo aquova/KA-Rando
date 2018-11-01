@@ -1,10 +1,18 @@
 // Valid bytes for Kirby's abilities
-var abilityValues = ["00","01","02","03","04","05","06","07","08","09","0A","0B","0C","0D","0E","0F","10","11","12","13","14","15","16","17","FF"]
+var abilityValues = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,0x10,0x11,0x12,0x13,0x14,0x15,0x16,0x17,0xFF]
 
 // Addresses for enemy abilities
-var abilityLocations = ["72BA7","72C1F","72C07","72C7F","72CF7","72D3F","72D6F","72DB7","72DFF","72E17","73237","73297","73267","72E2F","73117","730FF",
-"732F0","7324F","730E7","73027","73057","73087","72E8F","7318F",
-"7330F","727B7","72817","7372F","737D7","731D7"]
+var abilityLocations = [0x72BA7,0x72C1F,0x72C07,0x72C7F,0x72CF7,0x72D3F,0x72D6F,0x72DB7,0x72DFF,0x72E17,0x73237,0x73297,0x73267,0x72E2F,0x73117,0x730FF,
+0x732F0,0x7324F,0x730E7,0x73027,0x73057,0x73087,0x72E8F,0x7318F,
+0x7330F,0x727B7,0x72817,0x7372F,0x737D7,0x731D7]
 
 // Addresses for enemies without abilities
-var neutralLocations = ["72B8F","72C37","72C67","72C4F","72CAF","72CC7","72E5F","72F1F","72E47","72FF7","72F4F","72DE7","72F7F","72FAF","72FC7","72F37"]
+var neutralLocations = [0x72B8F,0x72C37,0x72C67,0x72C4F,0x72CAF,0x72CC7,0x72E5F,0x72F1F,0x72E47,0x72FF7,0x72F4F,0x72DE7,0x72F7F,0x72FAF,0x72FC7,0x72F37]
+
+function replaceEnemies() {
+    for (var i = 0; i < abilityLocations.length; i++) {
+        var address = abilityLocations[i]
+        var newEnemy = randomChoice(abilityValues)
+        rom[address] = newEnemy
+    }
+}
