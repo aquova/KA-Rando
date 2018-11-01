@@ -7,6 +7,10 @@ h1 {
     text-align: center;
 }
 
+.disabled {
+    color: lightgray;
+}
+
 .center {
     margin: auto;
     display: table;

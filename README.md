@@ -2,7 +2,9 @@
 
 Kirby's Adventure Randomizer
 
-An ability randomizer for Kirby's Adventure for NES.
+Randomize levels, character colors, and enemy abilities for *Kirby's Adventure* on NES.
+
+https://austinbricker.com/KA-Rando
 
 https://github.com/aquova/KA-Rando
 
@@ -13,6 +15,7 @@ Written by Austin Bricker, 2017-2018
 Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. As of Version 3.0.3, only the original release of the game (PRG0) is supported.
 
 ## -- Features --
+
 - Randomize the levels! You can now randomize the level order, so each level door you go through will take you to an unexpected level!
     - Note, boss doors and a handful of the regular levels (the ones with warp stars) are not randomized as of yet.
 - Randomize enemy abilities! Enemies will give you different abilities than the vanilla game when eaten.
@@ -20,35 +23,11 @@ Programs to randomize the level order, enemy abilities, and Kirby's color in Kir
 
 ## -- Usage --
 
-In addition to the files included in the repository, you will also need a US copy of the Kirby's Adventure ROM (which is left to the user to obtain). Follow the instructions in the subcategories below for your operating system/preference.
+All you need is a US copy of the original version of the Kirby's Adventure ROM (which is left to the user to obtain). Then, visit https://austinbricker.com/KA-Rando, choose the options you desire, select your file, and press 'Randomize'.
 
-#### --- Windows ---
+## -- Running Locally --
 
-Run `KA-Randomize-PC.exe`, found on the 'Releases' page. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
-
-#### --- macOS ---
-
-Run `KA-Randomize-Mac.app`, found on the 'Releases' page. Select the options you desire, and select the location of your .nes Kirby's Adventure file. Finish by clicking the 'Randomize' button. The randomized ROM will be saved into the same folder as the original, with the seed appended onto the end of the file name.
-
-#### --- Linux/Python ---
-
-Linux users, or users who want to simply run the Python program itself, have two options.
-
-1. If you have Python3, Qt5, and PyQt installed, you can run the following command in Terminal:
-
-`python3 KA-Randomize.py`
-
-This will open the same application as the PC and Mac binaries.
-
-2. If you just have Python 3, there is a Command Line version of the program, which can be run via:
-
-`python3 KA-Rando-Simple.py`
-
-Make sure that your .nes file is located in the same folder as the program, then simply follow the instructions. Note that the command line version is missing some of the features of the GUI version, such as the ability to choose a specific color for Kirby.
-
-#### --- .lua Compatible Emulator ---
-
-If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcome to instead use the `Randomize-Script.lua` script. This script edits the RAM in real time, allowing for complete randomization of Kirby's abilities, meaning that eating enemies of the same type may give different results. However, this script does not change Kirby's color or the level order, but it can be used with a ROM that has been randomized.
+This project runs entirely in the client, so if you need to use the randomizer offline, you can simply download and visit the webpage in a browser. To do so, either click `Clone or download` on the GitHub page and download the zip file, or in a Terminal run `git clone https://github.com/aquova/KA-Rando`. Once downloaded, simply open `index.html` in a browser of your choice!
 
 ## -- Known Issues --
 
@@ -57,6 +36,8 @@ If your emulator supports Lua scripts (such as FCEUX or Bizhawk), you are welcom
 - Museum enemies are not randomized
 
 ## -- Version History --
+
+v3.1.0 - 11/1/18 - Ported entire project from Python to JavaScript, from now on the project will use a web-based interface.
 
 v3.0.3 - 2/25/18 - Changed icon to not match KNDL-Randomizer, removed support for PRG1
 

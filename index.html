@@ -7,25 +7,38 @@
     </head>
     <body>
         <div id="main">
+            <br/>
             <h1>Kirby's Adventure Randomizer</h1>
             <form>
                 <label for="seed">Seed: </label>
                 <input type="text" id="seed" class="center">
             </form>
-
             <form>
-                <input type="checkbox" id="doorCheck">Randomize Levels<br/>
-                <input type="checkbox" id="enemyCheck">Randomize Enemies<br/>
-                <input type="checkbox" id="noAbilityCheck" disabled="true">Randomize Enemies with Abilities<br/>
-                <input type="checkbox" id="starRodCheck" disabled="true">Use Star Rod<br/>
+                <input type="checkbox" id="doorCheck">
+                <label for="doorCheck">Randomize Levels</label><br/>
+                <input type="checkbox" id="enemyCheck">
+                <label for="enemyCheck">Randomize Enemies</label><br/>
+                <input type="checkbox" id="noAbilityCheck" disabled="true">
+                <label for="noAbilityCheck" id="noAbilityLabel" class="disabled">Randomize Enemies with Abilities</label><br/>
+                <input type="checkbox" id="starRodCheck" disabled="true">
+                <label for="starRodCheck" id="starRodLabel" class="disabled">Use Star Rod</label>
             </form>
+            <span id="palette" class="center">
+                <select id="bodyColor" autocomplete="off">
+                    <option value="1" style="background:red"></option>
+                </select>
+                <select id="footColor" autocomplete="off"></select>
+                <select id="borderColor" autocomplete="off"></select>
+            </span>
+            <br/>
+            <canvas id="kirbyCanvas" width="320" height="288">Your browser does not support the HTML5 canvas.</canvas>
             <hr/>
             <span class="center">
                 <output id="name"></output>
                 <input type="file" id="fileinput" autocomplete="off"/>
             </span>
-            <hr/>
             <input type="button" id="rando-button" class="center" value="Randomize!"/>
+            <hr/>
             <div id="footer" class="center">
                 <p>&copy; 2017-2018 Austin Bricker</p>
                 <p>Want to run this locally? View the <a href="https://github.com/aquova/KA-Rando">source code</a> and follow the instructions.</p>

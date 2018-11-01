@@ -15,6 +15,7 @@ function readFile(evt) {
         }
         fr.readAsArrayBuffer(f)
         randoButton.disabled = false
+        randoButton.classList.remove("disabled")
     }
 }
 
@@ -47,12 +48,12 @@ function randomize(evt) {
         seed = Math.random()
     }
 
-    if (document.getElementById("enemyCheck").checked) {
-        if (document.getElementById("starRodCheck").checked) {
+    if (enemyCheckButton.checked) {
+        if (starRodButton.checked) {
             abilityValues.push(0x18)
         }
 
-        if (document.getElementById("noAbilityCheck").checked) {
+        if (noAbilityButton.checked) {
             abilityLocations.concat(neutralLocations)
         }
     }
@@ -67,8 +68,42 @@ function randomize(evt) {
 }
 
 var rom;
+
+var canvas = document.getElementById("kirbyCanvas")
+ctx = canvas.getContext("2d")
+ctx.imageSmoothingEnabled = false
+
+var img = new Image()
+img.crossOrigin = "Anonymous"
+// img.src = "https://austinbricker.com/KA-Rando/img/kirby_KA.png"
+// This is temporary
+img.src = "https://cdn.discordapp.com/attachments/247817964093440000/507692816311386112/kirby_KA.png"
+
+img.onload = function() {
+    drawKirby()
+}
+
 var randoButton = document.getElementById("rando-button")
 randoButton.addEventListener("click", randomize)
 randoButton.disabled = true
+randoButton.classList.add("disabled")
+
+var enemyCheckButton = document.getElementById("enemyCheck")
+var starRodButton = document.getElementById("starRodCheck")
+var noAbilityButton = document.getElementById("noAbilityCheck")
+
+enemyCheckButton.addEventListener("change", function() {
+    if (this.checked) {
+        starRodButton.disabled = false
+        document.getElementById("starRodLabel").classList.remove("disabled")
+        noAbilityButton.disabled = false
+        document.getElementById("noAbilityLabel").classList.remove("disabled")
+    } else {
+        starRodButton.disabled = true
+        document.getElementById("starRodLabel").classList.add("disabled")
+        noAbilityButton.disabled = true
+        document.getElementById("noAbilityLabel").classList.add("disabled")
+    }
+})
 
 document.getElementById("fileinput").addEventListener('change', readFile, false)
