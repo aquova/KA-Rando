@@ -9,10 +9,10 @@
         <div id="main">
             <br/>
             <h1>Kirby's Adventure Randomizer</h1>
-            <form>
+            <div class="center">
                 <label for="seed">Seed: </label>
-                <input type="text" id="seed" class="center">
-            </form>
+                <input type="text" id="seed">
+            </div>
             <form>
                 <input type="checkbox" id="doorCheck">
                 <label for="doorCheck">Randomize Levels</label><br/>
@@ -25,12 +25,27 @@
             </form>
             <span id="palette" class="center">
                 <label for="borderColor">Border Color: </label>
-                <select id="borderColor" onchange="changeColor(0, this)" style="background: #7C7C7C" autocomplete="off"></select>
+                <select id="borderColor" onchange="changeColor(0, this)" style="background: #000000" autocomplete="off"></select>
                 <label for="bodyColor">Body Color: </label>
-                <select id="bodyColor" onchange="changeColor(1, this)" style="background: #7C7C7C" autocomplete="off"></select>
+                <select id="bodyColor" onchange="changeColor(1, this)" style="background: #fcc2e4" autocomplete="off"></select>
                 <label for="footColor">Foot Color: </label>
-                <select id="footColor" onchange="changeColor(2, this)" style="background: #7C7C7C" autocomplete="off"></select>
+                <select id="footColor" onchange="changeColor(2, this)" style="background: #fc6ecc" autocomplete="off"></select>
             </span>
+            <div class="center">
+                <label for="presets">Presets: </label>
+                <select id="presets" autocomplete="off" onchange="setPreset()">
+                    <option value="0">Pink</option>
+                    <option value="1">Red</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Yellow</option>
+                    <option value="4">Light Green</option>
+                    <option value="5">Green</option>
+                    <option value="6">Light Blue</option>
+                    <option value="7">Blue</option>
+                    <option value="8">Purple</option>
+                    <option value="9">Grayscale</option>
+                </select>
+            </div>
             <br/>
             <canvas id="kirbyCanvas" width="320" height="288">Your browser does not support the HTML5 canvas.</canvas>
             <br/><hr/>
