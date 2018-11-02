@@ -107,8 +107,16 @@ function populateDropdowns() {
 
 // Rewrite ROM with new palette
 function replaceColor() {
-    var newColor = hex2rgb()
+    var newColor0 = parseInt(document.getElementById("bodyColor").value, 16)
+    var newColor1 = parseInt(document.getElementById("footColor").value, 16)
+    var newColor2 = parseInt(document.getElementById("borderColor").value, 16)
 
+    for (var i = 0; i < colorLocations.length; i++) {
+        var colorAddress = colorLocations[i]
+        rom[colorAddress] = newColor0
+        rom[colorAddress + 1] = newColor1
+        rom[colorAddress + 2] = newColor2
+    }
 }
 
 // Draws Kirby on canvas
