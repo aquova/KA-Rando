@@ -99,24 +99,3 @@ function shuffleDoors() {
         rom[exit_address + 4] = doorValues[i][1][2]
     }
 }
-
-function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1))
-        swap(array, i, j)
-    }
-}
-
-function swap(array, a, b) {
-    var tmp = array[a]
-    array[a] = array[b]
-    array[b] = tmp
-}
-
-function range(min, max) {
-    var array = []
-    for (var i = min; i < max; i++) {
-        array.push(i)
-    }
-    return array
-}

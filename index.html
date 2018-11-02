@@ -24,15 +24,16 @@
                 <label for="starRodCheck" id="starRodLabel" class="disabled">Use Star Rod</label>
             </form>
             <span id="palette" class="center">
-                <select id="bodyColor" autocomplete="off">
-                    <option value="1" style="background:red"></option>
-                </select>
-                <select id="footColor" autocomplete="off"></select>
-                <select id="borderColor" autocomplete="off"></select>
+                <label for="borderColor">Border Color: </label>
+                <select id="borderColor" onchange="changeColor(0, this)" style="background: #7C7C7C" autocomplete="off"></select>
+                <label for="bodyColor">Body Color: </label>
+                <select id="bodyColor" onchange="changeColor(1, this)" style="background: #7C7C7C" autocomplete="off"></select>
+                <label for="footColor">Foot Color: </label>
+                <select id="footColor" onchange="changeColor(2, this)" style="background: #7C7C7C" autocomplete="off"></select>
             </span>
             <br/>
             <canvas id="kirbyCanvas" width="320" height="288">Your browser does not support the HTML5 canvas.</canvas>
-            <hr/>
+            <br/><hr/>
             <span class="center">
                 <output id="name"></output>
                 <input type="file" id="fileinput" autocomplete="off"/>

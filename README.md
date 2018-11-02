@@ -37,7 +37,7 @@ This project runs entirely in the client, so if you need to use the randomizer o
 
 ## -- Version History --
 
-v3.1.0 - 11/1/18 - Ported entire project from Python to JavaScript, from now on the project will use a web-based interface.
+v4.0.0 - 11/1/18 - Ported entire project from Python to JavaScript, from now on the project will use a web-based interface.
 
 v3.0.3 - 2/25/18 - Changed icon to not match KNDL-Randomizer, removed support for PRG1
 
