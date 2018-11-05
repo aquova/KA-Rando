@@ -8,10 +8,14 @@ function readFile(evt) {
         var fr = new FileReader()
         fr.onload = function(e) {
             name = f.name.split('.')[0]
-            // TODO: append seed here
-            name += "_new.nes"
             var arrayBuffer = fr.result
             rom = new Uint8Array(arrayBuffer)
+        }
+        // Check for correct checksum - d41d8cd98f00b204e9800998ecf8427e
+        var hash = CryptoJS.MD5(rom)
+        if (hash != "d41d8cd98f00b204e9800998ecf8427e") {
+            alert("Invalid checksum - Please use a valid US Kirby's Adventure ROM")
+            return
         }
         fr.readAsArrayBuffer(f)
         randoButton.disabled = false
@@ -21,7 +25,13 @@ function readFile(evt) {
 
 function writeFile(evt) {
     var a = document.createElement("a")
-    a.download = name
+    var seedInput = document.getElementById("seed").value
+    if (seedInput == "") {
+        a.download = name + "_" + seed + ".nes"
+    } else {
+        a.download = name + "_" + seedInput + ".nes"
+    }
+
     var blob = new Blob([rom], {
         type: "text/plain"
     })
@@ -32,9 +42,11 @@ function writeFile(evt) {
 }
 
 function randomize(evt) {
-    var seed = document.getElementById("seed").innerHTML
-    if (seed == "") {
+    var seedInput = document.getElementById("seed").value
+    if (seedInput == "") {
         seed = Math.random()
+    } else {
+        seed = CryptoJS.MD5(seedInput)
     }
 
     if (enemyCheckButton.checked) {
@@ -58,7 +70,8 @@ function randomize(evt) {
     writeFile(evt)
 }
 
-var rom;
+var rom
+var seed
 
 var canvas = document.getElementById("kirbyCanvas")
 ctx = canvas.getContext("2d")
@@ -68,7 +81,8 @@ var img = new Image()
 img.crossOrigin = "Anonymous"
 // img.src = "https://austinbricker.com/KA-Rando/img/kirby_KA.png"
 // This is temporary
-img.src = "https://raw.githubusercontent.com/aquova/KA-Rando/website/img/kirby_KA.png"
+// img.src = "https://raw.githubusercontent.com/aquova/KA-Rando/website/img/kirby_KA.png"
+img.src = "./img/kirby_KA.png"
 
 img.onload = function() {
     drawKirby()

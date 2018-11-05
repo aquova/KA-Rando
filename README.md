@@ -29,6 +29,10 @@ All you need is a US copy of the original version of the Kirby's Adventure ROM (
 
 This project runs entirely in the client, so if you need to use the randomizer offline, you can simply download and visit the webpage in a browser. To do so, either click `Clone or download` on the GitHub page and download the zip file, or in a Terminal run `git clone https://github.com/aquova/KA-Rando`. Once downloaded, simply open `index.html` in a browser of your choice!
 
+## -- Credits --
+
+The source code for `md5-min.js`, can be found here: https://code.google.com/archive/p/crypto-js/#MD5
+
 ## -- Known Issues --
 
 - Dying with Star Rod disables select button until level completion
