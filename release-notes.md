@@ -1,5 +1,9 @@
 # Release Notes
 
+## 4.0.0
+
+A very big release this time. I'd been getting increasingly frustratated with the GUI setup I had, and decided to bite the bullet and convert to a web interface. I rewrote all the logic and UI in JavaScript, and implemented some of the additions from the sister *Kirby Color Editor* project. In addition to being a web release, all the original functionality is there, as well as a greater ability to make palette swaps.
+
 ## 3.0.3
 
 Two small changes to this release

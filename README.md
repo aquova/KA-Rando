@@ -12,14 +12,14 @@ Written by Austin Bricker, 2017-2018
 
 ## -- Overview --
 
-Programs to randomize the level order, enemy abilities, and Kirby's color in Kirby's Adventure. There are three programs contained within this repository which are to be used with a US version of Kirby's Adventure for NES. As of Version 3.0.3, only the original release of the game (PRG0) is supported.
+Randomizes the level order, enemy abilities, and Kirby's color in Kirby's Adventure. The main functionality is a web interface which is meant to be used with a US version of Kirby's Adventure for NES. As of Version 3.0.3, only the original release of the game (PRG0) is supported.
 
 ## -- Features --
 
 - Randomize the levels! You can now randomize the level order, so each level door you go through will take you to an unexpected level!
     - Note, boss doors and a handful of the regular levels (the ones with warp stars) are not randomized as of yet.
 - Randomize enemy abilities! Enemies will give you different abilities than the vanilla game when eaten.
-- Randomize your color! Kirby's color can now be randomized or chosen between a handful of color palettes I've selected. If you're feeling really crazy, you can also *completely* randomize Kirby's color, which often ends up looking rather hideous.
+- Change your color! Choose between a few presets I've designed, or pick any color that the NES has to offer!
 
 ## -- Usage --
 
@@ -27,11 +27,11 @@ All you need is a US copy of the original version of the Kirby's Adventure ROM (
 
 ## -- Running Locally --
 
-This project runs entirely in the client, so if you need to use the randomizer offline, you can simply download and visit the webpage in a browser. To do so, either click `Clone or download` on the GitHub page and download the zip file, or in a Terminal run `git clone https://github.com/aquova/KA-Rando`. Once downloaded, simply open `index.html` in a browser of your choice!
+This project runs entirely in the client, so if you need to use the randomizer off-line, you can simply download and visit the webpage in a browser. To do so, either click `Clone or download` on the GitHub page and download the zip file, or in a Terminal run `git clone https://github.com/aquova/KA-Rando`. Once downloaded, simply open `index.html` in a browser of your choice!
 
 ## -- Credits --
 
-The source code for `md5-min.js`, can be found here: https://code.google.com/archive/p/crypto-js/#MD5
+The source code for the CryptoJS MD5 library can be found here: https://code.google.com/archive/p/crypto-js/#MD5
 
 ## -- Known Issues --
 
