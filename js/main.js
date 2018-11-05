@@ -46,7 +46,7 @@ function randomize(evt) {
     if (seedInput == "") {
         seed = Math.random()
     } else {
-        seed = CryptoJS.MD5(seedInput)
+        seed = parseInt(CryptoJS.MD5(seedInput).toString(), 16) % 1e+10
     }
 
     if (enemyCheckButton.checked) {
@@ -79,9 +79,6 @@ ctx.imageSmoothingEnabled = false
 
 var img = new Image()
 img.crossOrigin = "Anonymous"
-// img.src = "https://austinbricker.com/KA-Rando/img/kirby_KA.png"
-// This is temporary
-// img.src = "https://raw.githubusercontent.com/aquova/KA-Rando/website/img/kirby_KA.png"
 img.src = "./img/kirby_KA.png"
 
 img.onload = function() {
