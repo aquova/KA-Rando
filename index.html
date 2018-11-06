@@ -24,13 +24,11 @@
                 <label for="starRodCheck" id="starRodLabel" class="disabled">Use Star Rod</label>
             </form>
             <span id="palette" class="center">
-                <label for="borderColor">Border Color: </label>
-                <select id="borderColor" onchange="changeColor(0, this)" style="background: #000000" autocomplete="off"></select>
-                <label for="bodyColor">Body Color: </label>
-                <select id="bodyColor" onchange="changeColor(1, this)" style="background: #fcc2e4" autocomplete="off"></select>
-                <label for="footColor">Foot Color: </label>
-                <select id="footColor" onchange="changeColor(2, this)" style="background: #fc6ecc" autocomplete="off"></select>
+                <button type="button" id="borderColor" style="background: #000000; color: #fff" onclick="viewTable(0)">Border Color</button>
+                <button type="button" id="bodyColor" style="background: #fcc2e4" onclick="viewTable(1)">Body Color</button>
+                <button type="button" id="footColor" style="background: #fc6ecc" onclick="viewTable(2)">Foot Color</button>
             </span>
+            <table id="paletteTable" class="hidden"></table>
             <div class="center">
                 <label for="presets">Presets: </label>
                 <select id="presets" autocomplete="off" onchange="setPreset()">

@@ -45,9 +45,8 @@ function randomize(evt) {
     var seedInput = document.getElementById("seed").value
     if (seedInput == "") {
         seed = Math.random()
-    } else {
-        seed = parseInt(CryptoJS.MD5(seedInput).toString(), 16) % 1e+10
     }
+    seed = parseInt(CryptoJS.MD5(seedInput).toString(), 16) % 1e+10
 
     if (enemyCheckButton.checked) {
         if (starRodButton.checked) {
@@ -65,7 +64,6 @@ function randomize(evt) {
         shuffleDoors()
     }
 
-    // TODO: Create check, don't call this if color unchanged
     replaceColor()
     writeFile(evt)
 }
@@ -79,17 +77,19 @@ ctx.imageSmoothingEnabled = false
 
 var img = new Image()
 img.crossOrigin = "Anonymous"
+// Loading locally doesn't work for Chrome/Safari?
 img.src = "./img/kirby_KA.png"
+// img.src = "https://raw.githubusercontent.com/aquova/KA-Rando/master/img/kirby_KA.png"
 
 img.onload = function() {
     drawKirby()
+    populateTable()
 }
 
 var randoButton = document.getElementById("rando-button")
 randoButton.addEventListener("click", randomize)
 randoButton.disabled = true
 randoButton.classList.add("disabled")
-populateDropdowns()
 
 var enemyCheckButton = document.getElementById("enemyCheck")
 var starRodButton = document.getElementById("starRodCheck")

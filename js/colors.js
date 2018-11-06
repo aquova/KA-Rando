@@ -20,10 +20,7 @@ var presetPalettes = [
 ]
 
 // Places to replace Kirby's palette
-var colorLocations = [0x32FEC,0x43AC9,0x43AF7,0x43CE1,0x47E4A,0x6D5EB,0x6D5EF,0x711E4,0x711EB,0x76759,0x76783,0x7679B,0x767B3,0x767CB,0x767E3,0x767FB,0x76813,0x7682B,0x7684F,0x7687B,0x77A61,0x78A0D,0x78A1D,0x78A2D,0x78A35,0x79552,0x79562,0x7ADA6,0x7ADB6,0x7ADD2,0x2CED0,0x2D2F6,0x43B79,0x43CE9,0x5C980,0x5C98C,0x69D29,0x69D49,0x69D69,0x69D71,0x69D89,0x69DA9,0x69DC9,0x69DE9,0x69E09,0x6D5F7,0x6DBAF,0x6DF56,0x711F3,0x79542,0x7954A,0x7855A,0x7ADCA,0x43ACD]
-
-// Ordered array of NES palette values
-var nesColors = ["30","20","10","00","2D","0D","3D","35","25","15","05","36","26","16","06","37","27","17","07","38","28","18","08","39","29","19","09","3A","2A","1A","0A","3B","2B","1B","0B","3C","2C","1C","0C","31","21","11","01","32","22","12","02","33","23","13","03","34","24","14","04"]
+var colorLocations = [0x32FEC, 0x43AC9, 0x43AF7, 0x43CE1, 0x47E4A, 0x6D5EB, 0x6D5EF, 0x711E4, 0x711EB, 0x76759, 0x76783, 0x7679B, 0x767B3, 0x767CB, 0x767E3, 0x767FB, 0x76813, 0x7682B, 0x7684F, 0x7687B, 0x77A61, 0x78A0D, 0x78A1D, 0x78A2D, 0x78A35, 0x79552, 0x79562, 0x7ADA6, 0x7ADB6, 0x7ADD2, 0x2CED0, 0x2D2F6, 0x43B79, 0x43CE9, 0x5C980, 0x5C98C, 0x69D29, 0x69D49, 0x69D69, 0x69D71, 0x69D89, 0x69DA9, 0x69DC9, 0x69DE9, 0x69E09, 0x6D5F7, 0x6DBAF, 0x6DF56, 0x711F3, 0x79542, 0x7954A, 0x7855A, 0x7ADCA, 0x43ACD]
 
 // Map of NES palette values to 24-bit hex color
 var nesMap = {
@@ -42,21 +39,38 @@ var nesMap = {
     "0C": "004058",
     "0D": "000000",
     "10": "BCBCBC",
+    "11": "0078F8",
+    "12": "0058F8",
+    "13": "6844FC",
+    "14": "D800CC",
     "15": "E40058",
     "16": "F83800",
     "17": "E45C10",
     "18": "AC7C00",
     "19": "00B800",
     "1A": "00A800",
+    "1B": "00A844",
+    "1C": "008888",
+    "1D": "000000",
     "20": "F8F8F8",
+    "21": "3CBCFC",
+    "22": "6888FC",
+    "23": "9878F8",
+    "24": "F878F8",
     "25": "F85898",
     "26": "F87858",
     "27": "FCA044",
     "28": "F8B800",
     "29": "B8F818",
     "2A": "58D854",
+    "2B": "58F898",
+    "2C": "00E8D8",
     "2D": "787878",
     "30": "FCFCFC",
+    "31": "A4E4FC",
+    "32": "B8B8F8",
+    "33": "D8B8F8",
+    "34": "F8B8F8",
     "35": "F8A4C0",
     "36": "F0D0B0",
     "37": "FCE0A8",
@@ -65,51 +79,61 @@ var nesMap = {
     "39": "D8F878",
     "3A": "B8F8B8",
     "3B": "B8F8D8",
-    "11": "0078F8",
-    "12": "0058F8",
-    "13": "6844FC",
-    "14": "D800CC",
-    "1B": "00A844",
-    "1C": "008888",
-    "21": "3CBCFC",
-    "22": "6888FC",
-    "23": "9878F8",
-    "24": "F878F8",
-    "2B": "58F898",
-    "2C": "00E8D8",
-    "31": "A4E4FC",
-    "32": "B8B8F8",
-    "33": "D8B8F8",
     "3C": "00FCFC",
-    "34": "F8B8F8",
- }
+    "3D": "F7D8F8"
+}
 
- var nesColorValues = nesColors.map(function(d) {
-     return nesMap[d]
- })
+var nesColors = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D"]
 
-function populateDropdowns() {
-    var bodyList = document.getElementById("bodyColor")
-    var footList = document.getElementById("footColor")
-    var borderList = document.getElementById("borderColor")
+var brightText = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "11", "12", "13", "18", "19", "1A", "1B", "1C", "1D", "2D"]
 
-    for (var i = 0; i < nesColorValues.length; i++) {
-        var opt = document.createElement("option")
-        opt.value = nesColors[i]
-        opt.style = "background: #" + nesColorValues[i]
-        var opt2 = opt.cloneNode(true)
-        var opt3 = opt.cloneNode(true)
-        bodyList.appendChild(opt)
-        footList.appendChild(opt2)
-        borderList.appendChild(opt3)
+// There is probably a better way to pass the NES value to be written into the ROM, but I couldn't think of it
+var nesVals = ["0F", "25", "35"]
+
+function populateTable() {
+    var t = document.getElementById("paletteTable")
+    // Table shall be 4 rows, 14 columns
+    for (var row = 0; row < 4; row++) {
+        var tableRow = document.createElement("tr")
+        for (var col = 0; col < 14; col++) {
+            var cell = document.createElement("input")
+            cell.type = "button"
+            cell.id = nesColors[14 * row + col]
+            cell.style = "width: 20px"
+            cell.style = "background-color: #" + nesMap[nesColors[14 * row + col]]
+            cell.addEventListener("click", function(d) {
+                var thisButton = document.getElementById("palette").getElementsByTagName("button")[t.value]
+                thisButton.style.backgroundColor = d.target.style.backgroundColor
+                if (brightText.includes(d.target.id)) {
+                    thisButton.style.color = "#fff"
+                } else {
+                    thisButton.style.color = "#000"
+                }
+                changeColor(t.value, nesMap[d.target.id])
+                nesVals[t.value] = d.target.id
+                t.classList.add("hidden")
+            })
+            tableRow.appendChild(cell)
+        }
+        t.appendChild(tableRow)
     }
+}
+
+function viewTable(index) {
+    var t = document.getElementById("paletteTable")
+
+    if (t.classList.contains("hidden")) {
+        t.classList.remove("hidden")
+    }
+    t.value = index
 }
 
 // Rewrite ROM with new palette
 function replaceColor() {
-    var newColor0 = parseInt(document.getElementById("bodyColor").value, 16)
-    var newColor1 = parseInt(document.getElementById("footColor").value, 16)
-    var newColor2 = parseInt(document.getElementById("borderColor").value, 16)
+    // Yeah, these are out of order, but I didn't want to redo all of the for loops just for this
+    var newColor0 = parseInt(nesVals[1], 16)
+    var newColor1 = parseInt(nesVals[2], 16)
+    var newColor2 = parseInt(nesVals[0], 16)
 
     for (var i = 0; i < colorLocations.length; i++) {
         var colorAddress = colorLocations[i]
@@ -139,12 +163,7 @@ function hex2rgb(hex) {
 
 // Draw recolored Kirby on canvas
 // Iterate through pixels of Kirby image, recolor if a match
-function changeColor(oldIndex, node) {
-    // Change color of select element
-    var selectedColor = node.options[node.selectedIndex].style.backgroundColor
-    node.style.backgroundColor = selectedColor
-
-    var color = nesColorValues[node.selectedIndex]
+function changeColor(oldIndex, color) {
     var newColor = hex2rgb(color)
 
     // Pixel array is four parts: R, G, B, A
@@ -171,9 +190,10 @@ function changeColor(oldIndex, node) {
 function setPreset() {
     var presetIdx = Number(document.getElementById("presets").value)
 
-    var nodes = document.getElementById("palette").getElementsByTagName("select")
+    var nodes = document.getElementById("palette").getElementsByTagName("button")
     for (var i = 0; i < nodes.length; i++) {
-        nodes[i].selectedIndex = nesColors.indexOf(presetPalettes[presetIdx][i])
-        changeColor(i, nodes[i])
+        nesVals[i] = presetPalettes[presetIdx][i]
+        nodes[i].style.backgroundColor = "#" + nesMap[presetPalettes[presetIdx][i]]
+        changeColor(i, nesMap[presetPalettes[presetIdx][i]])
     }
 }

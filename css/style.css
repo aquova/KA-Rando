@@ -19,8 +19,18 @@ select {
     width: 100px;
 }
 
+table {
+    margin: auto;
+    display: table;
+}
+
+.hidden {
+    display: none;
+}
+
 .disabled {
     color: lightgray;
+    cursor: not-allowed;
 }
 
 .center {
