@@ -194,6 +194,11 @@ function setPreset() {
     for (var i = 0; i < nodes.length; i++) {
         nesVals[i] = presetPalettes[presetIdx][i]
         nodes[i].style.backgroundColor = "#" + nesMap[presetPalettes[presetIdx][i]]
+        if (brightText.includes(presetPalettes[presetIdx][i])) {
+            nodes[i].style.color = "#fff"
+        } else {
+            nodes[i].style.color = "#000"
+        }
         changeColor(i, nesMap[presetPalettes[presetIdx][i]])
     }
 }
