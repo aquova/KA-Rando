@@ -2,7 +2,7 @@
 == Kirby's Adventure ROM Notes ==
 =================================
 
-Written by Aquova
+Written by aquova
 
 This document details some of the missing pieces of the ROM.
 Nearly everything before 0x24A90 is very well documented on Data Crystal, but after that information becomes very hard to piece together.

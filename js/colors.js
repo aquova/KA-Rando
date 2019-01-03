@@ -124,6 +124,8 @@ function viewTable(index) {
 
     if (t.classList.contains("hidden")) {
         t.classList.remove("hidden")
+    } else if (t.value == index) {
+        t.classList.add("hidden")
     }
     t.value = index
 }
