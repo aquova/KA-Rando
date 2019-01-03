@@ -77,9 +77,7 @@ ctx.imageSmoothingEnabled = false
 
 var img = new Image()
 img.crossOrigin = "Anonymous"
-// Loading locally doesn't work for Chrome/Safari?
 img.src = "./img/kirby_KA.png"
-// img.src = "https://raw.githubusercontent.com/aquova/KA-Rando/master/img/kirby_KA.png"
 
 img.onload = function() {
     drawKirby()
