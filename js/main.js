@@ -1,4 +1,4 @@
-var version = "4.0.0"
+var version = "4.0.1"
 
 function readFile(evt) {
     var f = evt.target.files[0]
@@ -44,7 +44,7 @@ function writeFile(evt) {
 function randomize(evt) {
     var seedInput = document.getElementById("seed").value
     if (seedInput == "") {
-        seed = Math.random()
+        seedInput = Math.random().toString()
     }
     seed = parseInt(CryptoJS.MD5(seedInput).toString(), 16) % 1e+10
 

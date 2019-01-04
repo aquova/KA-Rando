@@ -88,7 +88,7 @@ var nesColors = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A
 var brightText = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "11", "12", "13", "18", "19", "1A", "1B", "1C", "1D", "2D"]
 
 // There is probably a better way to pass the NES value to be written into the ROM, but I couldn't think of it
-var nesVals = ["0F", "25", "35"]
+var nesVals = ["0F", "35", "25"]
 
 function populateTable() {
     var t = document.getElementById("paletteTable")
