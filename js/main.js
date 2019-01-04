@@ -64,6 +64,11 @@ function randomize(evt) {
         shuffleDoors()
     }
 
+    // Experimental
+    if (document.getElementById("fullRandoCheck").checked) {
+        fullRando()
+    }
+
     replaceColor()
     writeFile(evt)
 }

@@ -82,6 +82,21 @@ var doorValues = [[[0x2B, 0x00, 0x24], [0x00, 0x12, 0x66]], // 1-1
                  // [["2A", "85", "13"], ["04", "15", "14"]], 5-5
                  [[0x31, 0x80, 0x49], [0x04, 0x15, 0x85]]] // 5-6
 
+// === FULL RANDOMIZED ===
+var deadEndAddresses = [
+    // Into,  Exit
+    [0x254A8, 0x254B2], // 1-1 UFO Room
+    [0x2584A, 0x2584F], // 2-3 UFO Room
+    [0x2587C, 0x25881], // 2-4 Hidden Room, maybe wrong
+    [0x258A4, 0x258A9], // 2-5 Hidden Room, also maybe wrong
+]
+
+var deadEndData = [
+    [[0x2E, 0x00, 0x89], [0x2C, 0x03, 0xC8]],
+    [[0xB7, 0x00, 0x39], [0xB5, 0x00, 0x23]]
+]
+// =======================
+
 function shuffleDoors() {
     var num_array = range(0, doorLocations.length)
     shuffle(num_array)
@@ -97,5 +112,23 @@ function shuffleDoors() {
         rom[exit_address + 2] = doorValues[i][1][0]
         rom[exit_address + 3] = doorValues[i][1][1]
         rom[exit_address + 4] = doorValues[i][1][2]
+    }
+}
+
+function fullRando() {
+    var num_array = range(0, deadEndData)
+    shufle(num_array)
+    for (var i = 0; i < num_array.length; i++) {
+        j = num_array[i]
+        var entry_address = deadEndAddresses[i][0]
+        var exit_address = deadEndAddresses[j][1]
+
+        rom[entry_address + 2] = deadEndData[j][0][0]
+        rom[entry_address + 3] = deadEndData[j][0][1]
+        rom[entry_address + 4] = deadEndData[j][0][2]
+
+        rom[exit_address + 2] = deadEndData[i][1][0]
+        rom[exit_address + 3] = deadEndData[i][1][1]
+        rom[exit_address + 4] = deadEndData[i][1][2]
     }
 }
