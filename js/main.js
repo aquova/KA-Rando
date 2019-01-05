@@ -25,12 +25,7 @@ function readFile(evt) {
 
 function writeFile(evt) {
     var a = document.createElement("a")
-    var seedInput = document.getElementById("seed").value
-    if (seedInput == "") {
-        a.download = name + "_" + seed + ".nes"
-    } else {
-        a.download = name + "_" + seedInput + ".nes"
-    }
+    a.download = name + "_" + seedInput + ".nes"
 
     var blob = new Blob([rom], {
         type: "text/plain"
@@ -42,9 +37,9 @@ function writeFile(evt) {
 }
 
 function randomize(evt) {
-    var seedInput = document.getElementById("seed").value
+    seedInput = document.getElementById("seed").value
     if (seedInput == "") {
-        seedInput = Math.random().toString()
+        seedInput = Math.random().toString().split(".")[1]
     }
     seed = parseInt(CryptoJS.MD5(seedInput).toString(), 16) % 1e+10
 
@@ -70,6 +65,7 @@ function randomize(evt) {
 
 var rom
 var seed
+var seedInput
 
 var canvas = document.getElementById("kirbyCanvas")
 ctx = canvas.getContext("2d")
