@@ -83,17 +83,31 @@ var doorValues = [[[0x2B, 0x00, 0x24], [0x00, 0x12, 0x66]], // 1-1
                  [[0x31, 0x80, 0x49], [0x04, 0x15, 0x85]]] // 5-6
 
 // === FULL RANDOMIZED ===
+// Final arrays go here
+var finalAddresses = [
+    // Into,  Exit
+    [0x254A8, 0x254B2], // 1-1 UFO Room
+    [0x2584A, 0x25868], // 2-3 UFO Room
+    [0x2587C, 0x25886], // 2-4 Hidden Room
+]
+
+var finalData = [
+    [[0x2E, 0x00, 0x89], [0x2C, 0x03, 0xC8]],
+    [[0xB7, 0x00, 0x39], [0xB3, 0x03, 0x25]],
+    [[0xBC, 0x00, 0x27], [0xB8, 0x02, 0x09]]
+]
+
+// These are for testing
 var deadEndAddresses = [
     // Into,  Exit
     [0x254A8, 0x254B2], // 1-1 UFO Room
-    [0x2584A, 0x2584F], // 2-3 UFO Room
-    [0x2587C, 0x25881], // 2-4 Hidden Room, maybe wrong
-    [0x258A4, 0x258A9], // 2-5 Hidden Room, also maybe wrong
+    [0x2588B, 0x2586D]
+    // [0x258A4, 0x258A9], // 2-5 Hidden Room
 ]
 
 var deadEndData = [
     [[0x2E, 0x00, 0x89], [0x2C, 0x03, 0xC8]],
-    [[0xB7, 0x00, 0x39], [0xB5, 0x00, 0x23]]
+    [[0xBC, 0x00, 0x27], [0xB8, 0x02, 0x09]]
 ]
 // =======================
 
@@ -116,8 +130,9 @@ function shuffleDoors() {
 }
 
 function fullRando() {
-    var num_array = range(0, deadEndData)
-    shufle(num_array)
+    var num_array = [1, 0]
+    // var num_array = range(0, deadEndData)
+    // shuffle(num_array)
     for (var i = 0; i < num_array.length; i++) {
         j = num_array[i]
         var entry_address = deadEndAddresses[i][0]

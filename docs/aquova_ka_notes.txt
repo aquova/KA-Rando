@@ -861,13 +861,13 @@ NOTE: This is all Stage 7-2. It doesn't look too messy, I'm just too lazy now.
 2583B - Stage 2-2 Room 4 -> Room 5
 25840 - Stage 2-2 End of level
 25845 - Stage 2-3 Room 1 -> Room 2
-2584A - Stage 2-3 Room 2? -> Secret Room
-2584F - Stage 2-3 Secret Room? -> Room 3
+2584A - Stage 2-3 Room 2 -> Secret Room
+2584F - Door to 2-3 Room 3
 25854 - Stage 2-3 Room 3 -> Miniboss
 25859 - Stage 2-3 Miniboss -> Room 4
 2585E - Stage 2-3 Room 4? -> Room 2
 25863 - Stage 2-3 End of level
-25868 - Door to Stage 2-3 Room 2
+25868 - Stage 2-3 Secret Room -> Room 2
 2586D - Door to Stage 2-4 Room 4
 25872 - Stage 2-4 Room 1 -> Room 2
 25877 - Stage 2-4 Room 2 -> Room 3
