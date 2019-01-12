@@ -8,7 +8,7 @@ https://austinbricker.com/KA-Rando
 
 https://github.com/aquova/KA-Rando
 
-Written by Austin Bricker, 2017-2018
+Written by Austin Bricker, 2017-2019
 
 ## -- Overview --
 
