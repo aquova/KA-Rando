@@ -1,4 +1,4 @@
-var version = "4.0.1"
+var version = "4.0.2"
 
 function readFile(evt) {
     var f = evt.target.files[0]
@@ -10,12 +10,13 @@ function readFile(evt) {
             name = f.name.split('.')[0]
             var arrayBuffer = fr.result
             rom = new Uint8Array(arrayBuffer)
-        }
-        // Check for correct checksum - d41d8cd98f00b204e9800998ecf8427e
-        var hash = CryptoJS.MD5(rom)
-        if (hash != "d41d8cd98f00b204e9800998ecf8427e") {
-            alert("Invalid checksum - Please use a valid US Kirby's Adventure ROM")
-            return
+            // Check for correct checksum - 1c47d0a7689f94e5d5f21eabdf0072da
+            var romString = rom.toString()
+            var hash = CryptoJS.MD5(romString)
+            if (hash != "1c47d0a7689f94e5d5f21eabdf0072da") {
+                alert("Invalid checksum - Please use a valid US Kirby's Adventure ROM")
+                return
+            }
         }
         fr.readAsArrayBuffer(f)
         randoButton.disabled = false
