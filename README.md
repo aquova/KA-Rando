@@ -4,11 +4,11 @@ Kirby's Adventure Randomizer
 
 Randomize levels, character colors, and enemy abilities for *Kirby's Adventure* on NES.
 
-https://austinbricker.com/KA-Rando
+https://aquova.net/KA-Rando
 
 https://github.com/aquova/KA-Rando
 
-Written by Austin Bricker, 2017-2019
+Written by Austin Bricker, 2017-2020
 
 ## -- Overview --
 
@@ -23,7 +23,7 @@ Randomizes the level order, enemy abilities, and Kirby's color in Kirby's Advent
 
 ## -- Usage --
 
-All you need is a US copy of the original version of the Kirby's Adventure ROM (which is left to the user to obtain). Then, visit https://austinbricker.com/KA-Rando, choose the options you desire, select your file, and press 'Randomize'.
+All you need is a US copy of the original version of the Kirby's Adventure ROM (which is left to the user to obtain). Then, visit https://aquova.net/KA-Rando, choose the options you desire, select your file, and press 'Randomize'.
 
 ## -- Running Locally --
 
