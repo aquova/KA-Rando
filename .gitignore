@@ -1,9 +1,6 @@
-# Python auto-generated files
-*__pycache__
-*build
-*dist
-*.spec
-
 # Editor files
 *.code-workspace
 *.swp
+
+# Game files
+*.nes

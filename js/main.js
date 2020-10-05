@@ -1,4 +1,4 @@
-var version = "4.0.2"
+const VERSION = "4.0.2"
 
 function readFile(evt) {
     var f = evt.target.files[0]
@@ -46,21 +46,21 @@ function randomize(evt) {
 
     if (enemyCheckButton.checked) {
         if (starRodButton.checked) {
-            abilityValues.push(0x18)
+            ability_values.push(0x18)
         }
 
         if (noAbilityButton.checked) {
-            abilityLocations.concat(neutralLocations)
+            ability_locations.concat(neutral_locations)
         }
 
-        replaceEnemies()
+        replace_enemies()
     }
 
     if (document.getElementById("doorCheck").checked) {
         shuffleDoors()
     }
 
-    replaceColor()
+    replace_color()
     writeFile(evt)
 }
 
@@ -77,8 +77,8 @@ img.crossOrigin = "Anonymous"
 img.src = "./img/kirby_KA.png"
 
 img.onload = function() {
-    drawKirby()
-    populateTable()
+    draw_kirby()
+    populate_table()
 }
 
 var randoButton = document.getElementById("rando-button")

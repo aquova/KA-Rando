@@ -17,21 +17,21 @@
                 <input type="checkbox" id="doorCheck" autocomplete="off">
                 <label for="doorCheck">Randomize Levels</label><br/>
                 <input type="checkbox" id="enemyCheck" autocomplete="off">
-                <label for="enemyCheck">Randomize Enemies</label><br/>
+                <label for="enemyCheck">Randomize Enemy Abilities</label><br/>
                 <input type="checkbox" id="noAbilityCheck" disabled="true" autocomplete="off">
-                <label for="noAbilityCheck" id="noAbilityLabel" class="disabled">Randomize Enemies with Abilities</label><br/>
+                <label for="noAbilityCheck" id="noAbilityLabel" class="disabled">Don't Give Abilities to Regular Enemies</label><br/>
                 <input type="checkbox" id="starRodCheck" disabled="true" autocomplete="off">
                 <label for="starRodCheck" id="starRodLabel" class="disabled">Use Star Rod</label>
             </form>
             <span id="palette" class="center">
-                <button type="button" id="borderColor" style="background: #000000; color: #fff" onclick="viewTable(0)">Border Color</button>
-                <button type="button" id="bodyColor" style="background: #fcc2e4" onclick="viewTable(1)">Body Color</button>
-                <button type="button" id="footColor" style="background: #fc6ecc" onclick="viewTable(2)">Foot Color</button>
+                <button type="button" id="bodyColor" style="background: #fcc2e4" onclick="view_table(0)">Body Color</button>
+                <button type="button" id="footColor" style="background: #fc6ecc" onclick="view_table(1)">Foot Color</button>
+                <button type="button" id="borderColor" style="background: #000000; color: #fff" onclick="view_table(2)">Border Color</button>
             </span>
             <table id="paletteTable" class="hidden"></table>
             <div class="center">
                 <label for="presets">Presets: </label>
-                <select id="presets" autocomplete="off" onchange="setPreset()">
+                <select id="presets" autocomplete="off" onchange="set_preset()">
                     <option value="0">Pink</option>
                     <option value="1">Red</option>
                     <option value="2">Orange</option>
@@ -54,7 +54,7 @@
             <input type="button" id="rando-button" class="center" value="Randomize!"/>
             <hr/>
             <div id="footer" class="center">
-                <p>&copy; 2017-2019 Austin Bricker</p>
+                <p>&copy; 2017-2020 Austin Bricker</p>
                 <p>Want to run this locally? View the <a href="https://github.com/aquova/KA-Rando">source code</a> and follow the instructions.</p>
                 <p>Not enough Kirby for you? Check out my <a href="https://aquova.net/kirby-color/">Kirby Color Editor</a> to edit other Kirby games.</p>
             </div>
