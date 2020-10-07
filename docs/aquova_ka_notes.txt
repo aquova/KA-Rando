@@ -11,16 +11,6 @@ Here I'm going to categorize what I've found, in addition to updating the Data C
 Kirby's Adventure Data Crystal page can be found here:
 http://datacrystal.romhacking.net/wiki/Kirby's_Adventure
 
--------------------------------------------------------------------------------
-Buiding the binaries:
-
-OS X:
-'pyinstaller --onefile --windowed --icon=icon.icns KA-Randomize.py'
-
-Windows:
-'pyinstaller.exe --onefile --windowed --icon=icon.ico KA-Randomize.py
-
--------------------------------------------------------------------------------
 RAM
 
 Ability RAM values

@@ -56,8 +56,12 @@ function randomize(evt) {
         replace_enemies()
     }
 
+    if (document.getElementById("roomCheck").checked) {
+        shuffle_rooms()
+    }
+
     if (document.getElementById("doorCheck").checked) {
-        shuffleDoors()
+        shuffle_doors()
     }
 
     replace_color()

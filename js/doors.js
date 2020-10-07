@@ -86,7 +86,23 @@ const door_values = [
     [[0x31, 0x80, 0x49], [0x04, 0x15, 0x85]]  // 5-6
 ]
 
-function shuffleDoors() {
+const rooms = [
+    // ROM address, original data
+    [0x254A3, [0x2C, 0x00, 0x28]], // 1-1 r1-r2
+    [0x254A8, [0x2E, 0x00, 0x89]], // 1-1 r1-h1
+    [0x254AD, [0x2D, 0x00, 0x38]], // 1-1 r2-r3
+    [0x254B2, [0x2C, 0x03, 0xC8]], // 1-1 h1-r1
+    [0x254BC, [0x2C, 0x02, 0xB9]], // 1-1 ??
+    // [0x254C1, [0x30, 0x02, 0xA8]], // 1-2 r1-warp
+    // [0x254C6, [0x31, 0x00, 0x00]], // 1-2 warp-r2
+    [0x254CB, [0x32, 0x00, 0x30]], // 1-2 r2-r3
+    [0x254D0, [0x33, 0x01, 0x49]], // 1-2 r3-r4
+    [0x254D5, [0x34, 0x00, 0xB6]], // 1-2 ??-h1
+    [0x254DA, [0x32, 0x03, 0xB4]], // 1-2 h1-r3
+    [0x254E4, [0x33, 0x01, 0x31]], // 1-2 ??-r4
+]
+
+function shuffle_doors() {
     var num_array = range(0, door_locations.length)
     shuffle(num_array)
     for (var src_idx = 0; src_idx < num_array.length; src_idx++) {
@@ -101,5 +117,17 @@ function shuffleDoors() {
         rom[exit_address + 2] = door_values[src_idx][1][0]
         rom[exit_address + 3] = door_values[src_idx][1][1]
         rom[exit_address + 4] = door_values[src_idx][1][2]
+    }
+}
+
+function shuffle_rooms() {
+    var num_array = range(0, rooms.length)
+    shuffle(num_array)
+    for (var src_idx = 0; src_idx < rooms.length; src_idx++) {
+        dst_idx = num_array[src_idx]
+        const dst_addr = rooms[dst_idx][0]
+        rom[dst_addr + 2] = rooms[src_idx][1][0]
+        rom[dst_addr + 3] = rooms[src_idx][1][1]
+        rom[dst_addr + 4] = rooms[src_idx][1][2]
     }
 }
